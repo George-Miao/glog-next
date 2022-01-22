@@ -1,0 +1,27 @@
+<svg id="Layer_1"
+     data-name="Layer 1"
+     xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 3055 2653">
+   <defs>
+      <style>
+         polygon {
+            fill: #FCFCFC;
+         }
+      </style>
+   </defs>
+   <polygon points="652 2272 1525 2267 1309 2647 0 2653 1514 0 1734 376 652 2272" />
+   <polygon points="2174 1130 1742 1888 1304 1893 1954 753 2174 1130" />
+   <polygon points="3055 2638
+                           1745
+                           2644
+                           1962
+                           2265
+                           2398
+                           2263
+                           2178
+                           1886
+                           2395
+                           1507
+                           3055
+                           2638" />
+</svg>

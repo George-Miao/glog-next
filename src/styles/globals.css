@@ -1,0 +1,27 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: DASH, Josefin-sans, -apple-system, BlinkMacSystemFont,
+    helvetica neue, Helvetica, Tahoma, Arial, STHeiti, pingfang sc,
+    wenquanyi micro hei, microsoft yahei, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.delim:before {
+  content: '';
+  height: 1px;
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+  background: rgba(51, 51, 51, 0.2);
+}
