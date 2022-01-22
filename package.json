@@ -2,24 +2,49 @@
   "name": "glog-next",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "rimraf .next && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "bench": "ts-node src/test/bench.ts"
   },
   "dependencies": {
-    "next": "12.0.8",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "next": "^12.0.8",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@iconify/react": "^3.1.2",
+    "@types/glob": "^7.2.0",
+    "@types/markdown-it": "^12.2.3",
     "@types/node": "17.0.8",
     "@types/react": "17.0.38",
-    "autoprefixer": "^10.4.2",
+    "@types/wordpress__wordcount": "^2.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "@wordpress/wordcount": "^3.2.3",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.15",
-    "typescript": "4.5.4"
+    "glob": "^7.2.0",
+    "gray-matter": "^4.0.3",
+    "isomorphic-dompurify": "^0.17.0",
+    "markdown-it": "^12.3.2",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-attrs": "^4.0.0",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-deflist": "^2.1.0",
+    "markdown-it-emoji": "^2.0.0",
+    "markdown-it-footnote": "^3.0.2",
+    "markdown-it-imsize": "^2.0.1",
+    "markdown-it-ins": "^3.0.1",
+    "markdown-it-mark": "^3.0.1",
+    "markdown-it-plain-text": "^0.3.0",
+    "markdown-it-regexp": "^0.4.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "markdown-it-task-checkbox": "^1.0.6",
+    "ts-node": "^10.4.0",
+    "typescript": "4.5.4",
+    "windicss-webpack-plugin": "^1.6.2"
   }
 }
