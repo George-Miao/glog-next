@@ -1,5 +1,5 @@
 import { render } from '@core/changelog/render'
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 
 import type { Changelog } from '@core/changelog/type'
 import type { GetStaticProps } from 'next'

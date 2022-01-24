@@ -1,4 +1,4 @@
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 import HTMLContent from '@comps/HTMLContent'
 
 import type { Changelog } from '@core/changelog/type'

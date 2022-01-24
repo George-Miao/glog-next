@@ -4,7 +4,7 @@ import BreadCrumb from '@comps/breadcrumb'
 import Title from '@comps/title'
 import PostMeta from '@comps/post/postMeta'
 import { getPostList, render, renderAll } from '@core/post/render'
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 
 import type { Rendered } from '@core/post/render'
 import SafeArea from '@comps/layout/safeArea'

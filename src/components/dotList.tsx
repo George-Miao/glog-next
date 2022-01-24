@@ -1,4 +1,4 @@
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 
 export interface DotListItemProp {
   title: string

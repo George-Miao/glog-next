@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 import Link from 'next/link'
 
 export interface BreadCrumb {

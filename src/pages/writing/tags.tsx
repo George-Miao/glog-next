@@ -5,7 +5,7 @@ import SafeArea from '@comps/layout/safeArea'
 import Title from '@comps/title'
 
 import { renderAll } from '@core/post/render'
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 import type { GetStaticProps } from 'next'
 
 interface Item {

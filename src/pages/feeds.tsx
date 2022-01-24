@@ -2,7 +2,7 @@ import type { DotListItemProp } from '@comps/dotList'
 import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
 import Title from '@comps/title'
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 
 const items: DotListItemProp[] = [
   {

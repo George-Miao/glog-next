@@ -1,4 +1,4 @@
-import { defineVFCWithChild } from '@core/utils'
+import { defineVFCWithChild } from '@core/helper'
 import NavBar from '../navbar'
 import Footer from '../footer'
 

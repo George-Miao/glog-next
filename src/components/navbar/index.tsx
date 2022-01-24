@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 import { Icon as Iconify } from '@iconify/react'
 
 import { btnClass, links } from './const'

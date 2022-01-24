@@ -1,5 +1,5 @@
 import SafeArea from '@comps/layout/safeArea'
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 import type { SummaryProp } from './postSummary'
 import PostSummary from './postSummary'
 

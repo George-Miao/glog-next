@@ -1,4 +1,4 @@
-import { allIndexOf } from './../utils'
+import { allIndexOf } from '../helper'
 import { readFile } from 'fs/promises'
 import { sanitize } from 'isomorphic-dompurify'
 import type { Changelog } from './type'

@@ -1,4 +1,4 @@
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 import type { MetaValidated } from '@core/post/render'
 import type { TagListProp } from '../tagList'
 import TagList from '../tagList'

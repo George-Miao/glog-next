@@ -1,5 +1,5 @@
 import type { MetaValidated } from '@core/post/render'
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 import PostMeta from '@comps/post/postMeta'
 import Title from '../title'
 import Button from '@comps/button'

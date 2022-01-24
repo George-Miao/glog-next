@@ -1,7 +1,7 @@
 import type { GetStaticProps } from 'next'
 
 import { renderAll } from '@core/post/render'
-import { defineVFC } from '@core/utils'
+import { defineVFC } from '@core/helper'
 
 import type { PostListProp } from '@comps/post/postList'
 import PostList from '@comps/post/postList'

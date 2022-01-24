@@ -1,4 +1,4 @@
-import { defineVFCWithClassAndChild } from '@core/utils'
+import { defineVFCWithClassAndChild } from '@core/helper'
 
 const SafeArea = defineVFCWithClassAndChild<{
   hideOverflow?: boolean

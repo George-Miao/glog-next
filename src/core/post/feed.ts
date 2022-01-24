@@ -1,3 +1,4 @@
+import { exists } from '@core/utils'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 import { renderAll } from './render'
@@ -15,7 +16,15 @@ const copyright = 'All rights reserved 2022, George Miao'
 export const generateAll = async () => {
   const feed = await generateFeed()
   const cwd = process.cwd()
-  await mkdir(`${cwd}/public/feeds`)
+  const feedsDir = `${cwd}/public/feeds`
+
+  await exists(feedsDir).then(exist => {
+    if (!exist) {
+      return mkdir(feedsDir, {
+        recursive: true
+      })
+    }
+  })
 
   await Promise.all([
     writeFile(`${process.cwd()}/public/feeds/rss.xml`, feed.rss2()),
