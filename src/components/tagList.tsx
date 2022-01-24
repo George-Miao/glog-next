@@ -1,16 +1,17 @@
 import { defineVFC } from '@core/utils'
 import Link from 'next/link'
 
-export interface ListProp {
+export interface TagListProp {
   list: { text: string; link: string }[]
   prefix?: string
   postfix?: string
   formatter?: (tag: string) => string
   className?: string
+  delimiter?: string
 }
 
-export default defineVFC<ListProp>(
-  ({ list, formatter, prefix, postfix, className }) => {
+const TagList = defineVFC<TagListProp>(
+  ({ list, formatter, prefix, postfix, className, delimiter }) => {
     return (
       <span>
         {list.map((tag, i) => {
@@ -19,16 +20,26 @@ export default defineVFC<ListProp>(
             (formatter?.(tag.text) ?? tag.text) +
             (postfix ?? '')
 
+          const isLast = i + 1 === list.length
+
           return (
-            <Link href={tag.link} key={i}>
-              <a
-                className={`${className} mr-1.5 text-red-800 filter hover:brightness-110 `}>
-                {text}
-              </a>
-            </Link>
+            <span key={i}>
+              <Link href={tag.link}>
+                <a
+                  className={`${className} mr-1.5 text-red-800 filter hover:brightness-110 `}>
+                  {text}
+                </a>
+              </Link>
+              {(delimiter && !isLast && (
+                <span className="mr-1.5 ">{delimiter}</span>
+              )) ??
+                ''}
+            </span>
           )
         })}
       </span>
     )
   }
 )
+
+export default TagList

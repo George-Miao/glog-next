@@ -18,6 +18,7 @@ const useCrumbs = () => {
   const path = useRouter().asPath.split('?')[0]
   const crumbs: BreadCrumb[] = path
     .slice(1)
+    .replace(/#.*/, '')
     .split('/')
     .map((x, i, all) => {
       return {

@@ -1,11 +1,10 @@
 import { defineVFC } from '@core/utils'
 
-const SvgComponent = defineVFC<unknown>(props => (
+const Logo = defineVFC(() => (
   <svg
     data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 3055.29 2653.48"
-    {...props}>
+    viewBox="0 0 3055.29 2653.48">
     <path
       className="cls-1"
       d="m652.85 2272.28 872.93-4.32-216.35 379.05L0 2653.48 1514.56 0l220.12 376.91L652.85 2272.28z"
@@ -17,4 +16,4 @@ const SvgComponent = defineVFC<unknown>(props => (
   </svg>
 ))
 
-export default SvgComponent
+export default Logo
