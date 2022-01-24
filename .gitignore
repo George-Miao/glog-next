@@ -197,3 +197,4 @@ $RECYCLE.BIN/
 
 # These are generated on-the-fly, so should not be included
 public/feeds/*
+.vercel

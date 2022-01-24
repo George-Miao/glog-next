@@ -1,4 +1,5 @@
 import { Feed } from 'feed'
+import { mkdir, writeFile } from 'fs/promises'
 import { renderAll } from './render'
 
 let feedCache: Feed | undefined = undefined
@@ -10,6 +11,18 @@ const author = {
 }
 
 const copyright = 'All rights reserved 2022, George Miao'
+
+export const generateAll = async () => {
+  const feed = await generateFeed()
+  const cwd = process.cwd()
+  await mkdir(`${cwd}/public/feeds`)
+
+  await Promise.all([
+    writeFile(`${process.cwd()}/public/feeds/rss.xml`, feed.rss2()),
+    writeFile(`${process.cwd()}/public/feeds/atom.xml`, feed.atom1()),
+    writeFile(`${process.cwd()}/public/feeds/json`, feed.json1())
+  ])
+}
 
 export const generateFeed = async () => {
   if (feedCache) {
