@@ -85,8 +85,8 @@ const getContent: (slug: string) => Promise<Content> = async slug => {
       const content = input.content as string
       // @ts-ignore
       input.excerpt =
-        content.match(moreExcerptPattern)?.[1].replaceAll('\n', ' ') ??
-        content.match(blockExcerptPattern)?.[1].replaceAll('\n', ' ') ??
+        content.match(moreExcerptPattern)?.[1]?.replaceAll?.('\n', ' ') ??
+        content.match(blockExcerptPattern)?.[1]?.replaceAll?.('\n', ' ') ??
         undefined
     }
   })

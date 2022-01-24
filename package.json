@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "bench": "ts-node src/test/bench.ts"
+    "bench": "ts-node src/test/bench.ts",
+    "clean": "rimraf node_modules .out .next yarn.lock yarn-error.log"
   },
   "dependencies": {
     "next": "^12.0.8",
