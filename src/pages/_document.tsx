@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-const MyDocument = () => (
+const Document = () => (
   <Html>
     <Head>
       <link rel="stylesheet" href="https://use.typekit.net/bkc5luv.css" />
@@ -12,4 +12,4 @@ const MyDocument = () => (
   </Html>
 )
 
-export default MyDocument
+export default Document

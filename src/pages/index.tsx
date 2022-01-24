@@ -1,14 +1,20 @@
-import Layout from '@comps/layout'
+import { generateFeed } from '@core/post/feed'
+import { writeFile } from 'fs/promises'
 import type { NextPage } from 'next'
 
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts
+  const feed = await generateFeed()
+
+  await Promise.all([
+    writeFile(`${process.cwd()}/public/feeds/rss.xml`, feed.rss2()),
+    writeFile(`${process.cwd()}/public/feeds/atom.xml`, feed.atom1()),
+    writeFile(`${process.cwd()}/public/feeds/json`, feed.json1())
+  ])
+
   const posts = {
-    a: 'Lol'
+    a: 'Index Page'
   }
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       posts
@@ -17,11 +23,7 @@ export async function getStaticProps() {
 }
 
 const Home: NextPage<{ posts: { a: string } }> = ({ posts }) => {
-  return (
-    <Layout header={<div></div>}>
-      <div className="">{posts.a}</div>
-    </Layout>
-  )
+  return <div className="">{posts.a}</div>
 }
 
 export default Home
