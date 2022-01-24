@@ -10,22 +10,19 @@ export default defineConfig({
         }
       },
       boxShadow: {
-        main: 'rgba(1,1,1,.2) 0 10px 20px',
-        nav: 'rgba(0,0,0,.15) 0 10px 15px '
+        'main': 'rgba(1,1,1,.2) 0 10px 20px',
+        'nav-active': 'rgba(0,0,0,.15) 0 10px 15px',
+        'nav-hover': 'rgba(0,0,0,.2) 0 10px 15px'
       }
     }
   },
   extract: {
-    include: ['./src/**/*.{html,jsx,tsx,mdx}'],
+    include: ['./src/**/*.{html,jsx,tsx,js,ts}'],
     exclude: ['node_modules', '.git', '.next']
   },
   shortcuts: {
-    'big-o-char':
-      'absolute select-none -left-16 -top-12 text-[12rem] leading-[12rem] text-warm-gray-200 font-bold <md:hidden',
     'main-title':
-      'text-5xl mt-10 mb-4 z-10 relative font-bold text-warm-gray-700',
-    'btn':
-      'bg-red-800 hover:shadow-nav hover:brightness-110 filter transition-all text-warm-gray-100 text-sm'
+      'text-3xl sm:text-5xl z-10 relative font-bold text-warm-gray-700'
   },
   plugins: [
     require('windicss/plugin/filters'),

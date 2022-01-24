@@ -1,4 +1,4 @@
-import { renderAll } from '../core/generate'
+import { renderAll } from '../core/post/render'
 
 const bench = async <T>(i: number, func: () => Promise<T> | T) => {
   const startMark = `start-${i}`,

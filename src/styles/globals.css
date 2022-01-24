@@ -1,3 +1,10 @@
+@font-face {
+  unicode-range: U+2014, U+2015, U+2E3B, U+2E3A;
+  font-family: DASH;
+  src: local('STHeiti'), local('PingFang SC'), local('WenQuanYi Micro Hei'),
+    local('Microsoft Yahei');
+}
+
 html,
 body {
   padding: 0;
@@ -18,10 +25,10 @@ a {
 
 .delim:before {
   content: '';
-  height: 1px;
-  width: 50px;
-  position: absolute;
-  left: 50%;
-  margin-left: -25px;
   background: rgba(51, 51, 51, 0.2);
+  @apply absolute left-[50%] h-[1px] w-[50px] -ml-[25px];
+}
+
+.btn-plain:after {
+  content: '';
 }
