@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 /**
   This module is intended to be run purely during build time
   All function exported requires node and fs access
@@ -7,57 +10,41 @@ import { readFile } from 'fs/promises'
 import glob from 'glob'
 import matter from 'gray-matter'
 import { sanitize } from 'isomorphic-dompurify'
-import markdownIt from 'markdown-it'
 import { count } from '@wordpress/wordcount'
-import { Content, Meta, MetaValidated, Path, Rendered } from './type'
+import type { Content, Meta, MetaValidated, PostPath, Rendered } from './type'
+import { md } from '@core/render'
 
-export type { Content, Meta, MetaValidated, Path, Rendered }
+export type { Content, Meta, MetaValidated, PostPath as Path, Rendered }
 
-const md = markdownIt({
-  html: true,
-  linkify: true,
-  typographer: true
-})
-  .use(require('markdown-it-plain-text'))
-  .use(require('markdown-it-abbr'))
-  .use(require('markdown-it-attrs'))
-  .use(require('markdown-it-container'), 'info')
-  .use(require('markdown-it-container'), 'success')
-  .use(require('markdown-it-container'), 'danger')
-  .use(require('markdown-it-container'), 'error')
-  .use(require('markdown-it-deflist'))
-  .use(require('markdown-it-emoji'))
-  .use(require('markdown-it-footnote'))
-  .use(require('markdown-it-imsize'))
-  .use(require('markdown-it-ins'))
-  .use(require('markdown-it-mark'))
-  .use(require('markdown-it-regexp'))
-  .use(require('markdown-it-sub'))
-  .use(require('markdown-it-sup'))
-  .use(require('markdown-it-task-checkbox'))
-
-const blockExcerptPattern = /<!--\s*block\s*-->([\s\S]*)<!--\s*block\s*-->/g
-const moreExcerptPattern = /([\s\S]*)<!--\s*more\s*-->/g
+const blockExcerptPattern = /<!--\s*block\s*-->([\s\S]*)<!--\s*block\s*-->/i
+const moreExcerptPattern = /([\s\S]*)<!--\s*more\s*-->/i
 
 const renderCache: Record<string, Rendered> = {}
 const postListCache: {
-  paths?: Path[]
+  paths?: PostPath[]
 } = {}
 
-export const getPostList: () => Promise<Path[]> = async () => {
+const postsDir = `${process.cwd()}/content/posts`
+
+export const getPostList: () => Promise<PostPath[]> = async () => {
   if (postListCache.paths) {
     return postListCache.paths
   } else
     return new Promise((res, rej) =>
-      glob('posts/*.md', (err, match) => {
+      glob(`${postsDir}/*.md`, (err, match) => {
         if (err) {
           rej(err)
         } else {
           res(
             match.map(path => {
+              const slug = getSlugFromPath(path)
+              if (!slug)
+                throw Error(
+                  `Bad post filename, unable to retreive slug: ${path}`
+                )
               return {
                 path,
-                slug: getSlugFromPath(path)
+                slug
               }
             })
           )
@@ -73,20 +60,21 @@ export const renderAll: () => Promise<Rendered[]> = () =>
       x.sort((a, b) => +new Date(b.meta.created) - +new Date(a.meta.created))
     )
 
+const slugPattern = /.*\/(.*?)\.md/i
+
 const getSlugFromPath = (path: string) => {
-  const fileName = path.split('/')[1]
-  return fileName.split('.')[0]
+  return path.match(slugPattern)?.[1]
 }
 
 const read: (slug: string) => Promise<string> = async slug => {
-  const path = `${process.cwd()}/posts/${slug}.md`
+  const path = `${postsDir}/${slug}.md`
   const content = await readFile(path).then(x => x.toString())
   return content
 }
 
 const getContent: (slug: string) => Promise<Content> = async slug => {
   const data = await read(slug)
-  let {
+  const {
     data: meta,
     content: raw,
     excerpt
@@ -97,14 +85,8 @@ const getContent: (slug: string) => Promise<Content> = async slug => {
       const content = input.content as string
       // @ts-ignore
       input.excerpt =
-        content
-          .match(moreExcerptPattern)?.[0]
-          .replace(/<!--\s*more\s*-->/g, '')
-          .replaceAll('\n', ' ') ??
-        content
-          .match(blockExcerptPattern)?.[0]
-          .replaceAll(/<!--\s*block\s*-->/g, '')
-          .replaceAll('\n', ' ') ??
+        content.match(moreExcerptPattern)?.[1].replaceAll('\n', ' ') ??
+        content.match(blockExcerptPattern)?.[1].replaceAll('\n', ' ') ??
         undefined
     }
   })
@@ -116,9 +98,12 @@ const getContent: (slug: string) => Promise<Content> = async slug => {
 }
 
 export const render: (slug: string) => Promise<Rendered> = async slug => {
-  if (renderCache[slug]) return renderCache[slug]
+  if (renderCache[slug]) {
+    console.log(`Cache hit: ${slug}`)
+    return renderCache[slug]
+  }
 
-  let { meta, raw, excerpt } = await getContent(slug)
+  const { meta, raw, excerpt } = await getContent(slug)
   const html = sanitize(md.render(raw), {
     USE_PROFILES: { html: true }
   })

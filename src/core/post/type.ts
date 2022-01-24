@@ -1,4 +1,4 @@
-export interface Path {
+export interface PostPath {
   path: string
   slug: string
 }
@@ -13,7 +13,7 @@ export interface Rendered {
 }
 
 export interface Content {
-  raw: any
+  raw: string
   meta: Meta
   excerpt?: string
 }
