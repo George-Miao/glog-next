@@ -98,8 +98,7 @@ const getContent: (slug: string) => Promise<Content> = async slug => {
 }
 
 export const render: (slug: string) => Promise<Rendered> = async slug => {
-  if (renderCache[slug]) {
-    console.log(`Cache hit: ${slug}`)
+  if (process.env.NODE_ENV !== 'development' && renderCache[slug]) {
     return renderCache[slug]
   }
 

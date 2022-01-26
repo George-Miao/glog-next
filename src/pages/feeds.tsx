@@ -1,6 +1,7 @@
 import type { DotListItemProp } from '@comps/dotList'
 import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
+import SEO from '@comps/seo'
 import Title from '@comps/title'
 import { defineVFC } from '@core/helper'
 
@@ -25,6 +26,7 @@ const items: DotListItemProp[] = [
 export default defineVFC(() => {
   return (
     <SafeArea>
+      <SEO title="Feeds" />
       <Title title="Feeds" safeArea />
       <DotList
         items={items}

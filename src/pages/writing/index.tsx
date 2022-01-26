@@ -8,6 +8,7 @@ import PostList from '@comps/post/postList'
 import Button from '@comps/button'
 import Title from '@comps/title'
 import SafeArea from '@comps/layout/safeArea'
+import SEO from '@comps/seo'
 
 export const getStaticProps: GetStaticProps<PostListProp> = () =>
   renderAll().then(e => {
@@ -33,6 +34,8 @@ const buttons = [
 export default defineVFC<PostListProp>(({ list }) => {
   return (
     <SafeArea className="grid gap-8 md:gap-16 items-center">
+      <SEO title="Writing" />
+
       <Title
         title="Writing"
         subtitle="Posts, categories and tags"

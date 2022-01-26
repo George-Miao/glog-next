@@ -7,6 +7,7 @@ import Title from '@comps/title'
 import { renderAll } from '@core/post/render'
 import { defineVFC } from '@core/helper'
 import type { GetStaticProps } from 'next'
+import SEO from '@comps/seo'
 
 interface Item {
   slug: string
@@ -68,13 +69,13 @@ export default defineVFC<Prop>(({ categories }) => {
   })
   return (
     <SafeArea className="md:(px-8) grid gap-4">
-      <>
-        <BreadCrumb className="absolute sm:top-2 md:-top-16" />
-        <Title title="Categories" className="my-4 md:mb-12" safeArea />
-        {items.map((prop, i) => (
-          <DotList {...prop} key={i} />
-        ))}
-      </>
+      <SEO title="Categories" />
+
+      <BreadCrumb className="absolute sm:top-2 md:-top-16" />
+      <Title title="Categories" className="my-4 md:mb-12" safeArea />
+      {items.map((prop, i) => (
+        <DotList {...prop} key={i} />
+      ))}
     </SafeArea>
   )
 })

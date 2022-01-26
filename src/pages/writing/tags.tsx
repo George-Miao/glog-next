@@ -1,13 +1,13 @@
 import BreadCrumb from '@comps/breadcrumb'
-import type { DotListProp } from '@comps/dotList'
 import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
+import SEO from '@comps/seo'
 import Title from '@comps/title'
-
-import { renderAll } from '@core/post/render'
 import { defineVFC } from '@core/helper'
-import type { GetStaticProps } from 'next'
+import { renderAll } from '@core/post/render'
 
+import type { DotListProp } from '@comps/dotList'
+import type { GetStaticProps } from 'next'
 interface Item {
   slug: string
   title: string
@@ -68,13 +68,13 @@ export default defineVFC<Prop>(({ tags }) => {
   })
   return (
     <SafeArea className="md:(px-8) grid gap-4">
-      <>
-        <BreadCrumb className="absolute sm:top-2 md:-top-16" />
-        <Title title="Tags" className="my-4 md:mb-12" safeArea />
-        {items.map((prop, i) => (
-          <DotList {...prop} key={i} />
-        ))}
-      </>
+      <SEO title="Tags" />
+
+      <BreadCrumb className="absolute sm:top-2 md:-top-16" />
+      <Title title="Tags" className="my-4 md:mb-12" safeArea />
+      {items.map((prop, i) => (
+        <DotList {...prop} key={i} />
+      ))}
     </SafeArea>
   )
 })

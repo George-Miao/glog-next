@@ -6,6 +6,7 @@ import PostList from '@comps/post/postList'
 import { renderAll } from '@core/post/render'
 import BreadCrumb from '@comps/breadcrumb'
 import SafeArea from '@comps/layout/safeArea'
+import SEO from '@comps/seo'
 
 export const getStaticProps: GetStaticProps<PostListProp> = () =>
   renderAll().then(e => {
@@ -25,6 +26,8 @@ export const getStaticProps: GetStaticProps<PostListProp> = () =>
 export default defineVFC<PostListProp>(({ list }) => {
   return (
     <SafeArea>
+      <SEO title="Posts" />
+
       <BreadCrumb className="relative md:-top-16 mb-6" />
       <p className="text-warm-gray-500 font-bold text-md mb-6 mx-auto text-center">
         Latest Posts

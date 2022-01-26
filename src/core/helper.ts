@@ -1,4 +1,7 @@
+import { useRouter } from 'next/router'
+
 import type { VFC } from 'react'
+import { config } from './config'
 
 export interface baseProp {
   className?: string
@@ -42,3 +45,5 @@ export const allIndexOf = (string: string, regex: RegExp) => {
   } while (true)
   return ret
 }
+
+export const useUrl = () => `https://${config.domain}${useRouter().asPath}`
