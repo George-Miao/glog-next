@@ -13,5 +13,12 @@
     "**/node_modules": true
   },
   "svg.preview.background": "dark-transparent",
-  "cSpell.words": ["imsize", "linkify", "memoizee", "rehype"]
+  "cSpell.words": [
+    "highlightjs",
+    "imsize",
+    "linkify",
+    "memoizee",
+    "merriweather",
+    "rehype"
+  ]
 }
