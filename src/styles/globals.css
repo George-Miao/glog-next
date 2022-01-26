@@ -7,11 +7,9 @@
 
 html,
 body {
+  @apply font-sans;
   padding: 0;
   margin: 0;
-  font-family: DASH, Josefin-sans, -apple-system, BlinkMacSystemFont,
-    helvetica neue, Helvetica, Tahoma, Arial, STHeiti, pingfang sc,
-    wenquanyi micro hei, microsoft yahei, sans-serif;
 }
 
 a {

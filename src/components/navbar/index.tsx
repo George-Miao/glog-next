@@ -1,18 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import { defineVFC } from '@core/helper'
 import { Icon as Iconify } from '@iconify/react'
 
 import { btnClass, links } from './const'
-import { useRouter } from 'next/router'
 
 const NavBar = defineVFC(({ className }) => {
   const mainClass = `
     ${className ?? ''}
     fixed flex z-100
     sm:px-8
-    <lg:(px-3 justify-between h-24 my-auto w-full)
+    <lg:(px-3 justify-between h-24 my-auto w-full px-8)
     lg:(flex-col h-full w-63 justify-center p-4)
   `
 

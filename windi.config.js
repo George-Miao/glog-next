@@ -1,5 +1,12 @@
 import { defineConfig } from 'windicss/helpers'
 
+const chineseFont = [
+  'STHeiti',
+  'pingfang sc',
+  'wenquanyi micro hei',
+  'microsoft yahei'
+]
+
 export default defineConfig({
   theme: {
     extend: {
@@ -8,6 +15,32 @@ export default defineConfig({
           800: '#be223a',
           highlight: 'rgba(255,255,255,.05)'
         }
+      },
+      fontFamily: {
+        sans: [
+          'DASH',
+          'Josefin-sans',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'helvetica neue',
+          'Helvetica',
+          'Tahoma',
+          'Arial',
+          ...chineseFont,
+          'sans-serif'
+        ],
+        mono: ['fira-mono', 'monospace'],
+        content: [
+          'DASH',
+          'merriweather',
+          'Josefin-sans',
+          ...chineseFont,
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Times New Roman',
+          'Times',
+          'serif'
+        ]
       },
       boxShadow: {
         'main': 'rgba(1,1,1,.2) 0 10px 20px',
@@ -19,10 +52,6 @@ export default defineConfig({
   extract: {
     include: ['./src/**/*.{html,jsx,tsx,js,ts}'],
     exclude: ['node_modules', '.git', '.next']
-  },
-  shortcuts: {
-    'main-title':
-      'text-3xl sm:text-5xl z-10 relative font-bold text-warm-gray-700'
   },
   plugins: [
     require('windicss/plugin/filters'),

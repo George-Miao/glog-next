@@ -1,6 +1,7 @@
 import { defineVFCWithChild } from '@core/helper'
-import NavBar from '../navbar'
+
 import Footer from '../footer'
+import NavBar from '../navbar'
 
 /**
  * When using layout, it is recommended to use

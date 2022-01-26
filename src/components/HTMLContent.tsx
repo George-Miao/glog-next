@@ -1,10 +1,12 @@
 import { defineVFC } from '@core/helper'
+import content from '@styles/content.module.css'
 
 const HTMLContent = defineVFC<{ html: string }>(({ html, className }) => {
   return (
-    <div
+    <article
       dangerouslySetInnerHTML={{ __html: html }}
-      className={`${className} relative`}></div>
+      className={`${className} relative ${content.content}`}
+    />
   )
 })
 

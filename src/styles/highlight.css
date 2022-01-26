@@ -1,0 +1,131 @@
+.hljs {
+  color: #5c6166;
+  background: #f8f9fa;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo,
+.hljs-variable.language_ {
+  /* prettylights-syntax-keyword */
+  color: #fa8d3e;
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__ {
+  /* prettylights-syntax-entity */
+  color: #399ee6;
+}
+
+.hljs-title.function_ {
+  color: #f2ae49;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable {
+  color: #5c6166;
+}
+
+.hljs-literal,
+.hljs-meta,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+  /* prettylights-syntax-constant */
+  color: #005cc5;
+}
+
+.hljs-operator {
+  color: #ed9366;
+}
+
+.hljs-number {
+  color: #a37acc;
+}
+
+.hljs-regexp {
+  color: #4cbf99;
+}
+
+.hljs-string,
+.hljs-meta .hljs-string {
+  /* prettylights-syntax-string */
+  color: #86b300;
+}
+
+.hljs-built_in,
+.hljs-symbol {
+  /* prettylights-syntax-variable */
+  color: #e36209;
+}
+
+.hljs-comment,
+.hljs-code,
+.hljs-formula {
+  /* prettylights-syntax-comment */
+  color: #787b8099;
+}
+
+.hljs-subst {
+  /* prettylights-syntax-storage-modifier-import */
+  color: #8a9199;
+}
+
+.hljs-section {
+  /* prettylights-syntax-markup-heading */
+  color: #fa8d3e;
+  font-weight: bold;
+}
+
+.hljs-bullet {
+  /* prettylights-syntax-markup-list */
+  color: #735c0f;
+}
+
+.hljs-emphasis {
+  /* prettylights-syntax-markup-italic */
+  color: #24292e;
+  font-style: italic;
+}
+
+.hljs-strong {
+  /* prettylights-syntax-markup-bold */
+  color: #8a9199;
+  font-weight: bold;
+}
+
+.hljs-addition {
+  /* prettylights-syntax-markup-inserted */
+  color: #22863a;
+  background-color: #f0fff4;
+}
+
+.hljs-deletion {
+  /* prettylights-syntax-markup-deleted */
+  color: #f07171;
+  background-color: #ffeef0;
+}
+
+.hljs-tag,
+.hljs-name {
+  color: #55b4d4;
+}
+
+.hljs-params {
+  color: #a37acc;
+}
+
+.hljs-char.escape_,
+.hljs-link,
+.hljs-property,
+.hljs-punctuation {
+  /* Ignored */
+}

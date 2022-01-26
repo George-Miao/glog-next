@@ -1,12 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 import MarkdownIt from 'markdown-it'
+import { config } from './config'
+
+const anchor = require('markdown-it-anchor')
 
 export const md = MarkdownIt({
   html: true,
   linkify: true,
   typographer: true
 })
+  .use(require('markdown-it-highlightjs'), { auto: false })
+  .use(anchor, { permalink: anchor.permalink.headerLink() })
+  .use(require('markdown-it-image-lazy-loading'))
   .use(require('markdown-it-plain-text'))
   .use(require('markdown-it-abbr'))
   .use(require('markdown-it-attrs'))
@@ -24,3 +30,8 @@ export const md = MarkdownIt({
   .use(require('markdown-it-sub'))
   .use(require('markdown-it-sup'))
   .use(require('markdown-it-task-checkbox'))
+  .use(require('markdown-it-external-links'), {
+    internalDomains: [config.domain],
+    externalRel: 'external nofollow'
+  })
+  .use(require('markdown-it-latex2img'))

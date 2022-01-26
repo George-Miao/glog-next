@@ -1,0 +1,340 @@
+.content {
+  @apply w-full relative box-border overflow-hidden p-1 text-[16px] font-thin z-20;
+
+  & article,
+  & aside,
+  & details,
+  & figcaption,
+  & figure,
+  & footer,
+  & header,
+  & hgroup,
+  & main,
+  & menu,
+  & nav,
+  & section,
+  & summary,
+  & ins {
+    display: block;
+  }
+
+  & * {
+    box-sizing: border-box;
+  }
+
+  & s {
+    color: #878787;
+  }
+
+  & p {
+    @apply font-content font-light pb-1;
+
+    vertical-align: middle;
+  }
+
+  & hr {
+    margin-bottom: 0.7em;
+    margin-top: 0.7em;
+  }
+
+  & ins {
+    background: #e5ffd5;
+    border-left: 0.2rem solid #aade8b;
+    &::before {
+      content: '+';
+      margin-right: 1rem;
+    }
+    line-height: normal;
+  }
+
+  & blockquote {
+    @apply border-l-2 ml-0 pl-4 py-1
+    border-warm-gray-300 italic block text-warm-gray-600;
+
+    & p {
+      @apply p-0 m-0;
+    }
+  }
+
+  & mark {
+    color: inherit;
+    display: inline;
+    padding: 0.2em 0.5em;
+    background-color: #fcffc0;
+  }
+
+  & figure.highlight {
+    overflow: hidden;
+    overflow-x: auto;
+    background: #282a36;
+    padding: 10px;
+    font-size: 14px;
+    color: #ccc;
+
+    & td {
+      border: none;
+      padding: 0;
+    }
+  }
+
+  & ins,
+  & .success,
+  & .info,
+  & .warning,
+  & .danger {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    margin-left: -1rem;
+    text-decoration: none;
+  }
+
+  & .success,
+  & .info,
+  & .warning,
+  & .danger {
+    text-decoration: none;
+    margin: 2rem 0;
+    & p {
+      margin-top: 0.35rem;
+    }
+  }
+
+  & .success {
+    background: #e5ffd5;
+    border-left: 0.2rem solid #aade8b;
+  }
+
+  & .info {
+    background: #cbeeff;
+    border-left: 0.2rem solid #53ceff;
+  }
+
+  & .warning {
+    background: #ffe2d1;
+    border-left: 0.2rem solid #ffa670;
+  }
+
+  & .danger {
+    background: #ffc5c5;
+    border-left: 0.2rem solid #ff6868;
+  }
+
+  & .arrow svg #rod {
+    stroke: #545454;
+  }
+
+  & .arrow svg #point {
+    fill: #545454;
+  }
+
+  & > table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: block;
+    line-height: 1.5;
+
+    & th,
+    & td {
+      padding: 6px 13px;
+      border: 1px solid #dfe2e5;
+    }
+
+    & tr:nth-child(2n) {
+      background-color: #f6f8fa;
+    }
+  }
+
+  & ul,
+  & ol {
+    @apply my-4;
+    padding-inline-start: 0px;
+
+    & li {
+      @apply mb-2 font-content leading-6;
+
+      &::marker {
+        @apply select-none;
+      }
+
+      & p {
+        margin: 0;
+      }
+    }
+  }
+
+  & ul {
+    @apply pl-6 list-disc;
+
+    & li {
+      @apply font-content text-sm;
+
+      &::marker {
+        color: #736e6e;
+      }
+    }
+  }
+
+  & ol {
+    @apply list-decimal pl-6;
+
+    counter-reset: ol;
+
+    & li {
+      &::marker {
+        color: #736e6e;
+        @apply font-mono text-xs;
+      }
+    }
+  }
+
+  & .footnotes-list {
+    padding-inline-start: 0;
+  }
+
+  & .footnote-item {
+    counter-reset: footnote;
+    margin-top: 1rem;
+    display: flex;
+    position: relative;
+
+    & p {
+      margin-top: 0;
+      text-indent: 0;
+    }
+
+    &::before {
+      @apply font-mono leading-6 min-w-4 mr-2 text-sm;
+
+      content: counter(ol) '.';
+      counter-increment: ol;
+      position: absolute;
+      left: -1.4rem;
+    }
+  }
+
+  & dl {
+    & dt {
+      @apply mb-2 font-bold;
+    }
+
+    & dd {
+      @apply text-xs font-content;
+
+      margin-inline-start: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    & a {
+      @apply transition-colors text-warm-gray-800 hover:text-warm-gray-600;
+    }
+  }
+
+  & h1,
+  & h2 {
+    @apply pt-4 pb-3 border-b-1;
+  }
+
+  & h4,
+  & h5 {
+    @apply pt-2 pb-1;
+  }
+
+  & h1 {
+    @apply text-4xl;
+  }
+
+  & h2 {
+    @apply text-3xl;
+  }
+
+  & h3 {
+    @apply text-2xl;
+  }
+
+  & h4 {
+    @apply text-xl;
+  }
+
+  & h5 {
+    @apply text-lg;
+  }
+
+  & .iconify {
+    margin-left: 0.3rem;
+  }
+
+  & img {
+    @apply max-w-full my-4 mx-auto h-auto rounded-lg border-1 border-light-900 block;
+
+    & ~ em {
+      @apply text-warm-gray-400 mt-2 mb-2 block text-center;
+    }
+
+    &[src*='math.now.sh'] {
+      @apply border-none rounded-none cursor-auto;
+
+      &:not([style='display:inline-block']) {
+        @apply inline;
+      }
+
+      &[style*='display:inline-block'] {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  & a {
+    @apply text-red-800 filter hover:brightness-120 font-sans font-normal;
+    &[rel*='external'] {
+      &::after {
+        content: ' ↗';
+        @apply text-xs relative -top-0.5;
+      }
+    }
+  }
+
+  & p,
+  & figure {
+    hyphens: auto;
+    line-height: 27px;
+  }
+
+  & figure {
+    margin-left: 0;
+    margin-right: 0;
+    & span {
+      word-break: break-all;
+    }
+  }
+
+  & hr {
+    height: 1px;
+    border: 0;
+    background-color: #dedede;
+    margin: 1rem auto 1.57143em auto;
+  }
+
+  & pre {
+    @apply;
+
+    & code {
+      @apply font-mono block p-4 text-sm leading-6;
+
+      /* color: #c7254e; */
+    }
+  }
+
+  & code:not([class*='hljs']) {
+    @apply font-mono text-sm break-all px-2 mr-1;
+
+    color: #c7254e;
+    background-color: #f9f2f4;
+  }
+}

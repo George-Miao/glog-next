@@ -18,7 +18,8 @@
     "paths": {
       "@core/*": ["core/*"],
       "@comps/*": ["components/*"],
-      "@pages/*": ["pages/*"]
+      "@pages/*": ["pages/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   "include": [

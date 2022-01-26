@@ -1,10 +1,19 @@
 {
   "name": "glog-next",
-  "private": true,
+  "author": {
+    "name": "George Miao",
+    "email": "gm@miao.dev",
+    "url": "https://miao.dev"
+  },
+  "bugs": {
+    "email": "bug@miao.do",
+    "url": "https://github.com/George-Miao/glog-next/issues"
+  },
   "scripts": {
     "dev": "rimraf .next && next dev",
     "build": "next build",
     "start": "next start",
+    "serve": "next build && next start",
     "lint": "next lint",
     "bench": "ts-node src/test/bench.ts",
     "clean": "rimraf node_modules .out .next yarn.lock yarn-error.log"
@@ -30,16 +39,22 @@
     "feed": "^4.2.2",
     "glob": "^7.2.0",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.4.0",
     "isomorphic-dompurify": "^0.17.0",
     "markdown-it": "^12.3.2",
     "markdown-it-abbr": "^1.0.4",
+    "markdown-it-anchor": "^8.4.1",
     "markdown-it-attrs": "^4.0.0",
     "markdown-it-container": "^3.0.0",
     "markdown-it-deflist": "^2.1.0",
     "markdown-it-emoji": "^2.0.0",
+    "markdown-it-external-links": "^0.0.6",
     "markdown-it-footnote": "^3.0.2",
+    "markdown-it-highlightjs": "^3.6.0",
+    "markdown-it-image-lazy-loading": "^1.2.0",
     "markdown-it-imsize": "^2.0.1",
     "markdown-it-ins": "^3.0.1",
+    "markdown-it-latex2img": "^0.0.6",
     "markdown-it-mark": "^3.0.1",
     "markdown-it-plain-text": "^0.3.0",
     "markdown-it-regexp": "^0.4.0",
@@ -47,6 +62,9 @@
     "markdown-it-sup": "^1.0.0",
     "markdown-it-task-checkbox": "^1.0.6",
     "next-seo": "^4.29.0",
+    "postcss-nesting": "^10.1.2",
+    "postcss-preset-env": "^7.2.3",
+    "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
     "typescript": "4.5.4",
     "windicss-webpack-plugin": "^1.6.2"

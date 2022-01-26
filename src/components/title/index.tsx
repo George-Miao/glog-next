@@ -17,14 +17,19 @@ const Title = defineVFC<TitleProp>(
         {link ? (
           <Link href={link}>
             <a
-              className={`main-title hover:text-red-800 transition-colors ${
+              className={`text-3xl sm:text-5xl z-10 relative font-bold hover:text-red-800 transition-colors ${
                 uppercase ? 'uppercase' : ''
               }`}>
               {node}
             </a>
           </Link>
         ) : (
-          <a className={`main-title ${uppercase ? 'uppercase' : ''}`}>{node}</a>
+          <a
+            className={`text-3xl sm:text-5xl z-10 relative font-bold text-warm-gray-700 ${
+              uppercase ? 'uppercase' : ''
+            }`}>
+            {node}
+          </a>
         )}
         {subtitle && (
           <p className="relative z-10 text-warm-gray-500 ml-1 md:ml-5 mt-3">
