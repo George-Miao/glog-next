@@ -25,14 +25,15 @@ export const links: NavBtn[] = [
 
 const activeBtn = 'bg-warm-gray-100 text-red-800 shadow-nav-active'
 const hoverBtn =
-  'text-white filter hover:(shadow-nav-hover bg-[rgba(255,255,255,.1)])'
+  'text-white sm:hover:(shadow-nav-hover bg-[rgba(255,255,255,.1)])'
 
 export const btnClass = (isActive: boolean) => `
-  flex flex-row relative
-  text-[0.8rem] font-bold uppercase
-  transition-all leading-5
-  p-2 ml-1
-  sm:(p-3 ml-2)
+  flex flex-row relative transition-all
+  font-bold uppercase leading-4
+  text-[0.8rem] p-3
+  <sm:(text-xs)
+  <md:(flex-1 justify-center)
+  md:(ml-1)
   lg:mt-2
   ${isActive ? activeBtn : hoverBtn}
 `

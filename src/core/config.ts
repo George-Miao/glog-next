@@ -44,5 +44,7 @@ export const defaultSeo: DefaultSeoProps = {
   description: config.description,
   titleTemplate: `%s | ${config.siteTitle}`,
   twitter: config.twitter,
+  noindex: false,
+  nofollow: false,
   openGraph: { ...config.openGraph, description: config.description }
 }

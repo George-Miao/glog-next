@@ -10,9 +10,10 @@ import { btnClass, links } from './const'
 const NavBar = defineVFC(({ className }) => {
   const mainClass = `
     ${className ?? ''}
-    fixed flex z-100
+    fixed flex flex-col z-100
     sm:px-8
-    <lg:(px-3 justify-between h-24 my-auto w-full px-8)
+    md:(my-8 flex-row)
+    <lg:(justify-between h-24 my-auto w-full)
     lg:(flex-col h-full w-63 justify-center p-4)
   `
 
@@ -22,10 +23,9 @@ const NavBar = defineVFC(({ className }) => {
         <a
           className="
             flex text-white
-            pt-3 pb-4
-            sm:px-4
-            @md:(my-auto)
-            lg:(pl-3 w-full)
+            pl-10 py-7
+            @md:(my-auto pl-4)
+            lg:(pl-3 w-full pt-0)
           ">
           <Image src="/img/logo.svg" alt="" width={24} height={24}></Image>
           <span className="ml-4 text-xl font-bold <lg:my-auto">Glog</span>
@@ -34,9 +34,11 @@ const NavBar = defineVFC(({ className }) => {
       <div
         className="
           flex
-          @md:(my-auto)
+          <sm:p-1
+          @sm:space-x-2
+          @md:(my-auto space-x-2)
           <lg:my-auto
-          lg:(flex-col w-full mt-2)
+          lg:(flex-col w-full mt-2 mb-12)
         ">
         {links.map((x, i) => {
           const isCurrent = useRouter().asPath.startsWith(x.link)
@@ -48,11 +50,11 @@ const NavBar = defineVFC(({ className }) => {
                   icon={x.icon as string}
                   width={18}
                   height={18}
-                  className="md:mr-2 lg:mr-4"></Iconify>
-                <span className="<md:hidden">{x.text}</span>
+                  className="mr-4 <sm:hidden md:mr-3"></Iconify>
+                <span>{x.text}</span>
                 {x.external && (
                   <Iconify
-                    className="ml-auto <lg:hidden"
+                    className="ml-auto"
                     icon="heroicons-outline:external-link"
                     width={16}
                     height={16}></Iconify>

@@ -23,8 +23,10 @@ const Layout = defineVFCWithChild(({ children, className }) => {
       <main
         className={`
           relative
-          pb-8 pt-[max(8vh,6rem)]
-          sm:(p-8 pt-[max(8vh,6rem)])
+          pb-8
+          sm:(p-8)
+          <md:(pt-[max(12vh,9rem)])
+          md:(pt-[max(8vh,6rem)])
           lg:(pt-8 ml-56)
         `}>
         {/* White Background, max-w-6xl */}
