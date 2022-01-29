@@ -2,7 +2,7 @@ import { config, feedBase } from '@core/config'
 import { exists } from '@core/utils'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
-import { renderAll } from './render'
+import { renderAllPost } from './reduce'
 
 let feedCache: Feed | undefined = undefined
 
@@ -40,14 +40,14 @@ export const generateFeed = async () => {
   }
   const feed = new Feed({ ...feedBase, author, copyright })
 
-  const posts = await renderAll()
+  const posts = await renderAllPost()
 
   posts.forEach(({ excerpt, html, meta, slug }) => {
     const link = `https://${config.domain}/writing/posts/${slug}`
 
     feed.addItem({
       title: meta.title,
-      date: meta.updated ? new Date(meta.updated) : new Date(meta.created),
+      date: new Date(meta.created),
       link,
       author: [author],
       content: html,

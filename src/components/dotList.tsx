@@ -13,35 +13,37 @@ export const DotListItem = defineVFC<DotListItemProp>(
     return (
       <a
         className={`${className ?? ''} block flex
-        items-center group mb-2
-        overflow-hidden`}
-        href={link ?? ''}>
+        items-center group mb-2 w-full overflow-hidden
+        `}
+        href={link ?? undefined}>
         <span
-          className="mr-4 flex-none
+          className={`flex-none
             font-medium text-gray-1000
-          group-hover:text-red-800
-            overflow-hidden overflow-ellipsis break-words">
+            flex-shrink
+            overflow-hidden overflow-ellipsis
+            whitespace-nowrap
+            ${link ? 'group-hover:text-red-800 ' : ''}
+            `}>
           {title}
         </span>
 
         <span
-          className="flex-shrink w-full border-t
+          className="flex-shrink-[10000000] mx-2 sm:mx-4 w-full border-t
           border-gray-300 border-dashed
-          dark:border-gray-800"></span>
+          dark:border-gray-800"
+        />
 
         {subtitle && (
-          <span
-            className="ml-4 flex-none
-              text-sm text-warm-gray-400">
+          <span className="flex-none <sm:(mr-2 text-sm) sm:mr-4 font-light text-warm-gray-400 inline-block leading-5">
             {subtitle}
           </span>
         )}
 
         <span
-          className="ml-4 whitespace-nowrap
-            text-sm text-warm-gray-600
-            font-mono font-thin text-xs
-            flex-none
+          className="whitespace-nowrap
+            text-warm-gray-600
+            font-mono font-thin text-sm
+            flex-none contents inline-block leading-5
             overflow-hidden break-all">
           {value}
         </span>

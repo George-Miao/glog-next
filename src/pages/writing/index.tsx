@@ -1,6 +1,6 @@
 import type { GetStaticProps } from 'next'
 
-import { renderAll } from '@core/post/render'
+import { renderAllPost } from '@core/post/reduce'
 import { defineVFC } from '@core/helper'
 
 import type { PostListProp } from '@comps/post/postList'
@@ -11,10 +11,10 @@ import SafeArea from '@comps/layout/safeArea'
 import SEO from '@comps/seo'
 
 export const getStaticProps: GetStaticProps<PostListProp> = () =>
-  renderAll().then(e => {
+  renderAllPost().then(e => {
     return {
       props: {
-        list: e.slice(0, 3).map(x => {
+        list: e.map(x => {
           return {
             meta: x.meta,
             slug: x.slug,
@@ -71,7 +71,7 @@ export default defineVFC<PostListProp>(({ list }) => {
         className="ml-auto w-36 text-sm"
         style="underline"
         postfix="→">
-        {'View All Posts'}
+        View All Posts
       </Button>
     </SafeArea>
   )

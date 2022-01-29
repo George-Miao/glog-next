@@ -7,14 +7,22 @@ export interface baseProp {
   className?: string
 }
 
-export const defineVFC = <P = baseProp>(comp: VFC<P & baseProp>) => comp
+export interface childProp {
+  children: React.ReactNode
+}
 
-export const defineVFCWithClass = <P = baseProp>(comp: VFC<baseProp & P>) =>
-  comp
+type Empty = Record<string, never>
 
-export const defineVFCWithChild = <P = baseProp>(
-  comp: VFC<{ children: React.ReactNode } & baseProp & P>
-) => comp
+export const defineVFC =
+  <P = Empty>(comp: VFC<P & Required<baseProp>>) =>
+  (prop: P & baseProp) => {
+    const className = prop.className ?? ''
+    return comp({ ...prop, className })
+  }
+
+export const defineVFCWithChild = <P = childProp>(
+  comp: VFC<childProp & P & Required<baseProp>>
+) => defineVFC<childProp & P>(comp)
 
 export const defineVFCWithClassAndChild = <P = baseProp>(
   comp: VFC<{ children: React.ReactNode } & baseProp & P>

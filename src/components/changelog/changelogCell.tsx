@@ -4,8 +4,10 @@ import HTMLContent from '@comps/HTMLContent'
 import type { Changelog } from '@core/changelog/type'
 import Image from 'next/image'
 
-const ChangeLogCell = defineVFC<Changelog>(
-  ({ content, date, title, className, image }) => {
+const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
+  ({ content, date, title, className, image, bottomLine }) => {
+    const showLine = bottomLine === undefined ? true : bottomLine
+
     const formattedDate = new Date(date).toLocaleDateString(undefined, {
       day: 'numeric',
       year: 'numeric',
@@ -14,15 +16,15 @@ const ChangeLogCell = defineVFC<Changelog>(
 
     return (
       <article
-        className={`${className}
-          py-6 border-b-1
+        className={`${className ?? ''}
+          py-6 ${showLine ? 'border-b-1' : ''}
           flex flex-col relative
-          md:(flex-row py-12)
+          md:(grid grid-cols-12 py-12)
         `}>
         <aside
           className="
             <md:(mb-6)
-            md:(mr-4 mb-4 w-36)">
+            md:(mr-4 mb-4 col-span-3)">
           <div className="md:(sticky top-12)">
             <span className="text-xl mb-2 block">{title}</span>
             <span
@@ -32,9 +34,9 @@ const ChangeLogCell = defineVFC<Changelog>(
             </span>
           </div>
         </aside>
-        <div>
+        <div className="md:(col-span-9)">
           {image && <Image src={image} alt="" />}
-          <HTMLContent html={content} className="md:(col-span-9)" />
+          <HTMLContent html={content} />
         </div>
       </article>
     )

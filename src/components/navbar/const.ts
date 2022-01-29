@@ -25,10 +25,10 @@ export const links: NavBtn[] = [
 
 const activeBtn = 'bg-warm-gray-100 text-red-800 shadow-nav-active'
 const hoverBtn =
-  'text-white sm:hover:(shadow-nav-hover bg-[rgba(255,255,255,.1)])'
+  'text-white sm:hover:(transition-all shadow-nav-hover bg-[rgba(255,255,255,.1)])'
 
 export const btnClass = (isActive: boolean) => `
-  flex flex-row relative transition-all
+  flex flex-row relative
   font-bold uppercase leading-4
   text-[0.8rem] p-3
   <sm:(text-xs)

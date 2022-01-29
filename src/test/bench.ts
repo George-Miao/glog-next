@@ -1,4 +1,4 @@
-import { renderAll } from '../core/post/render'
+import { renderAllPost } from '../core/post/reduce'
 
 const bench = async <T>(i: number, func: () => Promise<T> | T) => {
   const startMark = `start-${i}`,
@@ -12,7 +12,7 @@ const bench = async <T>(i: number, func: () => Promise<T> | T) => {
 
 ;(async () => {
   for (let i = 0; i < 10; i++) {
-    await bench(i, renderAll)
+    await bench(i, renderAllPost)
   }
 })()
 

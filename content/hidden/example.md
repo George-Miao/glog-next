@@ -17,6 +17,20 @@ look like:
 - that one
 - the other one
 
+1. this one
+2. that one
+3. the other one
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+| Header1    |     Header2 |   Header3   |
+| :--------- | ----------: | :---------: |
+| Align left | Align right | center text |
+| cell data1 |  cell data2 | cell data3  |
+
 ## 又折腾了啥？
 
 这个月到目前为止大部分时间都在外面玩，不过带了电脑，还是做了一些东西。

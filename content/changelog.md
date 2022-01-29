@@ -1,87 +1,17 @@
-# Update @ 2022-01-24 02:04:47
+# Rewrite in Next.js - 2022-01-28 17:16:19
 
-This is an update
+Glog is fully rewritten in Next.js. Two previously separated sites [Proj.](https://github.com/George-Miao/Proj) and [Index](https://github.com/George-Miao/Index) are now merged into one site under domain [miao.dev](https://miao.dev).
 
-This is another update
+![2022-01-29T00:32:07Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/dbbe3391-3ae8-43d1-9751-5491a3801100/public)
+_Brand new design_
 
-This is another update
+## What's new
 
-This is another update
+- Ditched Hexo, now fully rewritten with Next.js, including rendering posts with [markdown-it](https://github.com/markdown-it/markdown-it)
+- Changelog
+- New UI with same color scheme and design pattern
+- Fine-tuned responsiveness brought by WindiCSS
 
-This is another update
+## Todo
 
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-# Update 2 Add a new Article: Some Name @ 2022-01-24 01:43:06
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
-
-This is another update
+- CORS Proxy for connectivity testing in [Projects](/projects) panel

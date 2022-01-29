@@ -5,10 +5,22 @@ const Footer = defineVFC(({ className }) => {
     <footer
       className={`
         ${className ?? ''}
-        lg:ml-50 pt-0 pb-8 relative z-100
-        text-warm-gray-100 text-sm flex
+        lg:ml-50 pb-8 relative z-100
+        text-warm-gray-200
       `}>
-      <p className="mx-auto">Footer</p>
+      <p className="mx-auto block flex flex-col items-center">
+        <p className="mb-2">George Miao © 2022</p>
+        <p className="text-sm">
+          Built with
+          <a className="mx-1 font-bold" href="https://nextjs.org/">
+            NextJS
+          </a>
+          &
+          <a className="mx-1 font-bold" href="https://windicss.org/">
+            WindiCSS
+          </a>
+        </p>
+      </p>
     </footer>
   )
 })

@@ -12,10 +12,10 @@ export interface Rendered {
   excerpt: string | null
 }
 
-export interface Content {
+export interface Ingot {
   raw: string
   meta: Meta
-  excerpt?: string
+  excerpt: string | null
 }
 
 export interface Meta {
@@ -23,14 +23,17 @@ export interface Meta {
   categories?: string[]
   title?: string
   created?: Date
-  updated?: Date
 }
 
 export interface MetaValidated {
   tags: string[]
   categories: string[]
   title: string
-  created: string
+  created: number
   wordCount: number
-  updated: string | null
+}
+
+export interface RenderCache {
+  rendered: Record<string, Rendered>
+  list: PostPath[] | null
 }

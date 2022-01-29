@@ -14,14 +14,16 @@ import SEO from '@comps/seo'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
+    <>
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/bkc5luv.css" />
       </Head>
-      <DefaultSeo {...defaultSeo} />
-      <SEO />
-      <Component {...pageProps} />
-    </Layout>
+      <Layout>
+        <DefaultSeo {...defaultSeo} />
+        <SEO />
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
 }
 

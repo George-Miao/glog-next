@@ -5,7 +5,7 @@ const HTMLContent = defineVFC<{ html: string }>(({ html, className }) => {
   return (
     <article
       dangerouslySetInnerHTML={{ __html: html }}
-      className={`${className} relative ${content.content}`}
+      className={`${className ?? ''} relative ${content.content}`}
     />
   )
 })

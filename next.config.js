@@ -43,6 +43,9 @@ const nextConfig = {
       }
     ]
   },
+  images: {
+    domains: ['imagedelivery.net']
+  },
   experimental: {
     // removeConsole: true
   }

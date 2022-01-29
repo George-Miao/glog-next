@@ -1,6 +1,6 @@
 export interface Changelog {
   title: string
-  date: string
+  date: number
   content: string
   image?: string
 }

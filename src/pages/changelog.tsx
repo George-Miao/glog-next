@@ -20,15 +20,23 @@ export const getStaticProps: GetStaticProps<Prop> = async () => {
 }
 
 export default defineVFC<Prop>(({ changelogs }) => {
+  const len = changelogs.length
   return (
     <SafeArea>
       <SEO title="Changelog" />
 
-      <Title title="Changelog" safeArea />
-      <section className="grid sm:pt-8 ">
-        {changelogs.map((changelog, id) => (
-          <ChangeLogCell {...changelog} key={id} />
-        ))}
+      <Title title="Changelog" />
+      <p className="pt-3 pb-6 text-true-gray-400 sm:(pt-3 ml-3) md:ml-6 font-sm relative">
+        Changelog of mine, not limited to Glog updates.
+      </p>
+      <section className="grid ">
+        {changelogs.map((changelog, id) => {
+          if (id === len - 1) {
+            return <ChangeLogCell key={id} {...changelog} bottomLine={false} />
+          } else {
+            return <ChangeLogCell key={id} {...changelog} />
+          }
+        })}
       </section>
     </SafeArea>
   )

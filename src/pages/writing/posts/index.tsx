@@ -3,13 +3,13 @@ import type { GetStaticProps } from 'next'
 import { defineVFC } from '@core/helper'
 import type { PostListProp } from '@comps/post/postList'
 import PostList from '@comps/post/postList'
-import { renderAll } from '@core/post/render'
+import { renderAllPost } from '@core/post/reduce'
 import BreadCrumb from '@comps/breadcrumb'
 import SafeArea from '@comps/layout/safeArea'
 import SEO from '@comps/seo'
 
 export const getStaticProps: GetStaticProps<PostListProp> = () =>
-  renderAll().then(e => {
+  renderAllPost().then(e => {
     return {
       props: {
         list: e.map(x => {

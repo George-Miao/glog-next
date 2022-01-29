@@ -35,7 +35,7 @@ const BreadCrumb = defineVFC<BreadCrumbProp>(
     const len = crumbs.length
 
     return (
-      <p className={`${className} py-2 relative z-10 select-none`}>
+      <p className={`${className ?? ''} py-2 relative z-10 select-none`}>
         {crumbs.map((x, i) => {
           const isLast = len === i + 1
           const text = isLast ? (

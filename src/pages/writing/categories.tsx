@@ -4,19 +4,19 @@ import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
 import Title from '@comps/title'
 
-import { renderAll } from '@core/post/render'
+import { renderAllPost } from '@core/post/reduce'
 import { defineVFC } from '@core/helper'
 import type { GetStaticProps } from 'next'
 import SEO from '@comps/seo'
 
-interface Item {
+interface ArticleItem {
   slug: string
   title: string
-  created: string
+  created: number
 }
 interface Category {
   name: string
-  items: Item[]
+  items: ArticleItem[]
 }
 
 interface Prop {
@@ -24,10 +24,10 @@ interface Prop {
 }
 
 export const getStaticProps: GetStaticProps<Prop> = () =>
-  renderAll().then(posts => {
-    const categories: Record<string, Item[]> = {}
+  renderAllPost().then(posts => {
+    const categories: Record<string, ArticleItem[]> = {}
     posts.forEach(({ meta, slug }) => {
-      const item: Item = {
+      const item: ArticleItem = {
         created: meta.created,
         title: meta.title,
         slug

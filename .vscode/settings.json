@@ -14,11 +14,13 @@
   },
   "svg.preview.background": "dark-transparent",
   "cSpell.words": [
+    "chtml",
     "highlightjs",
     "imsize",
     "linkify",
+    "Mathjax",
     "memoizee",
     "merriweather",
     "rehype"
-  ]
+  ],
 }

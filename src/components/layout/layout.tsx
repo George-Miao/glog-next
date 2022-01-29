@@ -7,7 +7,7 @@ import NavBar from '../navbar'
  * When using layout, it is recommended to use
  * SafeArea inside for constrain the max width to 3xl
  *
- * Here I use 6xl for background for the sake of aesthetics
+ * Here I use 6xl for max background width for the sake of aesthetics
  * however content should
  * not take the entire <main />
  */
@@ -38,7 +38,7 @@ const Layout = defineVFCWithChild(({ children, className }) => {
             px-6 py-8
             sm:(px-16 py-20)
             md:(px-26 py-32)
-            lg:min-h-[calc(100vh-8rem)]`}>
+            lg:min-h-[calc(100vh-9rem)]`}>
           {children}
         </div>
       </main>

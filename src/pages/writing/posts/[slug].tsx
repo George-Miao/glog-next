@@ -8,12 +8,15 @@ import PostMeta from '@comps/post/postMeta'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
 import { defineVFC } from '@core/helper'
-import { getPostList, render, renderAll } from '@core/post/render'
+import { getPostList, renderAllPost } from '@core/post/reduce'
 
-import type { Rendered } from '@core/post/render'
+import type { MetaValidated } from '@core/post/type'
 import type { PostFooterProp } from '@comps/post/postFooter'
+import { renderPost } from '@core/post/map'
+
 interface Prop {
-  rendered: Rendered
+  meta: MetaValidated
+  html: string
   footer: PostFooterProp
 }
 
@@ -43,7 +46,7 @@ export const getStaticProps: GetStaticProps<Prop, { slug: string }> = async ({
     }
   }
 
-  const list = await renderAll().then(list =>
+  const list = await renderAllPost().then(list =>
     list.map(({ meta: { title }, slug }) => {
       return {
         title,
@@ -53,10 +56,12 @@ export const getStaticProps: GetStaticProps<Prop, { slug: string }> = async ({
   )
 
   const current = list.findIndex(post => post.slug === params.slug)
+  const { html, meta } = await renderPost(params.slug)
 
   return {
     props: {
-      rendered: await render(params.slug),
+      html,
+      meta,
       footer: {
         next: list.length > current + 1 ? list[current + 1] : null,
         prev: current !== 0 ? list[current - 1] : null
@@ -65,7 +70,7 @@ export const getStaticProps: GetStaticProps<Prop, { slug: string }> = async ({
   }
 }
 
-export default defineVFC<Prop>(({ rendered: { meta, html }, footer }) => {
+export default defineVFC<Prop>(({ meta, html, footer }) => {
   return (
     <SafeArea className="pb-12">
       <SEO title={meta.title} />

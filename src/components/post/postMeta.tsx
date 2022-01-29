@@ -1,5 +1,5 @@
 import { defineVFC } from '@core/helper'
-import type { MetaValidated } from '@core/post/render'
+import type { MetaValidated } from '@core/post/type'
 import type { TagListProp } from '../tagList'
 import TagList from '../tagList'
 
@@ -11,14 +11,12 @@ const timeFormatConfig: Intl.DateTimeFormatOptions = {
 
 const PostMeta = defineVFC<{ meta: MetaValidated; className?: string }>(
   ({ meta, className }) => {
-    const { categories, created, updated, tags, wordCount } = meta
+    const { categories, created, tags, wordCount } = meta
 
     const createFormatted = new Date(created).toLocaleString(
       undefined,
       timeFormatConfig
     )
-    const updatedFormatted =
-      updated && new Date(updated).toLocaleString(undefined, timeFormatConfig)
 
     const catList: TagListProp = {
       list: categories.map(x => {
@@ -43,11 +41,7 @@ const PostMeta = defineVFC<{ meta: MetaValidated; className?: string }>(
     return (
       <div className={`${className ?? ''} font-sm`}>
         <p className="text-warm-gray-500 text-sm relative z-10 mb-2">
-          {updatedFormatted && `Updated at ${updatedFormatted} / `}
-          {updatedFormatted
-            ? `Created at ${createFormatted}`
-            : createFormatted}{' '}
-          / {wordCount} words / in <TagList {...catList} />
+          {createFormatted} / {wordCount} words / in <TagList {...catList} />
         </p>
 
         <p className="text-warm-gray-500 text-xs relative z-10 mb-4">
