@@ -14,7 +14,7 @@
     "build": "next build",
     "start": "next start",
     "serve": "next build && next start",
-    "lint": "next lint",
+    "lint": "trunk check",
     "bench": "ts-node src/test/bench.ts",
     "clean": "rimraf node_modules .out .next yarn.lock yarn-error.log"
   },
@@ -63,6 +63,7 @@
     "markdown-it-task-checkbox": "^1.0.6",
     "next-remote-watch": "^1.0.0",
     "next-seo": "^4.29.0",
+    "next-sitemap": "^2.1.2",
     "postcss-nesting": "^10.1.2",
     "postcss-preset-env": "^7.2.3",
     "rimraf": "^3.0.2",
