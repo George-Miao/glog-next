@@ -1,9 +1,17 @@
-# Rewrite in Next.js - 2022-01-28 17:16:19
+<!-- markdownlint-disable -->
 
-Glog is fully rewritten in Next.js. Two previously separated sites [Proj.](https://github.com/George-Miao/Proj) and [Index](https://github.com/George-Miao/Index) are now merged into one site under domain [miao.dev](https://miao.dev).
+# Error page - 2022-01-29 14:06:59
+
+![2022-01-29T19:14:28Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/33e36183-71f4-442e-80bd-d1b6823f7600/720)
+
+Error pages ([404](/404) and [500](/500)) are now available.
+
+# Rewrite in Next.js - 2022-01-28 17:16:19
 
 ![2022-01-29T00:32:07Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/dbbe3391-3ae8-43d1-9751-5491a3801100/public)
 _Brand new design_
+
+Glog is fully rewritten in Next.js. Two previously separated sites [Proj.](https://github.com/George-Miao/Proj) and [Index](https://github.com/George-Miao/Index) are now merged into one site under domain [miao.dev](https://miao.dev).
 
 ## What's new
 
