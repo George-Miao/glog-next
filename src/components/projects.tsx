@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
+import useSWR from 'swr'
 
 import { defineVFC } from '@core/helper'
 import { ProjItem, ProjStatus } from '@core/projects/types'
@@ -9,6 +10,7 @@ import type {
   ProjIndicator,
   ProjCategory as ProjCategoryProp
 } from '@core/projects/types'
+import { config } from '@core/config'
 
 const Indicator = defineVFC<ProjIndicator>(
   ({ icon, className, label, link }) => {
@@ -47,6 +49,16 @@ const ProjItem = defineVFC<ProjItem>(
 
     const size = 16
     const [status, setStatus] = useState(ProjStatus.Init)
+
+    const url = healthCheck ?? link
+
+    if (url) {
+      const proxiedUrl = config.corsProxy.replace('%s', url)
+      useSWR(proxiedUrl, async url => {
+        const res = await fetch(url)
+        setStatus(res.ok ? ProjStatus.Online : ProjStatus.Offline)
+      })
+    }
 
     const iconComp = icon && (
       <Icon
