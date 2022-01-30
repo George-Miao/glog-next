@@ -18,7 +18,8 @@ const PostSummary = defineVFC<SummaryProp>(({ meta, slug, excerpt }) => {
         grid gap-3
         <md:(py-12)
         md:(pl-12 pt-32 pb-24)
-      ">
+      "
+    >
       <Title title={meta.title} link={href}></Title>
 
       <PostMeta meta={meta}></PostMeta>

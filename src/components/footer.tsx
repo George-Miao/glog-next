@@ -7,7 +7,8 @@ const Footer = defineVFC(({ className }) => {
         ${className ?? ''}
         lg:ml-50 pb-8 relative z-100
         text-warm-gray-200
-      `}>
+      `}
+    >
       <p className="mx-auto block flex flex-col items-center">
         <p className="mb-2">George Miao © 2022</p>
         <p className="text-sm">

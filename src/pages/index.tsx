@@ -70,7 +70,8 @@ const Home = definePage(() => {
           className="w-full inline-block
             my-2 px-4
             flex flex-row items-center
-            text-warm-gray-600">
+            text-warm-gray-600"
+        >
           <div className="flex-grow" />
           <Icon
             icon="akar-icons:location"
@@ -87,7 +88,8 @@ const Home = definePage(() => {
         href={'/writing'}
         className="ml-auto w-36 text-sm"
         style="underline"
-        postfix="→">
+        postfix="→"
+      >
         View Writing
       </Button>
     </>

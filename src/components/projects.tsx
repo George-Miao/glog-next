@@ -134,7 +134,8 @@ const ProjItem = defineVFC<ProjItem>(
           bg-true-gray-100
           border-l-2 border-red-800
           relative
-        `}>
+        `}
+      >
         {iconComp}
         {linkComp}
         <p className="text-gray-600 text-sm w-full mb-3 font-thin relative">

@@ -17,7 +17,8 @@ export default defineVFC(() => {
           pt-6 gap-6
           @sm:pt-16
           sm:grid-cols-2
-        ">
+        "
+      >
         {categories.map((category, key) => (
           <ProjCategory {...category} key={key} />
         ))}

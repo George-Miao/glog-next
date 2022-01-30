@@ -20,16 +20,19 @@ const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
           py-6 ${showLine ? 'border-b-1' : ''}
           flex flex-col relative
           md:(grid grid-cols-12 py-12)
-        `}>
+        `}
+      >
         <aside
           className="
             <md:(mb-6)
-            md:(mr-4 mb-4 col-span-3)">
+            md:(mr-4 mb-4 col-span-3)"
+        >
           <div className="md:(sticky top-12)">
             <span className="text-xl mb-2 block">{title}</span>
             <span
               className="block
-              text-sm text-warm-gray-500 block">
+              text-sm text-warm-gray-500 block"
+            >
               {formattedDate}
             </span>
           </div>

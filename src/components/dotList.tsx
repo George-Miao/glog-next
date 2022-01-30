@@ -15,7 +15,8 @@ export const DotListItem = defineVFC<DotListItemProp>(
         className={`${className ?? ''} block flex
         items-center group mb-2 w-full overflow-hidden
         `}
-        href={link ?? undefined}>
+        href={link ?? undefined}
+      >
         <span
           className={`flex-none
             font-medium text-gray-1000
@@ -23,7 +24,8 @@ export const DotListItem = defineVFC<DotListItemProp>(
             overflow-hidden overflow-ellipsis
             whitespace-nowrap
             ${link ? 'group-hover:text-red-800 ' : ''}
-            `}>
+            `}
+        >
           {title}
         </span>
 
@@ -44,7 +46,8 @@ export const DotListItem = defineVFC<DotListItemProp>(
             text-warm-gray-600
             font-mono font-thin text-sm
             flex-none contents inline-block leading-5
-            overflow-hidden break-all">
+            overflow-hidden break-all"
+        >
           {value}
         </span>
       </a>
@@ -64,13 +67,15 @@ export const DotList = defineVFC<DotListProp>(
     return (
       <div
         className={`${className ?? ''}
-          grid items-start grid-cols-1`}>
+          grid items-start grid-cols-1`}
+      >
         {title && (
           <h4
             className={`col-span-3
             text-lg mt-4 mb-2 text-red-800
             ${id ? 'hover:text-red-800' : ''}`}
-            id={id ?? ''}>
+            id={id ?? ''}
+          >
             {title}
           </h4>
         )}

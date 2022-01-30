@@ -35,7 +35,8 @@ const TagList = defineVFC<TagListProp>(
                       w-0 h-0.5 block
                       bg-red-800 transition-all
                       hover:w-full
-                    )`}>
+                    )`}
+                >
                   {text}
                 </a>
               </Link>

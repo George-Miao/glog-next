@@ -50,14 +50,16 @@ export default defineVFC<PostListProp>(({ list }) => {
           before:-top-6
           sm:(px-6 py-4)
           md:(px-10 pt-8 pb-6)
-        ">
+        "
+      >
         {buttons.map(([text, link], i) => (
           <Button
             key={i}
             href={link}
             style="underline"
             className="w-full"
-            postfix="→">
+            postfix="→"
+          >
             {text}
           </Button>
         ))}
@@ -70,7 +72,8 @@ export default defineVFC<PostListProp>(({ list }) => {
         href={'/writing/posts'}
         className="ml-auto w-36 text-sm"
         style="underline"
-        postfix="→">
+        postfix="→"
+      >
         View All Posts
       </Button>
     </SafeArea>

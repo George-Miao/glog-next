@@ -26,7 +26,8 @@ const NavBar = defineVFC(({ className }) => {
             pl-10 py-7
             @md:(my-auto pl-4)
             lg:(pl-3 w-full pt-0)
-          ">
+          "
+        >
           <Image src="/img/logo.svg" alt="" width={24} height={24}></Image>
           <span className="ml-4 text-xl font-bold <lg:my-auto">Glog</span>
         </a>
@@ -39,7 +40,8 @@ const NavBar = defineVFC(({ className }) => {
           @md:(my-auto space-x-2)
           <lg:my-auto
           lg:(flex-col w-full mt-2 mb-12)
-        ">
+        "
+      >
         {links.map((x, i) => {
           const isCurrent = useRouter().asPath.startsWith(x.link)
 
@@ -50,14 +52,16 @@ const NavBar = defineVFC(({ className }) => {
                   icon={x.icon as string}
                   width={18}
                   height={18}
-                  className="mr-4 <sm:hidden md:mr-3"></Iconify>
+                  className="mr-4 <sm:hidden md:mr-3"
+                ></Iconify>
                 <span>{x.text}</span>
                 {x.external && (
                   <Iconify
                     className="ml-auto"
                     icon="heroicons-outline:external-link"
                     width={16}
-                    height={16}></Iconify>
+                    height={16}
+                  ></Iconify>
                 )}
               </a>
             </Link>

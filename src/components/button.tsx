@@ -44,7 +44,8 @@ const Button = defineVFCWithChild<ButtonProp>(
             justify-between content-between
             ${styleClass[style]}
           `}
-          onClick={onClick ?? voidFn}>
+          onClick={onClick ?? voidFn}
+        >
           {prefix && (
             <span className="text-sm text-warm-gray-400 mr-2">{prefix}</span>
           )}

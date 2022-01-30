@@ -16,7 +16,8 @@ const Layout = defineVFCWithChild(({ children, className }) => {
     <div
       className="min-h-screen
       bg-red-800 relative
-      ">
+      "
+    >
       <NavBar />
 
       {/* Main container */}
@@ -28,7 +29,8 @@ const Layout = defineVFCWithChild(({ children, className }) => {
           <md:(pt-[max(12vh,9rem)])
           md:(pt-[max(8vh,6rem)])
           lg:(pt-8 ml-56)
-        `}>
+        `}
+      >
         {/* White Background, max-w-6xl */}
         <div
           className={`${className ?? ''}
@@ -38,7 +40,8 @@ const Layout = defineVFCWithChild(({ children, className }) => {
             px-6 py-8
             sm:(px-16 py-20)
             md:(px-26 py-32)
-            lg:min-h-[calc(100vh-9rem)]`}>
+            lg:min-h-[calc(100vh-9rem)]`}
+        >
           {children}
         </div>
       </main>

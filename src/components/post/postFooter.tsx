@@ -19,7 +19,8 @@ const PostFooter = defineVFC<PostFooterProp>(({ prev, next }) => {
           style="underline"
           className="float-left text-warm-gray-600 max-w-48 max-w-[50%]"
           href={`/writing/posts/${prev.slug}`}
-          prefix="←">
+          prefix="←"
+        >
           {prev.title}
         </Button>
       ) : (
@@ -30,7 +31,8 @@ const PostFooter = defineVFC<PostFooterProp>(({ prev, next }) => {
           style="underline"
           className="float-right text-warm-gray-600 max-w-[50%]"
           href={`/writing/posts/${next.slug}`}
-          postfix="→">
+          postfix="→"
+        >
           {next.title}
         </Button>
       ) : (

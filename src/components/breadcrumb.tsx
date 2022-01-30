@@ -50,7 +50,8 @@ const BreadCrumb = defineVFC<BreadCrumbProp>(
               key={i}
               className={`text-sm uppercase  ${
                 isLast ? 'text-warm-gray-700' : 'text-warm-gray-500'
-              } `}>
+              } `}
+            >
               <span className="text-warm-gray-400 select-none px-2">
                 {separator ?? '/'}
               </span>

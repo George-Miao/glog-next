@@ -13,13 +13,15 @@ const Title = defineVFC<TitleProp>(
       <div
         className={`${className ?? ''} relative ${
           safeArea ? 'md:(ml-12 mb-12)' : ''
-        }`}>
+        }`}
+      >
         {link ? (
           <Link href={link}>
             <a
               className={`text-3xl sm:text-5xl z-10 relative font-bold hover:text-red-800 transition-colors ${
                 uppercase ? 'uppercase' : ''
-              }`}>
+              }`}
+            >
               {node}
             </a>
           </Link>
@@ -27,7 +29,8 @@ const Title = defineVFC<TitleProp>(
           <a
             className={`text-3xl sm:text-5xl z-10 relative font-bold text-warm-gray-700 ${
               uppercase ? 'uppercase' : ''
-            }`}>
+            }`}
+          >
             {node}
           </a>
         )}
@@ -40,7 +43,8 @@ const Title = defineVFC<TitleProp>(
           className="
           absolute -left-16 -top-20 block
           font-bold text-[190px] leading-[190px] text-warm-gray-200
-          select-none <md:hidden">
+          select-none <md:hidden"
+        >
           {bigOChar}
         </div>
       </div>
