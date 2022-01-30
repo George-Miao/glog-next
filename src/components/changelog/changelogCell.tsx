@@ -1,11 +1,10 @@
 import { defineVFC } from '@core/helper'
 import HTMLContent from '@comps/HTMLContent'
 
-import type { Changelog } from '@core/changelog/type'
-import Image from 'next/image'
+import type { Changelog } from '@core/changelog'
 
 const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
-  ({ content, date, title, className, image, bottomLine }) => {
+  ({ content, date, title, className, bottomLine }) => {
     const showLine = bottomLine === undefined ? true : bottomLine
 
     const formattedDate = new Date(date).toLocaleDateString(undefined, {
@@ -37,10 +36,7 @@ const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
             </span>
           </div>
         </aside>
-        <div className="md:(col-span-9)">
-          {image && <Image src={image} alt="" />}
-          <HTMLContent html={content} />
-        </div>
+        <HTMLContent html={content} className="md:(col-span-9)" />
       </article>
     )
   }
