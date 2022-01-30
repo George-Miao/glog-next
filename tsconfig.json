@@ -26,9 +26,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next.config.js",
+    "next.config.ts",
     "postcss.config.js",
-    "windi.config.js"
+    "windi.config.js",
+    "next-site.js"
   ],
   "exclude": ["node_modules"]
 }

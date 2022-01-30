@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import 'windi.css'
 import 'styles/globals.css'
 import 'styles/highlight.css'

@@ -76,7 +76,7 @@ const categories = defineProjCategories([
       },
       {
         name: 'Pop.tg',
-        link: 'https://pop.tg',
+        link: 'https://www.pop.tg',
         github: 'https://github.com/Pop-tg/main',
         description:
           'URL shortener, built with Svelte, Typescript and Cloudflare Worker',

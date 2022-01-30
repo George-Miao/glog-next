@@ -195,6 +195,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# These are generated on-the-fly, so should not be included
+# These are generated during build time
 public/feeds/*
+public/sitemap*
+public/robots.txt
+
+# Vercel dir
 .vercel
