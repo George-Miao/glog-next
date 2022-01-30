@@ -2,11 +2,12 @@ import ChangeLogCell from '@comps/changelog/changelogCell'
 import SafeArea from '@comps/layout/safeArea'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
-import { render } from '@core/changelog/render'
+import { render } from '@core/changelog'
 import { defineVFC } from '@core/helper'
 
-import type { Changelog } from '@core/changelog/type'
+import type { Changelog } from '@core/changelog'
 import type { GetStaticProps } from 'next'
+
 interface Prop {
   changelogs: Changelog[]
 }
