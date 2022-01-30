@@ -25,10 +25,11 @@ export default defineVFC<Prop>(({ changelogs }) => {
     <SafeArea>
       <SEO title="Changelog" />
 
-      <Title title="Changelog" />
-      <p className="pt-3 pb-6 text-true-gray-400 sm:(pt-3 ml-3) md:ml-6 font-sm relative">
-        Changelog of mine, not limited to Glog updates.
-      </p>
+      <Title
+        title="Changelog"
+        subtitle="Changelog of mine, not limited to Glog updates."
+      />
+
       <section className="grid ">
         {changelogs.map((changelog, id) => {
           if (id === len - 1) {
