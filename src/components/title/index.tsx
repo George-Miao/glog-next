@@ -26,13 +26,13 @@ const Title = defineVFC<TitleProp>(
             </a>
           </Link>
         ) : (
-          <a
+          <p
             className={`text-3xl sm:text-5xl z-10 relative font-bold text-warm-gray-700 ${
               uppercase ? 'uppercase' : ''
             }`}
           >
             {node}
-          </a>
+          </p>
         )}
         {subtitle && (
           <p className="relative z-10 text-warm-gray-500 ml-1 md:ml-5 mt-3">
