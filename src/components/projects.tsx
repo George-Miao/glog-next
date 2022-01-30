@@ -14,17 +14,22 @@ import { config } from '@core/config'
 
 const Indicator = defineVFC<ProjIndicator>(
   ({ icon, className, label, link }) => {
-    return (
+    const inner = (
+      <Icon
+        icon={icon}
+        className={`${className} ${
+          link ? 'hover:text-black cursor-pointer' : ''
+        } text-gray-500 transition-none`}
+        width={16}
+        height={16}
+      />
+    )
+    return link ? (
       <a href={link} title={label}>
-        <Icon
-          icon={icon}
-          className={`${className} ${
-            link ? 'hover:text-black cursor-pointer' : ''
-          } text-gray-500 transition-none`}
-          width={16}
-          height={16}
-        />
+        {inner}
       </a>
+    ) : (
+      <p title={label}>{inner}</p>
     )
   }
 )
@@ -78,7 +83,7 @@ const ProjItem = defineVFC<ProjItem>(
         <a className={`${linkClassBase} hover:text-red-800`}>{name}</a>
       </Link>
     ) : (
-      <a className={linkClassBase}>{name}</a>
+      <p className={linkClassBase}>{name}</p>
     )
 
     const indicatorsComp = (
@@ -109,7 +114,7 @@ const ProjItem = defineVFC<ProjItem>(
         )}
         {link && (
           <Link href={link}>
-            <a>
+            <a title="Link">
               <Icon
                 icon="akar-icons:link-chain"
                 className="text-gray-500 hover:text-black transition-none cursor-pointer"
@@ -121,7 +126,7 @@ const ProjItem = defineVFC<ProjItem>(
         )}
         {github && (
           <Link href={github}>
-            <a>
+            <a title="Github link">
               <Icon
                 icon="akar-icons:github-fill"
                 className="text-gray-500 hover:text-black transition-none cursor-pointer"
