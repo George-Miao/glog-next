@@ -1,11 +1,16 @@
+import Image from 'next/image'
+
 import Button from '@comps/button'
-import type { DotListItemProp } from '@comps/dotList'
 import { DotList } from '@comps/dotList'
+import SafeArea from '@comps/layout/safeArea'
 import Title from '@comps/title'
 import { definePage } from '@core/helper'
+import { generateAllFeeds } from '@core/post/feed'
 import { Icon } from '@iconify/react'
 import content from '@styles/content.module.css'
-import Image from 'next/image'
+
+import type { DotListItemProp } from '@comps/dotList'
+import type { GetStaticProps } from 'next'
 
 const resumeList: DotListItemProp[] = [
   {
@@ -42,9 +47,16 @@ const image = {
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFCAIAAADzBuo/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAApklEQVQImQGbAGT/AABFlAB9i5e+YpDFboW9cXezcmyqcm2fYQBvhAAkYQAASpgfmI2z1XOy3XyVx2Z8uH14rWtelmoAQX0ADFEAAD+Rca6J1ueRp9B5pdBpjr5vkrtlAGpyACFwAA5SAAA/kQB8neDsn8Llia3aeJfNXYnBZABOhAAbZgALUAAARZQAWKGr3bb//6qv25E3m5c6oaIATIwAF2AACE7N5kOMxiFKnAAAAABJRU5ErkJggg=='
 }
 
+export const getStaticProps: GetStaticProps = async () => {
+  await generateAllFeeds()
+  return {
+    props: {}
+  }
+}
+
 const Home = definePage(() => {
   return (
-    <>
+    <SafeArea>
       <Title title="Hi, I'm George Miao" safeArea />
       <br />
       <div className={`${content.content} mt-4 md:mt-8`}>
@@ -92,7 +104,7 @@ const Home = definePage(() => {
       >
         View Writing
       </Button>
-    </>
+    </SafeArea>
   )
 })
 

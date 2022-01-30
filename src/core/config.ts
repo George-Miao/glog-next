@@ -4,9 +4,10 @@ import type { DefaultSeoProps } from 'next-seo'
 export const config = {
   domain: 'miao.dev',
   siteTitle: 'Glog',
-  description: 'Student and developer, living in Syracuse',
+  description: "George Miao's Site",
   image: 'https://example.com/image.png', // TODO: image
   favicon: 'https://example.com/favicon.ico', // TODO: favicon
+  corsProxy: 'https://cors-proxy.miao.dev/?url=%s',
   twitter: {
     site: '@PopDotLol',
     cardType: 'summary_large_image'

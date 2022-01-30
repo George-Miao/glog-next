@@ -3,8 +3,10 @@ import { exists } from '@core/utils'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 import { renderAllPost } from './reduce'
+import { render as renderChangelog } from '@core/changelog'
 
-let feedCache: Feed | undefined = undefined
+let feedCache: Feed | null = null
+let changelogCache: Feed | null = null
 
 const author = {
   name: 'George Miao',
@@ -14,61 +16,83 @@ const author = {
 
 const copyright = 'All rights reserved 2022, George Miao'
 
-export const generateAll = async () => {
-  const feed = await generateFeed()
+export const generateAllFeeds = async () => {
   const cwd = process.cwd()
-  const feedsDir = `${cwd}/public/feeds`
+  const feedDir = `${cwd}/public/feeds`
 
-  await exists(feedsDir).then(exist => {
+  await exists(feedDir).then(exist => {
     if (!exist) {
-      return mkdir(feedsDir, {
+      return mkdir(feedDir, {
         recursive: true
       })
     }
   })
 
+  const [posts, changelogs] = await Promise.all([
+    generatePostFeed(),
+    generateChanglogFeed()
+  ])
+
   await Promise.all([
-    writeFile(`${process.cwd()}/public/feeds/rss.xml`, feed.rss2()),
-    writeFile(`${process.cwd()}/public/feeds/atom.xml`, feed.atom1()),
-    writeFile(`${process.cwd()}/public/feeds/json`, feed.json1())
+    writeFile(`${feedDir}/posts.rss.xml`, posts.rss2()),
+    writeFile(`${feedDir}/posts.atom.xml`, posts.atom1()),
+    writeFile(`${feedDir}/posts.json`, posts.json1()),
+    writeFile(`${feedDir}/changelog.rss.xml`, changelogs.rss2()),
+    writeFile(`${feedDir}/changelog.atom.xml`, changelogs.atom1()),
+    writeFile(`${feedDir}/changelog.json`, changelogs.json1())
   ])
 }
 
-export const generateFeed = async () => {
-  if (feedCache) {
+export const generatePostFeed = async () => {
+  if (process.env.NODE_ENV === 'production' && feedCache) {
     return feedCache
   }
+
   const feed = new Feed({ ...feedBase, author, copyright })
 
-  const posts = await renderAllPost()
+  feed.items = await renderAllPost().then(posts =>
+    posts.map(({ excerpt, html, meta, slug }) => {
+      const link = `https://${config.domain}/writing/posts/${slug}`
 
-  posts.forEach(({ excerpt, html, meta, slug }) => {
-    const link = `https://${config.domain}/writing/posts/${slug}`
-
-    feed.addItem({
-      title: meta.title,
-      date: new Date(meta.created),
-      link,
-      author: [author],
-      content: html,
-      description: excerpt ?? undefined,
-      copyright,
-      guid: link,
-      published: new Date(meta.created),
-      category: meta.categories.map(cat => {
-        return {
-          name: cat
-        }
-      })
+      return {
+        title: meta.title,
+        date: new Date(meta.created),
+        link,
+        author: [author],
+        content: html,
+        description: excerpt ?? undefined,
+        copyright,
+        guid: link,
+        published: new Date(meta.created),
+        category: meta.categories.map(cat => {
+          return {
+            name: cat
+          }
+        })
+      }
     })
-  })
+  )
 
   feedCache = feed
+
   return feed
 }
 
-export const renderRSS = async () => generateFeed().then(x => x.rss2())
+export const generateChanglogFeed = async () => {
+  if (process.env.NODE_ENV === 'production' && changelogCache) {
+    return changelogCache
+  }
 
-export const renderAtom = async () => generateFeed().then(x => x.atom1())
+  const cl = await renderChangelog()
+  const feed = new Feed({ ...feedBase, author, copyright })
 
-export const renderJson = async () => generateFeed().then(x => x.json1())
+  feed.items = cl.map(({ content, date, title }) => {
+    const link = `https://${config.domain}/changelog`
+
+    return { date: new Date(date), link, title, content, copyright, guid: link }
+  })
+
+  changelogCache = feed
+
+  return feed
+}
