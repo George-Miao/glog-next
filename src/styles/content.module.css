@@ -173,7 +173,7 @@
   }
 
   & img {
-    @apply max-w-full my-4 mx-auto h-auto block;
+    @apply max-w-[98%] rounded mt-1 mb-4 mx-auto h-auto block ring-1 ring-true-gray-200;
 
     & ~ em {
       @apply text-warm-gray-400 mt-2 mb-8 text-sm block text-center;
@@ -195,10 +195,7 @@
   & a {
     @apply text-red-800 filter hover:brightness-120 font-sans font-normal whitespace-nowrap;
     &[rel*='external'] {
-      &::after {
-        content: ' ↗';
-        @apply text-xs relative -top-0.5;
-      }
+      @apply border-b-1 border-red-800;
     }
   }
 
