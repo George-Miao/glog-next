@@ -12,6 +12,7 @@ import {
 } from './common'
 
 import type { Ingot, Meta, MetaValidated, Rendered } from './type'
+import { count } from '@wordpress/wordcount'
 
 export const renderPost = async (slug: string): Promise<Rendered> => {
   if (process.env.NODE_ENV === 'production' && cache.rendered?.[slug]) {
@@ -23,6 +24,9 @@ export const renderPost = async (slug: string): Promise<Rendered> => {
       .then(({ meta: metaUnchecked, raw, excerpt }) => {
         const { html, text } = renderMarkdown(raw)
         const meta = checkMeta(metaUnchecked)
+        meta.wordCount = count(text, 'words', {
+          l10n: { shortcodes: ['en', 'cn', 'zh'], type: 'words' }
+        })
         return { meta, raw, slug, html, text, excerpt }
       })
       .then(r => {
