@@ -2,7 +2,7 @@
 
 # Error page - 2022-01-29 14:06:59
 
-![2022-01-29T19:14:28Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/33e36183-71f4-442e-80bd-d1b6823f7600/720)
+![2022-01-29T19:14:28Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/33e36183-71f4-442e-80bd-d1b6823f7600/public)
 
 Error pages ([404](/404) and [500](/500)) are now available.
 
