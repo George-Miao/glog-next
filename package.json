@@ -9,6 +9,7 @@
     "email": "bug@miao.do",
     "url": "https://github.com/George-Miao/glog-next/issues"
   },
+  "license": "MIT",
   "scripts": {
     "dev": "rimraf .next && next-remote-watch content/",
     "build": "next build",
