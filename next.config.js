@@ -19,6 +19,12 @@ const headers = {
       key: 'Content-Type',
       value: 'application/rss+xml; charset=UTF-8'
     }
+  ],
+  text: [
+    {
+      key: 'Content-Type',
+      value: 'text/plain'
+    }
   ]
 }
 
@@ -59,6 +65,10 @@ const nextConfig = {
       {
         source: '/feeds/changelog.rss.xml',
         headers: headers.rss
+      },
+      {
+        source: '/ssh.pub',
+        headers: headers.text
       }
     ]
   },

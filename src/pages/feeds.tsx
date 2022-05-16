@@ -5,7 +5,7 @@ import SEO from '@comps/seo'
 import Title from '@comps/title'
 import { defineVFC } from '@core/helper'
 
-const items = (name: string): DotListItemProp[] => [
+const genItems = (name: string): DotListItemProp[] => [
   {
     title: 'Atom',
     value: `/feeds/${name}.atom.xml`,
@@ -29,13 +29,26 @@ export default defineVFC(() => {
       <SEO title="Feeds" />
       <Title title="Feeds" safeArea />
       <DotList
-        items={items('posts')}
+        items={genItems('posts')}
         title="Posts"
         className="pt-2 @sm:pt-12"
       />
       <DotList
-        items={items('changelog')}
+        items={genItems('changelog')}
         title="Changelogs"
+        className="pt-2 @sm:pt-12"
+      />
+      <DotList
+        items={[{
+          title: 'SSH',
+          value: '/ssh.pub',
+          link: '/ssh.pub'
+        },{
+          title: 'GPG',
+          value: '/gpg.asc',
+          link: '/gpg.asc'
+        },]}
+        title="Keys"
         className="pt-2 @sm:pt-12"
       />
     </SafeArea>
