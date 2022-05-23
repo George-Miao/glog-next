@@ -7,8 +7,8 @@ tags: [en-US, WIP]
 
 ```ts
 import { defineVFCWithChild } from '@core/helper'
-import NavBar from '../navbar'
 import Footer from '../footer'
+import NavBar from '../navbar'
 
 /**
  * When using layout, it is recommended to use
@@ -20,11 +20,9 @@ import Footer from '../footer'
  */
 const Layout = defineVFCWithChild(({ children, className }) => {
   return (
-    <div
-      className="min-h-screen
+    <div className='min-h-screen
       bg-red-800 relative
-      "
-    >
+      '>
       <NavBar />
 
       {/* Main container */}
@@ -281,5 +279,4 @@ async fn raw(
         ),
     }
 }
-
 ```

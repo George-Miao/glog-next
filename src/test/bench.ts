@@ -9,11 +9,9 @@ const bench = async <T>(i: number, func: () => Promise<T> | T) => {
   const { duration } = performance.measure('Start to end', startMark, endMark)
   console.log(`Took ${duration / 1000} s`)
 }
-
 ;(async () => {
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++)
     await bench(i, renderAllPost)
-  }
 })()
 
 export {}

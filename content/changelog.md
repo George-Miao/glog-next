@@ -25,8 +25,7 @@ Error pages ([404](/404) and [500](/500)) are now available.
 
 # Rewrite in Next.js - 2022-01-28 17:16:19
 
-![2022-01-29T00:32:07Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/dbbe3391-3ae8-43d1-9751-5491a3801100/public)
-_Brand new design_
+![2022-01-29T00:32:07Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/dbbe3391-3ae8-43d1-9751-5491a3801100/public) _Brand new design_
 
 Glog is fully rewritten in Next.js. Two previously separated sites [Proj.](https://github.com/George-Miao/Proj) and [Index](https://github.com/George-Miao/Index) are now merged into one site under domain [miao.dev](https://miao.dev).
 

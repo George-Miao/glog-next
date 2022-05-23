@@ -13,11 +13,9 @@ import NavBar from '../navbar'
  */
 const Layout = defineVFCWithChild(({ children, className }) => {
   return (
-    <div
-      className="min-h-screen
+    <div className='min-h-screen
       bg-red-800 relative
-      "
-    >
+      '>
       <NavBar />
 
       {/* Main container */}

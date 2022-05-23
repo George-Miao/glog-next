@@ -9,15 +9,15 @@ const Footer = defineVFC(({ className }) => {
         text-warm-gray-200
       `}
     >
-      <p className="mx-auto block flex flex-col items-center">
-        <p className="mb-2">George Miao © 2022</p>
-        <p className="text-sm">
+      <p className='mx-auto block flex flex-col items-center'>
+        <p className='mb-2'>George Miao © 2022</p>
+        <p className='text-sm'>
           Built with
-          <a className="mx-1 font-bold" href="https://nextjs.org/">
+          <a className='mx-1 font-bold' href='https://nextjs.org/'>
             NextJS
           </a>
           &
-          <a className="mx-1 font-bold" href="https://windicss.org/">
+          <a className='mx-1 font-bold' href='https://windicss.org/'>
             WindiCSS
           </a>
         </p>

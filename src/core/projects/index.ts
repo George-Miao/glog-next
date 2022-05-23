@@ -9,8 +9,7 @@ const categories = defineProjCategories([
       {
         name: 'Proxmox',
         isPrivate: true,
-        description:
-          'VM environment, hosts most of my services in Tharsis. Installed on R720',
+        description: 'VM environment, hosts most of my services in Tharsis. Installed on R720',
         icon: 'cib:proxmox'
       },
       {
@@ -28,7 +27,7 @@ const categories = defineProjCategories([
       {
         name: 'Grafana',
         isPrivate: true,
-        description: 'Matrix visualization. Consume data from Prometheus.',
+        description: 'Matrix visualization which consume data from Prometheus',
         icon: 'simple-icons:grafana'
       },
 
@@ -47,6 +46,32 @@ const categories = defineProjCategories([
     ]
   },
   {
+    name: 'Tharsis US',
+    description: 'ITX server in Syracuse, NY',
+    icon: 'bx:planet',
+    items: [
+      {
+        name: 'Proxmox',
+        isPrivate: true,
+        description: 'VM environment, hosts most of my services in Tharsis',
+        icon: 'cib:proxmox'
+      },
+      {
+        name: 'Home Assistant',
+        isPrivate: true,
+        description: 'Home automation system',
+        icon: 'mdi:home-assistant'
+      },
+      {
+        name: 'AdGuard Home',
+        github: 'https://github.com/AdguardTeam/AdGuardHome',
+        link: 'https://adguard.com/en/welcome.html',
+        description: 'Home automation system',
+        icon: 'mdi:home-assistant'
+      }
+    ]
+  },
+  {
     name: 'Sites',
     icon: 'ic:twotone-web-asset',
     description: 'Deployed and maintaining',
@@ -60,26 +85,23 @@ const categories = defineProjCategories([
       },
       {
         name: 'Blog',
-        link: 'https://blog.miao.dev',
+        link: 'https://miao.dev',
         github: 'https://github.com/George-Miao/GlogHexo',
-        description:
-          'My blog. Use hexo for generation. Written in Markdown, less and swig',
+        description: 'My blog. Use hexo for generation. Written in Markdown, less and swig',
         icon: 'cib:hexo'
       },
       {
         name: 'Typings.dev',
         link: 'https://typings.dev',
         github: 'https://github.com/George-Miao/typings.dev',
-        description:
-          'Typing practice site for Pinyin and Shuang users inspired by Typing-cn',
+        description: 'Typing practice site for Pinyin and Shuang users inspired by Typing-cn',
         icon: 'ion:logo-vue'
       },
       {
         name: 'Pop.tg',
         link: 'https://www.pop.tg',
         github: 'https://github.com/Pop-tg/main',
-        description:
-          'URL shortener, built with Svelte, Typescript and Cloudflare Worker',
+        description: 'URL shortener, built with Svelte, Typescript and Cloudflare Worker',
         icon: 'cib:cloudflare'
       },
 
@@ -98,12 +120,17 @@ const categories = defineProjCategories([
     description: 'Works have done and doing',
     items: [
       {
+        name: 'Stargazer Reborn',
+        icon: 'cib:rust',
+        github: 'https://github.com/Suisei-CN/stargazer-reborn',
+        description: 'A flexible vtuber tracker, reborn'
+      },
+      {
         name: 'Mail List Rss',
         icon: 'cib:rust',
         github: 'https://github.com/George-Miao/mail-list-rss',
         healthCheck: 'https://rss.miao.do/health',
-        description:
-          'Translate mail subscription to a RSS feed, written in Rust'
+        description: 'Translate mail subscription to a RSS feed, written in Rust'
       },
       {
         name: 'Shot',
@@ -122,8 +149,7 @@ const categories = defineProjCategories([
         name: 'Knotify telegram',
         icon: 'akar-icons:telegram-fill',
         github: 'https://github.com/George-Miao/knotify-telegram',
-        description:
-          'Bot as a bridge, forward HTTP request and PM to my telegram',
+        description: 'Bot as a bridge, forward HTTP request and PM to my telegram',
         indicators: [
           {
             icon: 'cib:typescript'
@@ -135,6 +161,7 @@ const categories = defineProjCategories([
         icon: 'akar-icons:telegram-fill',
         github: 'https://github.com/suisei-cn/golden-axe-rs',
         description: 'Anti-vandalism bot for Telegram',
+        healthCheck: 'https://golden-axe.fly.dev/health',
         indicators: [
           {
             icon: 'cib:rust'
@@ -145,8 +172,7 @@ const categories = defineProjCategories([
         name: 'RSS worker',
         icon: 'cib:cloudflare',
         github: 'https://github.com/George-Miao/rss-worker',
-        description:
-          'Cloudflare worker that generates RSS feed from various source',
+        description: 'Cloudflare worker that generates RSS feed from various source',
         indicators: [
           {
             icon: 'cib:typescript'

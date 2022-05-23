@@ -1,8 +1,8 @@
-import type { MetaValidated } from '@core/post/type'
-import { defineVFC } from '@core/helper'
-import PostMeta from '@comps/post/postMeta'
-import Title from '../title'
 import Button from '@comps/button'
+import PostMeta from '@comps/post/postMeta'
+import { defineVFC } from '@core/helper'
+import type { MetaValidated } from '@core/post/type'
+import Title from '../title'
 
 export interface SummaryProp {
   meta: MetaValidated
@@ -13,18 +13,16 @@ export interface SummaryProp {
 const PostSummary = defineVFC<SummaryProp>(({ meta, slug, excerpt }) => {
   const href = `/writing/posts/${slug}`
   return (
-    <summary
-      className="relative delim
+    <summary className='relative delim
         grid gap-3
         <md:(py-12)
         md:(pl-12 pt-32 pb-24)
-      "
-    >
+      '>
       <Title title={meta.title} link={href}></Title>
 
       <PostMeta meta={meta}></PostMeta>
 
-      <p className="<sm:text-sm text-warm-gray-600 relative z-10 mb-10">
+      <p className='<sm:text-sm text-warm-gray-600 relative z-10 mb-10'>
         {excerpt}
       </p>
 

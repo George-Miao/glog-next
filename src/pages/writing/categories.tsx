@@ -4,10 +4,10 @@ import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
 import Title from '@comps/title'
 
-import { renderAllPost } from '@core/post/reduce'
-import { defineVFC } from '@core/helper'
-import type { GetStaticProps } from 'next'
 import SEO from '@comps/seo'
+import { defineVFC } from '@core/helper'
+import { renderAllPost } from '@core/post/reduce'
+import type { GetStaticProps } from 'next'
 
 interface ArticleItem {
   slug: string
@@ -68,14 +68,12 @@ export default defineVFC<Prop>(({ categories }) => {
     }
   })
   return (
-    <SafeArea className="md:(px-8) grid gap-4">
-      <SEO title="Categories" />
+    <SafeArea className='md:(px-8) grid gap-4'>
+      <SEO title='Categories' />
 
-      <BreadCrumb className="absolute sm:top-2 md:-top-16" />
-      <Title title="Categories" className="my-4 md:mb-12" safeArea />
-      {items.map((prop, i) => (
-        <DotList {...prop} key={i} />
-      ))}
+      <BreadCrumb className='absolute sm:top-2 md:-top-16' />
+      <Title title='Categories' className='my-4 md:mb-12' safeArea />
+      {items.map((prop, i) => <DotList {...prop} key={i} />)}
     </SafeArea>
   )
 })

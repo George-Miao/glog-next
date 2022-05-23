@@ -10,21 +10,22 @@ const getSlugFromPath = (path: string) => {
 }
 
 export const getPostList: () => Promise<PostPath[]> = async () => {
-  if (cache.list) {
+  if (cache.list)
     return cache.list
-  } else
+  else {
     return new Promise((res, rej) =>
       glob(`${postsDir}/*.md`, (err, match) => {
-        if (err) {
+        if (err)
           rej(err)
-        } else {
+        else {
           res(
             match.map(path => {
               const slug = getSlugFromPath(path)
-              if (!slug)
+              if (!slug) {
                 throw Error(
                   `Bad post filename, unable to retreive slug: ${path}`
                 )
+              }
               return {
                 path,
                 slug
@@ -34,11 +35,10 @@ export const getPostList: () => Promise<PostPath[]> = async () => {
         }
       })
     )
+  }
 }
 
 export const renderAllPost: () => Promise<Rendered[]> = () =>
   getPostList()
     .then(x => Promise.all(x.map(({ slug }) => renderPost(slug))))
-    .then(x =>
-      x.sort((a, b) => +new Date(b.meta.created) - +new Date(a.meta.created))
-    )
+    .then(x => x.sort((a, b) => +new Date(b.meta.created) - +new Date(a.meta.created)))

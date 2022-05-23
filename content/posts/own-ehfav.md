@@ -7,19 +7,15 @@ created: 2021-06-21 19:02:56
 
 ~~哪个男孩子没有搭建一个 XP 展板的梦想呢？~~ 于是在某群友的启发下 [EhFavorite](https://github.com/George-Miao/EhFavorite) 诞生了，目前部署在 [eh.pops.moe](https://eh.pops.moe)。
 
-::: danger
-**NSFW Warning**
+::: danger **NSFW Warning**
 
-**警告：请勿在工作/上课时打开**
-:::
+**警告：请勿在工作/上课时打开** :::
 
 <!-- more -->
 
 ## 提前准备
 
-::: success
-本文章默认你有一部分的开发和运维基础知识
-:::
+::: success 本文章默认你有一部分的开发和运维基础知识 :::
 
 本项目分为两个部分：前端 `/front` 和后端 `/worker`。前端部分是基于 [Svelte](https://svelte.dev/) 的标准 `Jamstack`，任何支持的平台或者 http server 都可以用来 host。我的现在部署在 [Vercel](https://vercel.com) 并通过某不愿透露姓名的知名 CDN [Cloudflare](https://cloudflare.com) 来~~减速~~加速，因为一些众所周知的原因，可能不太适合用来给国内访问。后端部分你可以用我已经部署好的 api（`https://api.miao.dev/eh?cookie={cookie}`），但是直接使用已经部署好的 api 可能会导致性能问题，而且我不会帮你[定时更新缓存](#cron)，缓存可能会过时。后端部分被部署在 [Cloudflare Workers](https://workers.dev) 上。部署本项目需要：
 
@@ -38,9 +34,7 @@ created: 2021-06-21 19:02:56
 
 ## 获取 Cookie
 
-E-hentai 通过 cookie 来判断用户信息。形如：
-`ipb_member_id=ddddddd; ipb_pass_hash=xxxxxxxxxxx;`
-在浏览器上登陆一下 eh 然后通过 developer tool 的 Storage tag 就可以获取到 cookie 了。
+E-hentai 通过 cookie 来判断用户信息。形如： `ipb_member_id=ddddddd; ipb_pass_hash=xxxxxxxxxxx;` 在浏览器上登陆一下 eh 然后通过 developer tool 的 Storage tag 就可以获取到 cookie 了。
 
 ## 开始修改！
 
@@ -124,9 +118,9 @@ Jamstack 部署可以参考 [这篇博客](https://blog.codecentric.de/en/2019/0
 然后往里面添加你的帐号信息，其中 `account_id` 和 `zone_id` 都可以在 [Cloudflare Dashboard](https://dash.cloudflare.com) 首页找到（详情参看[官方文档](https://developers.cloudflare.com/workers/cli-wrangler/configuration)）：
 
 ```toml
-account_id=""
-route="" # 如果你打算用 workers.dev 的话此处可以留空
-zone_id=""
+account_id = ""
+route = "" # 如果你打算用 workers.dev 的话此处可以留空
+zone_id = ""
 ```
 
 首先使用 `wrangler` 创建一个叫做 `eh` 的 `namespace`
@@ -155,13 +149,9 @@ $ wrangler publish
 crons = ["0 0 * JAN-JUN FRI", "0 0 LW JUL-DEC *"]
 ```
 
-::: warning {#warn}
-注意：不要把 cron 设置的太过频繁，否则会导致 e-hentai ban ip。由于 Cloudflare Workers 的向外 fetch 的 IP 都是同一个，会导致所有访问 e-hentai 的 Workers 全部失效。
-:::
+::: warning {#warn} 注意：不要把 cron 设置的太过频繁，否则会导致 e-hentai ban ip。由于 Cloudflare Workers 的向外 fetch 的 IP 都是同一个，会导致所有访问 e-hentai 的 Workers 全部失效。 :::
 
 ## FAQ & 问题
 
-- Q: 为什么加载这么久？
-  A: 别问，问就是 known issue and won't fix
-- Q: 为什么部署到 `vercel` （或者别的 Jamstack 平台）上之后显示白屏？
-  A: 去设置，找到 Output directory，改为 `dist`
+- Q: 为什么加载这么久？ A: 别问，问就是 known issue and won't fix
+- Q: 为什么部署到 `vercel` （或者别的 Jamstack 平台）上之后显示白屏？ A: 去设置，找到 Output directory，改为 `dist`

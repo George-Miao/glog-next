@@ -40,11 +40,11 @@ const PostMeta = defineVFC<{ meta: MetaValidated; className?: string }>(
 
     return (
       <div className={`${className ?? ''} font-sm`}>
-        <p className="text-warm-gray-500 text-sm relative z-10 mb-2">
+        <p className='text-warm-gray-500 text-sm relative z-10 mb-2'>
           {createFormatted} / {wordCount} words / in <TagList {...catList} />
         </p>
 
-        <p className="text-warm-gray-500 text-xs relative z-10 mb-4">
+        <p className='text-warm-gray-500 text-xs relative z-10 mb-4'>
           <TagList {...tagList}></TagList>
         </p>
       </div>

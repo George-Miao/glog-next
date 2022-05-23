@@ -19,8 +19,7 @@ M1 系列的 MBP 我目前碰到的最大的问题就是 Docker。由于 Docker 
 
 从 Linux 切换到 MBP 的一个明显的影响就是我现在更喜欢使用一些 GUI 软件了。曾经我可能只需要三个窗口，VSC，浏览器还有 Alacritty，现在，在 Mac 这个充满了优秀 GUI 软件的环境，我会选择使用一些桌面软件来替代曾经在网页或者命令行里使用的程序。上面说的 Docker Desktop 可能算是一个比较无奈的例子吧。
 
-![2022-02-02T21:54:53Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/7495ad6c-9c47-4b68-df86-a61b7b5f6d00/public)
-_Utils 文件夹下面的程序们_
+![2022-02-02T21:54:53Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/7495ad6c-9c47-4b68-df86-a61b7b5f6d00/public) _Utils 文件夹下面的程序们_
 
 其中有几个我想要特别提一下。
 
@@ -60,16 +59,13 @@ _Utils 文件夹下面的程序们_
 
 Bartender 的开源替代，用来隐藏托盘不想要的图标。Dozer 通过一个在托盘上可以随意拖动的点来分开你想要和不想要的图标，点的左边会被隐藏，右边则正常显示。最方便的是可以加上一个快捷键，我的设置是 `⌘ + ⌥ + B`，尽可能避免耗时的鼠标操作。
 
-![Screenshot](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/3c5cc908-a805-4c28-feff-56ffed380a00/public)
-_隐藏前_
+![Screenshot](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/3c5cc908-a805-4c28-feff-56ffed380a00/public) _隐藏前_
 
-![Screenshot](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/d48aa650-0e05-4be9-d9c7-5bf3adf35c00/public)
-_隐藏后_
+![Screenshot](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/d48aa650-0e05-4be9-d9c7-5bf3adf35c00/public) _隐藏后_
 
 ### Glyphfinder
 
-[Site](https://www.glyphfinder.com) /
-[Gumroad](https://ueberdosis.gumroad.com/l/ZaEQz)
+[Site](https://www.glyphfinder.com) / [Gumroad](https://ueberdosis.gumroad.com/l/ZaEQz)
 
 啊又是个托盘程序。。这次是一个用来搜索 Unicode Glyph 的程序。收费，但是挺好用的，可以用更符合直觉的类似 `->` 的组合来搜索字符。
 

@@ -2,9 +2,10 @@ import { defineVFC } from '@core/helper'
 
 const Oops = defineVFC(() => {
   return (
-    <h3 className="relative z-100 oops">
+    <h3 className='relative z-100 oops'>
       OOPS
-      <style jsx>{`
+      <style jsx>
+        {`
         .oops::after {
           content: '_';
           animation: blinker 1s cubic-bezier(1, 0, 0, 1) infinite;
@@ -15,7 +16,8 @@ const Oops = defineVFC(() => {
             opacity: 0;
           }
         }
-      `}</style>
+      `}
+      </style>
     </h3>
   )
 })

@@ -73,66 +73,64 @@ const Home = definePage(() => {
       <br />
       <div className={`${content.content} mt-4 md:mt-8`}>
         <p>
-          I&rsquo;m an undergraduate student and developer currently at Syracuse
-          University. Languages used most are Rust and Typescript. Trying out
-          new stuff everyday!
+          I&rsquo;m an undergraduate student and developer currently at Syracuse University. Languages used most are
+          Rust and Typescript. Trying out new stuff everyday!
         </p>
         <br />
-        <h3 className="my-6">Wait, where is it?</h3>
+        <h3 className='my-6'>Wait, where is it?</h3>
         <Image
-          className="transition-all"
-          alt="Map of my location"
-          layout="intrinsic"
+          className='transition-all'
+          alt='Map of my location'
+          layout='intrinsic'
           src={mapImage.src}
           blurDataURL={mapImage.placeholder}
-          placeholder="blur"
+          placeholder='blur'
           width={1112}
           height={590}
-          about="Syracuse, NY"
+          about='Syracuse, NY'
         />
         <em className={emClass}>
-          <div className="flex-grow" />
+          <div className='flex-grow' />
           <Icon
-            icon="akar-icons:location"
+            icon='akar-icons:location'
             width={14}
             height={14}
-            className="inline mr-2 ml-auto"
+            className='inline mr-2 ml-auto'
           />
-          <span className="text-xs md:text-sm">Syracuse, NY</span>
+          <span className='text-xs md:text-sm'>Syracuse, NY</span>
         </em>
         <br />
         <p>
-          And, let me proudly introduce you, my home server rack,{' '}
-          <b>Tharsis:</b>
+          And, let me proudly introduce you, my home server rack, <b>Tharsis:</b>
         </p>
 
         <Image
-          className="transision-all"
-          alt="Photo of Tharsis"
+          className='transision-all'
+          alt='Photo of Tharsis'
           src={tharsisImage.src}
-          placeholder="blur"
+          placeholder='blur'
           blurDataURL={tharsisImage.placeholder}
           width={3024}
           height={4032}
         />
 
-        <p className="mt-8">
-          It&apos;s at China so currently I&apos;m not able to access it,
-          physically. But with Cloudflare Tunnel, I can still access{' '}
-          <Link href="/projects">
+        <p className='mt-8'>
+          It&apos;s at China so currently I&apos;m not able to access it, physically. But with Cloudflare Tunnel, I can
+          still access{' '}
+          <Link href='/projects'>
             <a>services runs on it</a>
           </Link>{' '}
-          and use ssh. So I&apos;m happy with it. After all I don&apos;t have a
-          public IP address and basically everything in China is behind NAT.
+          and use ssh. So I&apos;m happy with it. After all I don&apos;t have a public IP address and basically
+          everything in China is behind NAT.
         </p>
       </div>
 
-      <DotList items={resumeList} title="Resume" className="mb-16" />
+      <DotList items={resumeList} title='Resume' className='mb-16' />
       <Button
         href={'/writing'}
-        className="ml-auto w-36 text-sm"
-        style="underline"
-        postfix="→"
+        className='ml-auto w-36 text-sm'
+        style='underline'
+        postfix='→'
       >
         View Writing
       </Button>

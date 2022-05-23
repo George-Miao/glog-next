@@ -11,40 +11,38 @@ const Title = defineVFC<TitleProp>(
 
     return (
       <div
-        className={`${className ?? ''} relative ${
-          safeArea ? 'md:(ml-12 mb-12)' : ''
-        }`}
+        className={`${className ?? ''} relative ${safeArea ? 'md:(ml-12 mb-12)' : ''}`}
       >
-        {link ? (
-          <Link href={link}>
-            <a
-              className={`text-3xl sm:text-5xl z-10 relative font-bold hover:text-red-800 transition-colors ${
+        {link
+          ? (
+            <Link href={link}>
+              <a
+                className={`text-3xl sm:text-5xl z-10 relative font-bold hover:text-red-800 transition-colors ${
+                  uppercase ? 'uppercase' : ''
+                }`}
+              >
+                {node}
+              </a>
+            </Link>
+          )
+          : (
+            <p
+              className={`text-3xl sm:text-5xl z-10 relative font-bold text-warm-gray-700 ${
                 uppercase ? 'uppercase' : ''
               }`}
             >
               {node}
-            </a>
-          </Link>
-        ) : (
-          <p
-            className={`text-3xl sm:text-5xl z-10 relative font-bold text-warm-gray-700 ${
-              uppercase ? 'uppercase' : ''
-            }`}
-          >
-            {node}
-          </p>
-        )}
+            </p>
+          )}
         {subtitle && (
-          <p className="relative z-10 text-warm-gray-500 ml-1 md:ml-5 mt-3">
+          <p className='relative z-10 text-warm-gray-500 ml-1 md:ml-5 mt-3'>
             {subtitle}
           </p>
         )}
-        <div
-          className="
+        <div className='
           absolute -left-16 -top-20 block
           font-bold text-[190px] leading-[190px] text-warm-gray-200
-          select-none <md:hidden"
-        >
+          select-none <md:hidden'>
           {bigOChar}
         </div>
       </div>

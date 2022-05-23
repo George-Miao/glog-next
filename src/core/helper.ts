@@ -13,8 +13,7 @@ export interface childProp {
 
 type Empty = Record<string, never>
 
-export const defineVFC =
-  <P = Empty>(comp: VFC<P & Required<baseProp>>) =>
+export const defineVFC = <P = Empty>(comp: VFC<P & Required<baseProp>>) =>
   (prop: P & baseProp) => {
     const className = prop.className ?? ''
     return comp({ ...prop, className })
@@ -45,11 +44,10 @@ export const allIndexOf = (string: string, regex: RegExp) => {
   const ret: number[] = []
   do {
     pos = regexIndexOf(string, regex, pos)
-    if (pos >= 0) {
+    if (pos >= 0)
       ret.push(pos)
-    } else {
+    else
       break
-    }
   } while (true)
   return ret
 }

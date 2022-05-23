@@ -10,9 +10,9 @@ import Title from '@comps/title'
 import { defineVFC } from '@core/helper'
 import { getPostList, renderAllPost } from '@core/post/reduce'
 
-import type { MetaValidated } from '@core/post/type'
 import type { PostFooterProp } from '@comps/post/postFooter'
 import { renderPost } from '@core/post/map'
+import type { MetaValidated } from '@core/post/type'
 
 interface Prop {
   meta: MetaValidated
@@ -72,13 +72,13 @@ export const getStaticProps: GetStaticProps<Prop, { slug: string }> = async ({
 
 export default defineVFC<Prop>(({ meta, html, footer }) => {
   return (
-    <SafeArea className="pb-12">
+    <SafeArea className='pb-12'>
       <SEO title={meta.title} />
 
-      <BreadCrumb className="relative md:-top-16 mb-6" />
-      <Title title={meta.title} className="md:mt-4" />
-      <PostMeta meta={meta} className="pt-10 pb-6 md:(pt-6 ml-6)" />
-      <HTMLContent html={html} className="post-body" />
+      <BreadCrumb className='relative md:-top-16 mb-6' />
+      <Title title={meta.title} className='md:mt-4' />
+      <PostMeta meta={meta} className='pt-10 pb-6 md:(pt-6 ml-6)' />
+      <HTMLContent html={html} className='post-body' />
       <PostFooter {...footer} />
     </SafeArea>
   )

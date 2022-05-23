@@ -15,10 +15,9 @@ const TagList = defineVFC<TagListProp>(
     return (
       <span>
         {list.map((tag, i) => {
-          const text =
-            (prefix ?? '') +
-            (formatter?.(tag.text) ?? tag.text) +
-            (postfix ?? '')
+          const text = (prefix ?? '')
+            + (formatter?.(tag.text) ?? tag.text)
+            + (postfix ?? '')
 
           const isLast = i + 1 === list.length
 
@@ -26,9 +25,7 @@ const TagList = defineVFC<TagListProp>(
             <span key={i}>
               <Link href={tag.link}>
                 <a
-                  className={`${
-                    className ?? ''
-                  } mr-1.5 text-red-800 filter transition-all
+                  className={`${className ?? ''} mr-1.5 text-red-800 filter transition-all
                     hover:brightness-130 relative
                     after:(
                       absolute bottom-0
@@ -40,10 +37,8 @@ const TagList = defineVFC<TagListProp>(
                   {text}
                 </a>
               </Link>
-              {(delimiter && !isLast && (
-                <span className="mr-1.5 ">{delimiter}</span>
-              )) ??
-                ''}
+              {(delimiter && !isLast && <span className='mr-1.5 '>{delimiter}</span>)
+                ?? ''}
             </span>
           )
         })}

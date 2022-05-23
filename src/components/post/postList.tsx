@@ -10,10 +10,8 @@ export interface PostListProp {
 const PostList = defineVFC<PostListProp>(({ list }) => {
   return (
     <>
-      <SafeArea className="grid">
-        {list.map((post, i) => (
-          <PostSummary key={i} {...post}></PostSummary>
-        ))}
+      <SafeArea className='grid'>
+        {list.map((post, i) => <PostSummary key={i} {...post}></PostSummary>)}
       </SafeArea>
     </>
   )

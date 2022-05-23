@@ -188,8 +188,7 @@ pub unsafe fn into_inner_unchecked<P>                      (pin: Pin<P>) -> P;
 
 好，恩，听着，我需要做一些忏悔：我不喜欢用 `unsafe`。我知道我刚才才解释过为什么我们可以用它，但是，即便如此，
 
-![](https://blog.adamchalmers.com/pin-unpin/zizek_no.webp)
-_我就不_
+![](https://blog.adamchalmers.com/pin-unpin/zizek_no.webp) _我就不_
 
 我写 Rust 不是因为我想要思前顾后，淦，我只是想要写一点又快又好的东西。幸运的是，有人对此深表同情于是写了个库，可以用来生成完全安全的投影！这个超棒的库叫做 [pin-project](https://docs.rs/pin-project)。我们只需要更改一下我们的定义：
 

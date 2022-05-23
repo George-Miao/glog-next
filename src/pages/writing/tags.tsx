@@ -67,14 +67,12 @@ export default defineVFC<Prop>(({ tags }) => {
     }
   })
   return (
-    <SafeArea className="md:(px-8) grid gap-4">
-      <SEO title="Tags" />
+    <SafeArea className='md:(px-8) grid gap-4'>
+      <SEO title='Tags' />
 
-      <BreadCrumb className="absolute sm:top-2 md:-top-16" />
-      <Title title="Tags" className="my-4 md:mb-12" safeArea />
-      {items.map((prop, i) => (
-        <DotList {...prop} key={i} />
-      ))}
+      <BreadCrumb className='absolute sm:top-2 md:-top-16' />
+      <Title title='Tags' className='my-4 md:mb-12' safeArea />
+      {items.map((prop, i) => <DotList {...prop} key={i} />)}
     </SafeArea>
   )
 })

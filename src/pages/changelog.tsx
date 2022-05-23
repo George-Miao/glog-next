@@ -24,20 +24,19 @@ export default defineVFC<Prop>(({ changelogs }) => {
   const len = changelogs.length
   return (
     <SafeArea>
-      <SEO title="Changelog" />
+      <SEO title='Changelog' />
 
       <Title
-        title="Changelog"
-        subtitle="Changelog of mine, not limited to Glog updates."
+        title='Changelog'
+        subtitle='Changelog of mine, not limited to Glog updates.'
       />
 
-      <section className="grid ">
+      <section className='grid '>
         {changelogs.map((changelog, id) => {
-          if (id === len - 1) {
+          if (id === len - 1)
             return <ChangeLogCell key={id} {...changelog} bottomLine={false} />
-          } else {
+          else
             return <ChangeLogCell key={id} {...changelog} />
-          }
         })}
       </section>
     </SafeArea>

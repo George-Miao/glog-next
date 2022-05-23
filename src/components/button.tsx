@@ -46,13 +46,9 @@ const Button = defineVFCWithChild<ButtonProp>(
           `}
           onClick={onClick ?? voidFn}
         >
-          {prefix && (
-            <span className="text-sm text-warm-gray-400 mr-2">{prefix}</span>
-          )}
-          <span className="flex-1">{children}</span>
-          {postfix && (
-            <span className="text-sm text-warm-gray-400 ml-2">{postfix}</span>
-          )}
+          {prefix && <span className='text-sm text-warm-gray-400 mr-2'>{prefix}</span>}
+          <span className='flex-1'>{children}</span>
+          {postfix && <span className='text-sm text-warm-gray-400 ml-2'>{postfix}</span>}
         </a>
       </Link>
     )

@@ -6,31 +6,26 @@ import { defineVFC } from '@core/helper'
 import { ProjItem, ProjStatus } from '@core/projects/types'
 import { Icon } from '@iconify/react'
 
-import type {
-  ProjIndicator,
-  ProjCategory as ProjCategoryProp
-} from '@core/projects/types'
 import { config } from '@core/config'
+import type { ProjCategory as ProjCategoryProp, ProjIndicator } from '@core/projects/types'
 
 const Indicator = defineVFC<ProjIndicator>(
   ({ icon, className, label, link }) => {
     const inner = (
       <Icon
         icon={icon}
-        className={`${className} ${
-          link ? 'hover:text-black cursor-pointer' : ''
-        } text-gray-500 transition-none`}
+        className={`${className} ${link ? 'hover:text-black cursor-pointer' : ''} text-gray-500 transition-none`}
         width={16}
         height={16}
       />
     )
-    return link ? (
-      <a href={link} title={label}>
-        {inner}
-      </a>
-    ) : (
-      <p title={label}>{inner}</p>
-    )
+    return link
+      ? (
+        <a href={link} title={label}>
+          {inner}
+        </a>
+      )
+      : <p title={label}>{inner}</p>
   }
 )
 
@@ -70,54 +65,38 @@ const ProjItem = defineVFC<ProjItem>(
         width={72}
         height={72}
         icon={icon}
-        className="
+        className='
         text-true-gray-200 select-none
           absolute
-          right-[-12px] bottom-[-12px]"
+          right-[-12px] bottom-[-12px]'
       />
     )
 
     const linkClassBase = 'text-lg font-sans inline-block transition-all mb-1'
-    const linkComp = link ? (
-      <Link href={link}>
-        <a className={`${linkClassBase} hover:text-red-800`}>{name}</a>
-      </Link>
-    ) : (
-      <p className={linkClassBase}>{name}</p>
-    )
+    const linkComp = link
+      ? (
+        <Link href={link}>
+          <a className={`${linkClassBase} hover:text-red-800`}>{name}</a>
+        </Link>
+      )
+      : <p className={linkClassBase}>{name}</p>
 
     const indicatorsComp = (
-      <div className="flex item-indicators space-x-3">
-        {status === ProjStatus.Online && (
-          <Icon
-            className="text-green-600"
-            icon="akar-icons:circle-check"
-            width={size}
-            height={size}
-          />
-        )}
-        {status === ProjStatus.Offline && (
-          <Icon
-            className="text-yellow-600"
-            width={size}
-            height={size}
-            icon="ant-design:warning"
-          />
-        )}
+      <div className='flex item-indicators space-x-3'>
         {isPrivate && (
           <Icon
-            className="text-gray-600"
-            icon="bx:bx-lock-alt"
+            className='text-gray-600'
+            icon='bx:bx-lock-alt'
             width={size}
             height={size}
           />
         )}
         {link && (
           <Link href={link}>
-            <a title="Link">
+            <a title='Link'>
               <Icon
-                icon="akar-icons:link-chain"
-                className="text-gray-500 hover:text-black transition-none cursor-pointer"
+                icon='akar-icons:link-chain'
+                className='text-gray-500 hover:text-black transition-none cursor-pointer'
                 width={size}
                 height={size}
               />
@@ -126,20 +105,18 @@ const ProjItem = defineVFC<ProjItem>(
         )}
         {github && (
           <Link href={github}>
-            <a title="Github link">
+            <a title='Github link'>
               <Icon
-                icon="akar-icons:github-fill"
-                className="text-gray-500 hover:text-black transition-none cursor-pointer"
+                icon='akar-icons:github-fill'
+                className='text-gray-500 hover:text-black transition-none cursor-pointer'
                 width={size}
                 height={size}
               />
             </a>
           </Link>
         )}
-        {indicators &&
-          indicators.map((indicator, key) => (
-            <Indicator {...indicator} key={key} />
-          ))}
+        {indicators
+          && indicators.map((indicator, key) => <Indicator {...indicator} key={key} />)}
       </div>
     )
 
@@ -155,7 +132,23 @@ const ProjItem = defineVFC<ProjItem>(
       >
         {iconComp}
         {linkComp}
-        <p className="text-gray-600 text-sm w-full mb-3 font-thin relative">
+        {status === ProjStatus.Online && (
+          <Icon
+            className='text-green-600'
+            icon='akar-icons:circle-check'
+            width={size}
+            height={size}
+          />
+        )}
+        {status === ProjStatus.Offline && (
+          <Icon
+            className='text-yellow-600'
+            width={size}
+            height={size}
+            icon='ant-design:warning'
+          />
+        )}
+        <p className='text-gray-600 text-sm w-full mb-3 font-thin relative'>
           {description}
         </p>
         {indicatorsComp}
@@ -168,21 +161,19 @@ const ProjCategory = defineVFC<ProjCategoryProp>(
   ({ items, name, className, description, icon }) => {
     return (
       <div className={`${className} text-left mb-8`}>
-        <div className="flex items-baseline pb-4">
+        <div className='flex items-baseline pb-4'>
           {icon && (
-            <div className="my-auto text-gray-500 select-none ">
-              <Icon icon={icon} className="mr-2" width={24} height={24} />
+            <div className='my-auto text-gray-500 select-none '>
+              <Icon icon={icon} className='mr-2' width={24} height={24} />
             </div>
           )}
-          <h1 className="text-2xl font-sans text-gray-600">{name}</h1>
-          <span className="ml-3 text-gray-600 text-sm whitespace-nowrap overflow-hidden text-ellipsis">
+          <h1 className='text-2xl font-sans text-gray-600'>{name}</h1>
+          <span className='ml-3 text-gray-600 text-sm whitespace-nowrap overflow-hidden text-ellipsis'>
             {description}
           </span>
         </div>
 
-        {items.map((item, key) => (
-          <ProjItem {...item} key={key} />
-        ))}
+        {items.map((item, key) => <ProjItem {...item} key={key} />)}
       </div>
     )
   }

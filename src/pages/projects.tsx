@@ -8,20 +8,16 @@ import { categories } from '@core/projects'
 export default defineVFC(() => {
   return (
     <SafeArea>
-      <SEO title="Proj." />
-      <Title title="Proj." safeArea />
-      <div
-        className="box grid
+      <SEO title='Proj.' />
+      <Title title='Proj.' safeArea />
+      <div className='box grid
           auto-rows-min
           mx-auto
           pt-6 gap-6
           @sm:pt-16
           sm:grid-cols-2
-        "
-      >
-        {categories.map((category, key) => (
-          <ProjCategory {...category} key={key} />
-        ))}
+        '>
+        {categories.map((category, key) => <ProjCategory {...category} key={key} />)}
       </div>
     </SafeArea>
   )

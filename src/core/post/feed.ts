@@ -1,9 +1,9 @@
+import { render as renderChangelog } from '@core/changelog'
 import { config, feedBase } from '@core/config'
 import { exists } from '@core/utils'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 import { renderAllPost } from './reduce'
-import { render as renderChangelog } from '@core/changelog'
 
 let feedCache: Feed | null = null
 let changelogCache: Feed | null = null
@@ -44,9 +44,8 @@ export const generateAllFeeds = async () => {
 }
 
 export const generatePostFeed = async () => {
-  if (process.env.NODE_ENV === 'production' && feedCache) {
+  if (process.env.NODE_ENV === 'production' && feedCache)
     return feedCache
-  }
 
   const feed = new Feed({ ...feedBase, author, copyright })
 
@@ -79,9 +78,8 @@ export const generatePostFeed = async () => {
 }
 
 export const generateChanglogFeed = async () => {
-  if (process.env.NODE_ENV === 'production' && changelogCache) {
+  if (process.env.NODE_ENV === 'production' && changelogCache)
     return changelogCache
-  }
 
   const cl = await renderChangelog()
   const feed = new Feed({ ...feedBase, author, copyright })

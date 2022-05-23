@@ -4,21 +4,16 @@ import { sanitize } from 'isomorphic-dompurify'
 
 import { md } from '@core/render'
 
-import {
-  blockExcerptPattern,
-  cache,
-  moreExcerptPattern,
-  postsDir
-} from './common'
+import { blockExcerptPattern, cache, moreExcerptPattern, postsDir } from './common'
 
-import type { Ingot, Meta, MetaValidated, Rendered } from './type'
 import { count } from '@wordpress/wordcount'
+import type { Ingot, Meta, MetaValidated, Rendered } from './type'
 
 export const renderPost = async (slug: string): Promise<Rendered> => {
   if (process.env.NODE_ENV === 'production' && cache.rendered?.[slug]) {
     console.log(`Cache hit <${slug}>`)
     return cache.rendered[slug]
-  } else
+  } else {
     return await readData(slug)
       .then(extractMeta)
       .then(({ meta: metaUnchecked, raw, excerpt }) => {
@@ -33,6 +28,7 @@ export const renderPost = async (slug: string): Promise<Rendered> => {
         cache.rendered[slug] = r
         return r
       })
+  }
 }
 
 const readData = async (slug: string): Promise<string> => {
@@ -50,10 +46,9 @@ const extractMeta = async (data: string): Promise<Ingot> => {
     // @ts-expect-error https://github.com/jonschlinkert/gray-matter/issues/125 WTF IT'S STILL NOT SOLVED
     excerpt(input: matter.GrayMatterFile<string>) {
       const raw = input.content
-      input.excerpt =
-        raw.match(moreExcerptPattern)?.[1]?.replaceAll?.('\n', ' ') ??
-        raw.match(blockExcerptPattern)?.[1]?.replaceAll?.('\n', ' ') ??
-        ''
+      input.excerpt = raw.match(moreExcerptPattern)?.[1]?.replaceAll?.('\n', ' ')
+        ?? raw.match(blockExcerptPattern)?.[1]?.replaceAll?.('\n', ' ')
+        ?? ''
     }
   })
   return {
@@ -80,9 +75,9 @@ const renderMarkdown = (markdown: string) => {
 const checkMeta = (meta: Meta): MetaValidated => {
   const check = <K extends keyof Meta>(name: K) => {
     const value = meta[name]
-    if (!value) {
+    if (!value)
       throw Error(`Missing meta in post ${name}`)
-    } else {
+    else {
       if (value instanceof Date) return value.toISOString() as MetaValidated[K]
       else return value as unknown as MetaValidated[K]
     }
