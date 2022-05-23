@@ -41,12 +41,6 @@ const ProjItem = defineVFC<ProjItem>(
     isPrivate,
     link
   }) => {
-    // let up = 0
-    // link && fetch(link)
-    //   .then(res => (up = res.ok ? 1 : 2))
-    //   .catch(() => up = 2)
-    //   .finally(() => console.log(`Status of ${link} has changed to ${up}`))
-
     const iconSize = 16
     const [status, setStatus] = useState(ProjStatus.Init)
 
@@ -54,8 +48,7 @@ const ProjItem = defineVFC<ProjItem>(
 
     if (url) {
       useSWR(async () => {
-        config.corsProxy.replace('%s', url)
-        await fetch(url)
+        await fetch(config.corsProxy.replace('%s', url))
           .then(
             res => setStatus(res.ok ? ProjStatus.Online : ProjStatus.Offline)
           )
