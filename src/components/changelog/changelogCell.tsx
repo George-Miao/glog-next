@@ -1,7 +1,8 @@
 import HTMLContent from '@comps/HTMLContent'
+import type { Changelog } from '@core/changelog'
 import { defineVFC } from '@core/helper'
 
-import type { Changelog } from '@core/changelog'
+const toId = (str: string) => encodeURIComponent(str.replaceAll(/\s+/ig, '_').toLowerCase())
 
 const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
   ({ content, date, title, className, bottomLine }) => {
@@ -13,6 +14,8 @@ const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
       month: 'short'
     })
 
+    const id = toId(title)
+
     return (
       <article
         className={`${className ?? ''}
@@ -20,12 +23,13 @@ const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
           flex flex-col relative
           md:(grid grid-cols-12 py-12)
         `}
+        id={id}
       >
         <aside className='
             <md:(mb-6)
             md:(mr-4 mb-4 col-span-3)'>
           <div className='md:(sticky top-12)'>
-            <span className='text-xl mb-2 block'>{title}</span>
+            <a className='text-xl mb-2 block hover:text-red-800' href={`#${id}`}>{title}</a>
             <span className='block
               text-sm text-warm-gray-500 block'>
               {formattedDate}

@@ -2,11 +2,11 @@
 
 # Update projects panel - 2022-05-23
 
-**Old**:
+- Old:
 
 ![2022-05-23T14:48:26Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/33409aed-54ac-4ae3-756b-af8bca7b0700/public)
 
-**New**:
+- New:
 
 ![2022-05-23T14:46:54Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/f3c523ce-9226-4186-2e0e-431dd1409d00/public)
 
