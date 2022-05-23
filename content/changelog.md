@@ -1,5 +1,17 @@
 <!-- markdownlint-disable -->
 
+# Update projects panel - 2022-05-23
+
+**Old**:
+
+![2022-05-23T14:48:26Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/33409aed-54ac-4ae3-756b-af8bca7b0700/public)
+
+**New**:
+
+![2022-05-23T14:46:54Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/f3c523ce-9226-4186-2e0e-431dd1409d00/public)
+
+Minor design tweaking
+
 # New upptime endpoints - 2022-05-23
 
 ![2022-05-23T13:28:50Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/6d30ad53-c998-42db-6566-fe8e63b1cc00/public)

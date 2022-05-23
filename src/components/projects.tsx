@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import useSWR from 'swr'
 
 import { defineVFC } from '@core/helper'
@@ -47,16 +47,21 @@ const ProjItem = defineVFC<ProjItem>(
     //   .catch(() => up = 2)
     //   .finally(() => console.log(`Status of ${link} has changed to ${up}`))
 
-    const size = 16
+    const iconSize = 16
     const [status, setStatus] = useState(ProjStatus.Init)
 
     const url = healthCheck ?? link
 
     if (url) {
-      const proxiedUrl = config.corsProxy.replace('%s', url)
-      useSWR(proxiedUrl, async url => {
-        const res = await fetch(url)
-        setStatus(res.ok ? ProjStatus.Online : ProjStatus.Offline)
+      useSWR(async () => {
+        config.corsProxy.replace('%s', url)
+        await fetch(url)
+          .then(
+            res => setStatus(res.ok ? ProjStatus.Online : ProjStatus.Offline)
+          )
+          .catch(
+            () => setStatus(ProjStatus.Offline)
+          )
       })
     }
 
@@ -65,21 +70,31 @@ const ProjItem = defineVFC<ProjItem>(
         width={72}
         height={72}
         icon={icon}
-        className='
-        text-true-gray-200 select-none
-          absolute
-          right-[-12px] bottom-[-12px]'
+        className='text-true-gray-200 select-none absolute right-[-12px] bottom-[-12px]'
       />
     )
 
-    const linkClassBase = 'text-lg font-sans inline-block transition-all mb-1'
-    const linkComp = link
+    const statusText = status === ProjStatus.Init
+      ? undefined
+      : status === ProjStatus.Online
+      ? 'Service online'
+      : 'Service unreachable'
+    const statusClassBase = 'w-2 h-2 rounded-full inline-block absolute right-[12px] top-[12px]'
+    const statusComp = status === ProjStatus.Online
+      ? <span className={`bg-green-500 ${statusClassBase}`} title={statusText} />
+      : status === ProjStatus.Offline
+      ? <span className={`bg-gray-500 ${statusClassBase}`} title={statusText} />
+      : null
+
+    const titleClassBase = 'text-lg font-sans inline-block transition-all mb-1'
+    const titleLink = link ?? github
+    const titleComp = titleLink
       ? (
-        <Link href={link}>
-          <a className={`${linkClassBase} hover:text-red-800`}>{name}</a>
+        <Link href={titleLink}>
+          <a className={`${titleClassBase} hover:text-red-800`}>{name}</a>
         </Link>
       )
-      : <p className={linkClassBase}>{name}</p>
+      : <span className={titleClassBase}>{name}</span>
 
     const indicatorsComp = (
       <div className='flex item-indicators space-x-3'>
@@ -87,8 +102,8 @@ const ProjItem = defineVFC<ProjItem>(
           <Icon
             className='text-gray-600'
             icon='bx:bx-lock-alt'
-            width={size}
-            height={size}
+            width={iconSize}
+            height={iconSize}
           />
         )}
         {link && (
@@ -97,8 +112,8 @@ const ProjItem = defineVFC<ProjItem>(
               <Icon
                 icon='akar-icons:link-chain'
                 className='text-gray-500 hover:text-black transition-none cursor-pointer'
-                width={size}
-                height={size}
+                width={iconSize}
+                height={iconSize}
               />
             </a>
           </Link>
@@ -109,8 +124,8 @@ const ProjItem = defineVFC<ProjItem>(
               <Icon
                 icon='akar-icons:github-fill'
                 className='text-gray-500 hover:text-black transition-none cursor-pointer'
-                width={size}
-                height={size}
+                width={iconSize}
+                height={iconSize}
               />
             </a>
           </Link>
@@ -130,24 +145,11 @@ const ProjItem = defineVFC<ProjItem>(
           relative
         `}
       >
+        {/** Absolute comps */}
         {iconComp}
-        {linkComp}
-        {status === ProjStatus.Online && (
-          <Icon
-            className='text-green-600'
-            icon='akar-icons:circle-check'
-            width={size}
-            height={size}
-          />
-        )}
-        {status === ProjStatus.Offline && (
-          <Icon
-            className='text-yellow-600'
-            width={size}
-            height={size}
-            icon='ant-design:warning'
-          />
-        )}
+        {statusComp}
+        {/** Relative comps */}
+        {titleComp}
         <p className='text-gray-600 text-sm w-full mb-3 font-thin relative'>
           {description}
         </p>
@@ -161,16 +163,18 @@ const ProjCategory = defineVFC<ProjCategoryProp>(
   ({ items, name, className, description, icon }) => {
     return (
       <div className={`${className} text-left mb-8`}>
-        <div className='flex items-baseline pb-4'>
+        <div className='flex mb-4 <md:flex-row-reverse'>
+          <div className='flex-grow'>
+            <h1 className='text-red-800 text-xl font-sans'>{name}</h1>
+            <p className='text-gray-600 text-sm overflow-hidden text-ellipsis'>
+              {description}
+            </p>
+          </div>
           {icon && (
             <div className='my-auto text-gray-500 select-none '>
-              <Icon icon={icon} className='mr-2' width={24} height={24} />
+              <Icon icon={icon} className='mr-4' width={32} height={32} />
             </div>
           )}
-          <h1 className='text-2xl font-sans text-gray-600'>{name}</h1>
-          <span className='ml-3 text-gray-600 text-sm whitespace-nowrap overflow-hidden text-ellipsis'>
-            {description}
-          </span>
         </div>
 
         {items.map((item, key) => <ProjItem {...item} key={key} />)}
