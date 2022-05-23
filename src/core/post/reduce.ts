@@ -10,13 +10,11 @@ const getSlugFromPath = (path: string) => {
 }
 
 export const getPostList: () => Promise<PostPath[]> = async () => {
-  if (cache.list)
-    return cache.list
+  if (cache.list) return cache.list
   else {
     return new Promise((res, rej) =>
       glob(`${postsDir}/*.md`, (err, match) => {
-        if (err)
-          rej(err)
+        if (err) rej(err)
         else {
           res(
             match.map(path => {

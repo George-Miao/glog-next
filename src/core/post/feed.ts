@@ -44,8 +44,7 @@ export const generateAllFeeds = async () => {
 }
 
 export const generatePostFeed = async () => {
-  if (process.env.NODE_ENV === 'production' && feedCache)
-    return feedCache
+  if (process.env.NODE_ENV === 'production' && feedCache) return feedCache
 
   const feed = new Feed({ ...feedBase, author, copyright })
 

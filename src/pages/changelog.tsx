@@ -35,8 +35,7 @@ export default defineVFC<Prop>(({ changelogs }) => {
         {changelogs.map((changelog, id) => {
           if (id === len - 1)
             return <ChangeLogCell key={id} {...changelog} bottomLine={false} />
-          else
-            return <ChangeLogCell key={id} {...changelog} />
+          else return <ChangeLogCell key={id} {...changelog} />
         })}
       </section>
     </SafeArea>

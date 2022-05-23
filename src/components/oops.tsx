@@ -6,17 +6,17 @@ const Oops = defineVFC(() => {
       OOPS
       <style jsx>
         {`
-        .oops::after {
-          content: '_';
-          animation: blinker 1s cubic-bezier(1, 0, 0, 1) infinite;
-        }
-
-        @keyframes blinker {
-          50% {
-            opacity: 0;
+          .oops::after {
+            content: '_';
+            animation: blinker 1s cubic-bezier(1, 0, 0, 1) infinite;
           }
-        }
-      `}
+
+          @keyframes blinker {
+            50% {
+              opacity: 0;
+            }
+          }
+        `}
       </style>
     </h3>
   )

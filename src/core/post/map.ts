@@ -75,8 +75,7 @@ const renderMarkdown = (markdown: string) => {
 const checkMeta = (meta: Meta): MetaValidated => {
   const check = <K extends keyof Meta>(name: K) => {
     const value = meta[name]
-    if (!value)
-      throw Error(`Missing meta in post ${name}`)
+    if (!value) throw Error(`Missing meta in post ${name}`)
     else {
       if (value instanceof Date) return value.toISOString() as MetaValidated[K]
       else return value as unknown as MetaValidated[K]

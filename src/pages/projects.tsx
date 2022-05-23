@@ -4,6 +4,7 @@ import SEO from '@comps/seo'
 import Title from '@comps/title'
 import { defineVFC } from '@core/helper'
 import { categories } from '@core/projects'
+import React from 'react'
 
 export default defineVFC(() => {
   return (
@@ -11,7 +12,7 @@ export default defineVFC(() => {
       <SEO title='Proj.' />
       <Title title='Proj.' safeArea />
       <div className='box grid
-          auto-rows-min
+          grid-rows-min
           mx-auto
           pt-6 gap-6
           @sm:pt-16

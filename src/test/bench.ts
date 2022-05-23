@@ -10,8 +10,7 @@ const bench = async <T>(i: number, func: () => Promise<T> | T) => {
   console.log(`Took ${duration / 1000} s`)
 }
 ;(async () => {
-  for (let i = 0; i < 10; i++)
-    await bench(i, renderAllPost)
+  for (let i = 0; i < 10; i++) await bench(i, renderAllPost)
 })()
 
 export {}

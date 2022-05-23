@@ -66,8 +66,8 @@ const categories = defineProjCategories([
         name: 'AdGuard Home',
         github: 'https://github.com/AdguardTeam/AdGuardHome',
         link: 'https://adguard.com/en/welcome.html',
-        description: 'Home automation system',
-        icon: 'mdi:home-assistant'
+        description: 'AdGuard for DNS filtering',
+        icon: 'simple-icons:adguard'
       }
     ]
   },

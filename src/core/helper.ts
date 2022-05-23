@@ -44,10 +44,8 @@ export const allIndexOf = (string: string, regex: RegExp) => {
   const ret: number[] = []
   do {
     pos = regexIndexOf(string, regex, pos)
-    if (pos >= 0)
-      ret.push(pos)
-    else
-      break
+    if (pos >= 0) ret.push(pos)
+    else break
   } while (true)
   return ret
 }

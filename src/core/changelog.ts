@@ -20,8 +20,7 @@ export const render = async (): Promise<Changelog[]> => {
     const end = arr[i + 1]
     const fragment = raw.slice(start, end)
     const matched = fragment.match(titlePattern)
-    if (!matched)
-      throw Error('This cannot happen')
+    if (!matched) throw Error('This cannot happen')
     const title = matched[1].trim()
     const date = +new Date(matched[2].trim())
     const fragRaw = fragment.replace(titlePattern, '').trim()

@@ -39,15 +39,18 @@ export default defineVFC(() => {
         className='pt-2 @sm:pt-12'
       />
       <DotList
-        items={[{
-          title: 'SSH',
-          value: '/ssh.pub',
-          link: '/ssh.pub'
-        }, {
-          title: 'GPG',
-          value: '/gpg.asc',
-          link: '/gpg.asc'
-        }]}
+        items={[
+          {
+            title: 'SSH',
+            value: '/ssh.pub',
+            link: '/ssh.pub'
+          },
+          {
+            title: 'GPG',
+            value: '/gpg.asc',
+            link: '/gpg.asc'
+          }
+        ]}
         title='Keys'
         className='pt-2 @sm:pt-12'
       />
