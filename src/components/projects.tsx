@@ -165,7 +165,7 @@ const ProjCategory = defineVFC<ProjCategoryProp>(
           </div>
           {icon && (
             <div className='my-auto text-gray-500 select-none '>
-              <Icon icon={icon} className='mr-4' width={32} height={32} />
+              <Icon icon={icon} className='<md:mr-4' width={32} height={32} />
             </div>
           )}
         </div>

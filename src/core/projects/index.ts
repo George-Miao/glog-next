@@ -27,7 +27,7 @@ const categories = defineProjCategories([
       {
         name: 'Grafana',
         isPrivate: true,
-        description: 'Matrix visualization which consume data from Prometheus',
+        description: 'Matrix visualization which consumes data from Prometheus',
         icon: 'simple-icons:grafana'
       },
 
@@ -53,7 +53,7 @@ const categories = defineProjCategories([
       {
         name: 'Proxmox',
         isPrivate: true,
-        description: 'VM environment, hosts most of my services in Tharsis',
+        description: 'VM environment, hosts most of my services in Tharsis US',
         icon: 'cib:proxmox'
       },
       {
@@ -77,18 +77,11 @@ const categories = defineProjCategories([
     description: 'Deployed and maintaining',
     items: [
       {
-        name: 'Index Page',
-        link: 'https://miao.dev',
-        github: 'https://github.com/George-Miao/index-page',
-        description: 'Miao.dev Index page',
-        icon: 'maki:entrance-alt1'
-      },
-      {
         name: 'Blog',
         link: 'https://miao.dev',
         github: 'https://github.com/George-Miao/GlogHexo',
-        description: 'My blog. Use hexo for generation. Written in Markdown, less and swig',
-        icon: 'cib:hexo'
+        description: 'My blog. Use hexo for generation. Built with Next.js and WindiCSS',
+        icon: 'cib:next-js'
       },
       {
         name: 'Typings.dev',
@@ -183,7 +176,7 @@ const categories = defineProjCategories([
   },
   {
     name: 'Misc',
-    icon: 'ls:etc',
+    icon: 'material-symbols:auto-awesome-outline-rounded',
     description: 'Other things',
     items: [
       {
