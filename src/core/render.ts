@@ -12,10 +12,8 @@ export const md = MarkdownIt({
   typographer: true
 })
   .use(anchor, { permalink: anchor.permalink.headerLink() })
-  .use(container, 'info')
-  .use(container, 'success')
-  .use(container, 'danger')
-  .use(container, 'warning')
+  .use(container, 'tip')
+  .use(container, 'warn')
   .use(require('markdown-it-highlightjs'), { auto: false })
   .use(require('markdown-it-external-links'), {
     internalDomains: [config.domain],
@@ -39,4 +37,6 @@ export const md = MarkdownIt({
     internalDomains: [config.domain],
     externalRel: 'external nofollow'
   })
-  .use(require('markdown-it-latex2img'))
+  .use(require('markdown-it-latex2img'), {
+    style: 'filter: opacity(75%);text-align:center;border:none;'
+  })

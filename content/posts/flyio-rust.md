@@ -73,8 +73,8 @@ Date: Tue, 24 May 2022 10:28:04 GMT
 Hello, world!
 ```
 
-::: success
-`xh` is a cli tool written in Rust to do http requests . If you ever used `httpie` before, it will be familiar to you. I choose `xh` because `httpie` is written in Python which is much, much slower.
+::: tip
+`xh` is a cli tool written in Rust to do http requests. If you ever used `httpie` before, it will be familiar to you. I choose `xh` because `httpie` is written in Python which is much, much slower.
 :::
 
 Voilà! Now we have a simple http server, with Rust!
@@ -223,7 +223,7 @@ image size: 183 MB
 v0 is being deployed
 ```
 
-::: success
+::: tip
 You can choose either building the image on your machine or with builders provided by fly.io. The trick is to use `--local-only` or `--remote-only` flag with `flyctl deploy`.
 :::
 

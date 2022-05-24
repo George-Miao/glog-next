@@ -1,7 +1,5 @@
 .content {
-  @apply w-full relative box-border
-    overflow-hidden z-20
-    text-[16px] font-content font-light;
+  @apply w-full relative box-border overflow-hidden z-20 text-[16px] font-content font-light;
 
   & s {
     color: #878787;
@@ -13,18 +11,28 @@
     vertical-align: middle;
   }
 
+  & a {
+    @apply text-red-800 font-normal whitespace-nowrap;
+
+    & code {
+      @apply font-mono;
+    }
+
+    &:hover, & code:hover {
+      color: rgb(228, 73, 96);
+    }
+
+    &[rel*='external'] {
+      text-decoration: underline;
+    }
+  }
+
   & hr {
     @apply my-3;
   }
 
   & ins {
-    background: #e5ffd5;
-    border-left: 0.2rem solid #aade8b;
-    &::before {
-      content: '+';
-      margin-right: 1rem;
-    }
-    line-height: normal;
+    text-decoration: underline;
   }
 
   & sup,
@@ -33,8 +41,7 @@
   }
 
   & blockquote {
-    @apply border-l-2 ml-0 pl-4 py-1
-    border-warm-gray-300 italic block text-warm-gray-600;
+    @apply border-l-2 ml-0 pl-4 py-1 border-warm-gray-300 italic block text-warm-gray-600;
 
     & p {
       @apply p-0 m-0;
@@ -47,45 +54,42 @@
     background-color: #fcffc0;
   }
 
-  & ins,
-  & [class*='success'],
-  & [class*='info'],
-  & [class*='warning'],
-  & [class*='danger'] {
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
-    margin-left: -1rem;
-    text-decoration: none;
-  }
+  & [class*='tip'],
+  & [class*='warn'] {
+    @apply border-l-red-800 border-l-2;
 
-  & [class*='success'],
-  & [class*='info'],
-  & [class*='warning'],
-  & [class*='danger'] {
+    padding: 0.5rem;
+    padding-left: 1.15rem;
+    text-decoration: none;
     text-decoration: none;
     margin: 2rem 0;
+
+    &::before {
+      @apply block font-bold;
+
+      margin: 0.75rem 0 1rem;
+    }
+
     & p {
-      margin-top: 0.35rem;
+      margin: 0.35rem 0;
     }
   }
 
-  & [class*='success'] {
-    background: #e5ffd5;
-    border-left: 0.2rem solid #aade8b;
+  & [class*='tip'] {
+    @apply bg-true-gray-100;
+
+    &::before {
+      content: 'Tips';
+    }
   }
 
-  & [class*='info'] {
-    background: #cbeeff;
-    border-left: 0.2rem solid #53ceff;
-  }
+  & [class*='warn'] {
+    background: rgba(255, 200, 193, 0.45);
 
-  & [class*='warning'] {
-    background: #ffe2d1;
-    border-left: 0.2rem solid #ffa670;
-  }
-
-  & [class*='danger'] {
-    background: #ffc5c5;
-    border-left: 0.2rem solid #ff6868;
+    &::before {
+      @apply text-red-800;
+      content: 'Warn';
+    }
   }
 
   & ul,
@@ -134,13 +138,13 @@
   & > h5,
   & > h6 {
     & a {
-      @apply transition-colors text-warm-gray-800 hover:text-warm-gray-600;
+      @apply font-sans transition-colors duration-100 text-warm-gray-800 hover:text-warm-gray-600 font-normal;
     }
   }
 
   & h1,
   & h2 {
-    @apply pt-4 pb-3 border-b-1;
+    @apply my-7 pt-4 pb-3 border-b-1;
   }
 
   & h3 {
@@ -180,7 +184,7 @@
     }
 
     &[src*='math.now.sh'] {
-      @apply border-none rounded-none cursor-auto;
+      @apply ring-0 cursor-auto;
 
       &:not([style='display:inline-block']) {
         @apply inline;
@@ -189,13 +193,6 @@
       &[style*='display:inline-block'] {
         vertical-align: middle;
       }
-    }
-  }
-
-  & a {
-    @apply text-red-800 filter hover:brightness-120 font-sans font-normal whitespace-nowrap;
-    &[rel*='external'] {
-      @apply border-b-1 border-red-800;
     }
   }
 
@@ -254,7 +251,7 @@
     @apply;
 
     & code {
-      @apply font-mono block p-4 text-sm leading-6 overflow-x-scroll;
+      @apply font-mono block p-4 text-sm overflow-x-scroll;
     }
   }
 
