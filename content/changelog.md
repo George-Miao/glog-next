@@ -1,5 +1,19 @@
 <!-- markdownlint-disable -->
 
+# Design tweak - 2022-5-25
+
+![2022-05-24T17:52:50Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/f4060d5a-f42c-4b76-8676-0d6695e7a000/public)
+
+- New tips and warn container style
+
+- Fix when `<code>` and `<a>` are nested, underline and hover is broken
+
+# New article - 2022-05-24
+
+[Use fly.io to deploy your rust app](/writing/posts/flyio-rust)
+
+Fly.io is an Saas platform that let users to deploy their apps via docker image or buildpacks. It’s perfectly suitable for small and medium-sized apps for the generous free tier and easy-to-use cli. In this article, I will show how to deploy a rust app with fly.io.
+
 # Update projects panel - 2022-05-23
 
 - Old:
