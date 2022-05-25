@@ -9,6 +9,9 @@ import { Icon } from '@iconify/react'
 import { config } from '@core/config'
 import type { ProjCategory as ProjCategoryProp, ProjIndicator } from '@core/projects/types'
 
+const statusClassBase = 'w-2 h-2 rounded-full inline-block absolute right-[12px] top-[12px]'
+const titleClassBase = 'text-lg font-sans inline-block transition-all mb-1'
+
 const Indicator = defineVFC<ProjIndicator>(
   ({ icon, className, label, link }) => {
     const inner = (
@@ -72,14 +75,12 @@ const ProjItem = defineVFC<ProjItem>(
       : status === ProjStatus.Online
       ? 'Service online'
       : 'Service unreachable'
-    const statusClassBase = 'w-2 h-2 rounded-full inline-block absolute right-[12px] top-[12px]'
     const statusComp = status === ProjStatus.Online
       ? <span className={`bg-green-500 ${statusClassBase}`} title={statusText} />
       : status === ProjStatus.Offline
       ? <span className={`bg-gray-500 ${statusClassBase}`} title={statusText} />
       : null
 
-    const titleClassBase = 'text-lg font-sans inline-block transition-all mb-1'
     const titleLink = link ?? github
     const titleComp = titleLink
       ? (
@@ -88,6 +89,12 @@ const ProjItem = defineVFC<ProjItem>(
         </Link>
       )
       : <span className={titleClassBase}>{name}</span>
+
+    const descriptionComp = (
+      <p className='text-gray-600 text-sm w-full mb-3 font-thin relative'>
+        {description}
+      </p>
+    )
 
     const indicatorsComp = (
       <div className='flex item-indicators space-x-3'>
@@ -143,9 +150,7 @@ const ProjItem = defineVFC<ProjItem>(
         {statusComp}
         {/** Relative comps */}
         {titleComp}
-        <p className='text-gray-600 text-sm w-full mb-3 font-thin relative'>
-          {description}
-        </p>
+        {descriptionComp}
         {indicatorsComp}
       </div>
     )
@@ -159,13 +164,13 @@ const ProjCategory = defineVFC<ProjCategoryProp>(
         <div className='flex mb-4 <md:flex-row-reverse'>
           <div className='flex-grow'>
             <h1 className='text-red-800 text-xl font-sans'>{name}</h1>
-            <p className='text-gray-600 text-sm overflow-hidden text-ellipsis'>
+            <p className='text-gray-600 text-sm overflow-hidden text-ellipsis -mt-1'>
               {description}
             </p>
           </div>
           {icon && (
             <div className='my-auto text-gray-500 select-none '>
-              <Icon icon={icon} className='<md:mr-4' width={32} height={32} />
+              <Icon icon={icon} className='<md:mr-4' width={36} height={36} />
             </div>
           )}
         </div>

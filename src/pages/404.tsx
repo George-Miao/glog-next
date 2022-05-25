@@ -17,7 +17,7 @@ const ServerErrorPage = defineVFC(() => {
         subtitle='404 Not Found'
       />
       <br />
-      <h3 className='text-xl my-4'>Why am I seeing this page?</h3>
+      <p className='text-xl my-4'>Why am I seeing this page?</p>
       <div className='flex flex-col text-red-800 space-y-2 pl-2 mb-12'>
         <a>{'>'} Because I cannot find the page you are looding for</a>
         <a>{'>'} Maybe you entered the wrong URL</a>

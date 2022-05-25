@@ -2,7 +2,7 @@ import { defineVFC } from '@core/helper'
 
 const Oops = defineVFC(() => {
   return (
-    <h3 className='relative z-100 oops'>
+    <p className='relative z-100 oops'>
       OOPS
       <style jsx>
         {`
@@ -18,7 +18,7 @@ const Oops = defineVFC(() => {
           }
         `}
       </style>
-    </h3>
+    </p>
   )
 })
 

@@ -1,6 +1,16 @@
 import { defineVFC } from '@core/helper'
 
+const commit = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA
+const url = commit && `https://github.com/George-Miao/glog-next/commit/${commit}`
+
 const Footer = defineVFC(({ className }) => {
+  const commitComp = commit
+    && (
+      <>
+        Commit <a href={url} className='font-bold'>#{commit.substring(0, 6)}</a>
+      </>
+    )
+
   return (
     <footer
       className={`
@@ -11,7 +21,7 @@ const Footer = defineVFC(({ className }) => {
       `}
     >
       <p className='mb-2'>George Miao © 2022</p>
-      <p className='text-sm'>
+      <p className='text-sm mb-2'>
         Built with
         <a className='mx-1 font-bold' href='https://nextjs.org/'>
           NextJS
@@ -21,6 +31,7 @@ const Footer = defineVFC(({ className }) => {
           WindiCSS
         </a>
       </p>
+      {commitComp && <p>{commitComp}</p>}
     </footer>
   )
 })
