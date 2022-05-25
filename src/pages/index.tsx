@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import Button from '@comps/button'
 import { DotList } from '@comps/dotList'
@@ -11,8 +12,6 @@ import content from '@styles/content.module.css'
 
 import type { DotListItemProp } from '@comps/dotList'
 import type { GetStaticProps } from 'next'
-import Link from 'next/link'
-
 const resumeList: DotListItemProp[] = [
   {
     title: 'Syracuse University',
@@ -71,6 +70,24 @@ const Home = definePage(() => {
     <SafeArea>
       <Title title="Hi, I'm George Miao" safeArea />
       <br />
+      <p className='flex gap-2'>
+        <a href='https://github.com/George-Miao'>
+          <Image
+            src='https://img.shields.io/badge/Github-George--Miao-be223a?style=for-the-badge&logo=Github'
+            alt='github'
+            height={30}
+            width={200}
+          />
+        </a>
+        <a href='mailto:gm@miao.dev'>
+          <Image
+            src='https://img.shields.io/badge/Email-gm@miao.dev-blue?style=for-the-badge&logo=Mail.Ru'
+            alt='github'
+            height={30}
+            width={200}
+          />
+        </a>
+      </p>
       <div className={`${content.content} mt-4 md:mt-8`}>
         <p>
           I&rsquo;m an undergraduate student and developer currently at Syracuse University. Languages used most are
@@ -115,7 +132,7 @@ const Home = definePage(() => {
         />
 
         <p className='mt-8'>
-          It&apos;s at China so currently I&apos;m not able to access it, physically. But with Cloudflare Tunnel, I can
+          It&apos;s in China so currently I&apos;m not able to access it, physically. But with Cloudflare Tunnel, I can
           still access{' '}
           <Link href='/projects'>
             <a>services runs on it</a>
