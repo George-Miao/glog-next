@@ -27,7 +27,7 @@ const categories = defineProjCategories([
       {
         name: 'Grafana',
         isPrivate: true,
-        description: 'Matrix visualization which consumes data from Prometheus',
+        description: 'Matrix visualization which consumes data from Prometheus. Deployed on-premise',
         icon: 'simple-icons:grafana'
       },
 
@@ -104,6 +104,13 @@ const categories = defineProjCategories([
         github: 'https://github.com/Rushia-cn/Rushia-button',
         description: 'Button panel of vtuber, Uruha Rushia',
         icon: 'vs:butterfly'
+      },
+      {
+        name: 'Grafana',
+        link: 'https://grafana.miao.dev',
+        healthCheck: 'https://grafana.miao.dev/api/health',
+        description: 'Matrix visualization which consumes data from Prometheus. Deployed on Fly.io',
+        icon: 'simple-icons:grafana'
       }
     ]
   },
@@ -191,6 +198,13 @@ const categories = defineProjCategories([
         link: 'https://status.miao.dev',
         github: 'https://github.com/George-Miao/upptime',
         description: 'Status page of my services'
+      },
+      {
+        name: 'Conduit Matrix server',
+        icon: 'cib:matrix',
+        link: 'https://conduit.rs',
+        healthCheck: 'https://matrix.miao.dev/_matrix/client/versions',
+        description: 'Open source, decentralized chat'
       }
     ]
   }

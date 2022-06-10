@@ -161,7 +161,7 @@ const ProjCategory = defineVFC<ProjCategoryProp>(
   ({ items, name, className, description, icon }) => {
     return (
       <div className={`${className} text-left mb-8`}>
-        <div className='flex mb-4 <md:flex-row-reverse'>
+        <div className='flex mb-8 <md:flex-row-reverse'>
           <div className='flex-grow'>
             <h1 className='text-red-800 text-xl font-sans'>{name}</h1>
             <p className='text-gray-600 text-sm overflow-hidden text-ellipsis -mt-1'>
