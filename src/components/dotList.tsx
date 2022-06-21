@@ -8,6 +8,8 @@ export interface DotListItemProp {
   className?: string
 }
 
+export const defineDotListItems = (items: DotListItemProp[]) => items
+
 export const DotListItem = defineVFC<DotListItemProp>(
   ({ title, value, link, subtitle, className }) => {
     return (

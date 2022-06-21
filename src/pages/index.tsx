@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Button from '@comps/button'
-import { DotList } from '@comps/dotList'
+import { defineDotListItems, DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
 import Title from '@comps/title'
 import { definePage } from '@core/helper'
@@ -10,9 +10,9 @@ import { generateAllFeeds } from '@core/post/feed'
 import { Icon } from '@iconify/react'
 import content from '@styles/content.module.css'
 
-import type { DotListItemProp } from '@comps/dotList'
 import type { GetStaticProps } from 'next'
-const resumeList: DotListItemProp[] = [
+
+const resumeList = defineDotListItems([
   {
     title: 'Syracuse University',
     value: '2020 - Now',
@@ -39,7 +39,16 @@ const resumeList: DotListItemProp[] = [
     subtitle: 'HOYA summer'
   },
   { title: 'Montverde Academy', value: '2018 - 2020', subtitle: 'Highschool' }
-]
+])
+
+const linksList = defineDotListItems([
+  {
+    title: 'NovaDNG',
+    value: 'NovaDNG.studio',
+    link: 'https://novadng.studio',
+    subtitle: 'Some description'
+  }
+])
 
 const mapImage = {
   src: 'https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/e0f525ed-8419-4e08-1ebf-b7a1eb208300/public',
@@ -143,6 +152,7 @@ const Home = definePage(() => {
       </div>
 
       <DotList items={resumeList} title='Resume' className='mb-16' />
+      <DotList items={linksList} title='Link exchange' className='mb-16' />
       <Button
         href={'/writing'}
         className='ml-auto w-36 text-sm'
