@@ -46,7 +46,7 @@ const linksList = defineDotListItems([
     title: 'NovaDNG',
     value: 'NovaDNG.studio',
     link: 'https://novadng.studio',
-    subtitle: 'Some description'
+    subtitle: '字体学徒'
   }
 ])
 
