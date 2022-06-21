@@ -40,7 +40,7 @@ const nextConfig = {
     config.plugins.push(new WindiCSSWebpackPlugin())
     return config
   },
-  async headers() {
+  headers() {
     return [
       {
         source: '/feeds/posts.json',

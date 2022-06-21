@@ -86,6 +86,7 @@ const Home = definePage(() => {
             alt='github'
             height={30}
             width={200}
+            unoptimized
           />
         </a>
         <a href='mailto:gm@miao.dev'>
@@ -94,6 +95,7 @@ const Home = definePage(() => {
             alt='github'
             height={30}
             width={200}
+            unoptimized
           />
         </a>
       </p>
