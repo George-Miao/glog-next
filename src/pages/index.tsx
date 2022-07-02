@@ -47,6 +47,11 @@ const linksList = defineDotListItems([
     value: 'NovaDNG.studio',
     link: 'https://novadng.studio',
     subtitle: '字体学徒'
+  },
+  {
+    title: 'Yuuta',
+    value: 'GARDEN IN THE WONDERLAND',
+    link: 'https://yuuta.moe'
   }
 ])
 
