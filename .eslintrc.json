@@ -9,6 +9,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "@typescript-eslint/consistent-type-imports": 1
+    "@typescript-eslint/consistent-type-imports": 1,
+    "react/no-unknown-property": ["error", { "ignore": ["jsx"] }],
   }
 }
