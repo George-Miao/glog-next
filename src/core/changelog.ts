@@ -2,6 +2,8 @@ import { md } from '@core/render'
 import { readFile } from 'fs/promises'
 import { sanitize } from 'isomorphic-dompurify'
 import { allIndexOf } from './helper'
+import { renderMarkdown } from './post/map'
+import { renderAllPost } from './post/reduce'
 
 export interface Changelog {
   title: string
@@ -14,8 +16,19 @@ const titlePattern = /#([^#].*?)-(.*)/i
 const read = async () => readFile(`${process.cwd()}/content/changelog.md`).then(buffer => buffer.toString())
 
 export const render = async (): Promise<Changelog[]> => {
+  const newArticles = (await renderAllPost()).map(p => {
+    const header = `[${p.meta.title}](/writing/posts/${p.slug})\n\n`
+    const content = renderMarkdown(header + (p.excerpt ?? '')).html
+
+    return {
+      content,
+      date: p.meta.created,
+      title: 'New article'
+    }
+  })
+
   const raw = await read()
-  const ret = allIndexOf(raw, titlePattern).map((_, i, arr) => {
+  return allIndexOf(raw, titlePattern).map((_, i, arr) => {
     const start = arr[i]
     const end = arr[i + 1]
     const fragment = raw.slice(start, end)
@@ -32,7 +45,5 @@ export const render = async (): Promise<Changelog[]> => {
       date,
       title
     }
-  })
-
-  return ret
+  }).concat(newArticles).sort((a, b) => b.date - a.date)
 }

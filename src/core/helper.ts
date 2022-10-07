@@ -39,6 +39,7 @@ export const regexIndexOf = (
   return index >= 0 ? index + pos : index
 }
 
+// Return all indexes of a regex match within a string
 export const allIndexOf = (string: string, regex: RegExp) => {
   let pos: number | undefined = undefined
   const ret: number[] = []

@@ -58,7 +58,7 @@ const extractMeta = async (data: string): Promise<Ingot> => {
   }
 }
 
-const renderMarkdown = (markdown: string) => {
+export const renderMarkdown = (markdown: string) => {
   const html = sanitize(md.render(markdown), {
     USE_PROFILES: { html: true }
   })
@@ -77,7 +77,7 @@ const checkMeta = (meta: Meta): MetaValidated => {
     const value = meta[name]
     if (!value) throw Error(`Missing meta in post ${name}`)
     else {
-      if (value instanceof Date) return value.toISOString() as MetaValidated[K]
+      if (value instanceof Date) return +value as MetaValidated[K]
       else return value as unknown as MetaValidated[K]
     }
   }

@@ -8,12 +8,6 @@
 
 - Fix when `<code>` and `<a>` are nested, underline and hover is broken
 
-# New article - 2022-05-24
-
-[Use fly.io to deploy your rust app](/writing/posts/flyio-rust)
-
-Fly.io is an Saas platform that let users to deploy their apps via docker image or buildpacks. It’s perfectly suitable for small and medium-sized apps for the generous free tier and easy-to-use cli. In this article, I will show how to deploy a rust app with fly.io.
-
 # Update projects panel - 2022-05-23
 
 - Old:
@@ -53,7 +47,7 @@ Error pages ([404](/404) and [500](/500)) are now available.
 
 ![2022-01-29T00:32:07Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/dbbe3391-3ae8-43d1-9751-5491a3801100/public) _Brand new design_
 
-Glog is fully rewritten in Next.js. Two previously separated sites [Proj.](https://github.com/George-Miao/Proj) and [Index](https://github.com/George-Miao/Index) are now merged into one site under domain [miao.dev](https://miao.dev).
+Glog is fully rewritten in Next.js. Two previously separated sites [Proj.](https://github.com/George-Miao/Proj) and [Index](https://github.com/George-Miao/index-page) are now merged into one site under domain [miao.dev](https://miao.dev).
 
 ## What's new
 
