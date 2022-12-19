@@ -30,6 +30,7 @@ const Footer = defineVFC(({ className }) => {
           WindiCSS
         </a>
       </p>
+      <a rel="me" href="https://mastodon.miao.dev/@pop" className='text-sm mb-2'>Mastodon</a>
       {commitComp}
     </footer>
   )
