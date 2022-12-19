@@ -18,7 +18,8 @@
       @apply font-mono;
     }
 
-    &:hover, & code:hover {
+    &:hover,
+    & code:hover {
       color: rgb(228, 73, 96);
     }
 

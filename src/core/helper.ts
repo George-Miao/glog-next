@@ -13,7 +13,8 @@ export interface childProp {
 
 type Empty = Record<string, never>
 
-export const defineVFC = <P = Empty>(comp: VFC<P & Required<baseProp>>) =>
+export const defineVFC =
+  <P = Empty>(comp: VFC<P & Required<baseProp>>) =>
   (prop: P & baseProp) => {
     const className = prop.className ?? ''
     return comp({ ...prop, className })

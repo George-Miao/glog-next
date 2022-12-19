@@ -20,7 +20,7 @@ const ServerErrorPage = defineVFC(() => {
       <h3 className='text-xl my-4'>Why am I seeing this page?</h3>
       <div className='flex flex-col text-red-800 space-y-2 pl-2 mb-12'>
         <a>
-          {'>'} There{'\''}s an error happened on my side
+          {'>'} There{"'"}s an error happened on my side
         </a>
         <a>{'>'} Maybe my website just fxxked up</a>
         <a>{'>'} There are many possibilities</a>

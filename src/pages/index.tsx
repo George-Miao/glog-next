@@ -106,8 +106,9 @@ const Home = definePage(() => {
       </p>
       <div className={`${content.content} mt-4 md:mt-8`}>
         <p>
-          I&rsquo;m an undergraduate student and developer currently at Syracuse University. Languages used most are
-          Rust and Typescript. Trying out new stuff everyday!
+          I&rsquo;m an undergraduate student and developer currently at Syracuse
+          University. Languages used most are Rust and Typescript. Trying out
+          new stuff everyday!
         </p>
         <br />
         <h3 className='my-6'>Wait, where is it?</h3>
@@ -134,7 +135,8 @@ const Home = definePage(() => {
         </em>
         <br />
         <p>
-          And, let me proudly introduce you, my home server rack, <b>Tharsis:</b>
+          And, let me proudly introduce you, my home server rack,{' '}
+          <b>Tharsis:</b>
         </p>
 
         <Image
@@ -148,13 +150,11 @@ const Home = definePage(() => {
         />
 
         <p className='mt-8'>
-          It&apos;s in China so currently I&apos;m not able to access it, physically. But with Cloudflare Tunnel, I can
-          still access{' '}
-          <Link href='/projects'>
-            <a>services runs on it</a>
-          </Link>{' '}
-          and use ssh. So I&apos;m happy with it. After all I don&apos;t have a public IP address and basically
-          everything in China is behind NAT.
+          It&apos;s in China so currently I&apos;m not able to access it,
+          physically. But with Cloudflare Tunnel, I can still access{' '}
+          <Link href='/projects'>services runs on it</Link> and use ssh. So
+          I&apos;m happy with it. After all I don&apos;t have a public IP
+          address and basically everything in China is behind NAT.
         </p>
       </div>
 

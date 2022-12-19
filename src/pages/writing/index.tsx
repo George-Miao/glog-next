@@ -43,13 +43,15 @@ export default defineVFC<PostListProp>(({ list }) => {
         className='<md:mb-3'
       />
 
-      <div className='flex flex-col items-start
+      <div
+        className='flex flex-col items-start
           border rounded grid gap-1.5 px-4 py-3
           space-y-2 w-full
           before:-top-6
           sm:(px-6 py-4)
           md:(px-10 pt-8 pb-6)
-        '>
+        '
+      >
         {buttons.map(([text, link], i) => (
           <Button
             key={i}

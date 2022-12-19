@@ -20,7 +20,9 @@ export default defineVFC(() => {
         className='flex mt-8 sm:mt-12 md:mt-0'
         columnClassName='not-first:ml-6'
       >
-        {categories.map((category, key) => <ProjCategory {...category} key={key} />)}
+        {categories.map((category, key) => (
+          <ProjCategory {...category} key={key} />
+        ))}
       </Masonry>
     </SafeArea>
   )

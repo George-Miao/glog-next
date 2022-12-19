@@ -5,7 +5,9 @@ const SafeArea = defineVFCWithClassAndChild<{
 }>(({ className, children, hideOverflow }) => {
   return (
     <div
-      className={` ${className ?? ''} max-w-3xl mx-auto ${hideOverflow ? 'overflow-hidden' : ''}`}
+      className={` ${className ?? ''} max-w-3xl mx-auto ${
+        hideOverflow ? 'overflow-hidden' : ''
+      }`}
     >
       {children}
     </div>

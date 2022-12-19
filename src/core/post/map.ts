@@ -4,7 +4,12 @@ import { sanitize } from 'isomorphic-dompurify'
 
 import { md } from '@core/render'
 
-import { blockExcerptPattern, cache, moreExcerptPattern, postsDir } from './common'
+import {
+  blockExcerptPattern,
+  cache,
+  moreExcerptPattern,
+  postsDir
+} from './common'
 
 import { count } from '@wordpress/wordcount'
 import type { Ingot, Meta, MetaValidated, Rendered } from './type'
@@ -46,9 +51,10 @@ const extractMeta = async (data: string): Promise<Ingot> => {
     // @ts-expect-error https://github.com/jonschlinkert/gray-matter/issues/125 WTF IT'S STILL NOT SOLVED
     excerpt(input: matter.GrayMatterFile<string>) {
       const raw = input.content
-      input.excerpt = raw.match(moreExcerptPattern)?.[1]?.replaceAll?.('\n', ' ')
-        ?? raw.match(blockExcerptPattern)?.[1]?.replaceAll?.('\n', ' ')
-        ?? ''
+      input.excerpt =
+        raw.match(moreExcerptPattern)?.[1]?.replaceAll?.('\n', ' ') ??
+        raw.match(blockExcerptPattern)?.[1]?.replaceAll?.('\n', ' ') ??
+        ''
     }
   })
   return {

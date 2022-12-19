@@ -12,13 +12,11 @@ export const defineDotListItems = (items: DotListItemProp[]) => items
 
 export const DotListItem = defineVFC<DotListItemProp>(
   ({ title, value, link, subtitle, className }) => {
-    const subtitleClass = 'flex-none mr-4 font-light text-warm-gray-400 inline-block leading-5'
+    const subtitleClass =
+      'flex-none mr-4 font-light text-warm-gray-400 inline-block leading-5'
 
     return (
-      <a
-        className={`block mb-2 ${className}`}
-        href={link ?? undefined}
-      >
+      <a className={`block mb-2 ${className}`} href={link ?? undefined}>
         <p className='block flex items-center group w-full overflow-hidden'>
           <span
             className={`flex-none
@@ -32,21 +30,29 @@ export const DotListItem = defineVFC<DotListItemProp>(
             {title}
           </span>
 
-          <span className='flex-shrink-[10000000] mx-2 sm:mx-4 w-full border-t
+          <span
+            className='flex-shrink-[10000000] mx-2 sm:mx-4 w-full border-t
           border-gray-300 border-dashed
-          dark:border-gray-800' />
+          dark:border-gray-800'
+          />
 
-          {subtitle && <span className={`${subtitleClass} <sm:hidden`}>{subtitle}</span>}
+          {subtitle && (
+            <span className={`${subtitleClass} <sm:hidden`}>{subtitle}</span>
+          )}
 
-          <span className='whitespace-nowrap
+          <span
+            className='whitespace-nowrap
             text-warm-gray-600
             font-mono font-thin text-sm
             flex-none contents inline-block leading-5
-            overflow-hidden break-all'>
+            overflow-hidden break-all'
+          >
             {value}
           </span>
         </p>
-        <p className='sm:hidden text-sm'>{subtitle && <span className={subtitleClass}>{subtitle}</span>}</p>
+        <p className='sm:hidden text-sm'>
+          {subtitle && <span className={subtitleClass}>{subtitle}</span>}
+        </p>
       </a>
     )
   }
@@ -78,7 +84,9 @@ export const DotList = defineVFC<DotListProp>(
         )}
 
         <div className='col-span-9 '>
-          {items.map((item, i) => <DotListItem {...item} key={i}></DotListItem>)}
+          {items.map((item, i) => (
+            <DotListItem {...item} key={i}></DotListItem>
+          ))}
         </div>
       </div>
     )

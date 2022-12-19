@@ -7,9 +7,13 @@ import { ProjItem, ProjStatus } from '@core/projects/types'
 import { Icon } from '@iconify/react'
 
 import { config } from '@core/config'
-import type { ProjCategory as ProjCategoryProp, ProjIndicator } from '@core/projects/types'
+import type {
+  ProjCategory as ProjCategoryProp,
+  ProjIndicator
+} from '@core/projects/types'
 
-const statusClassBase = 'w-2 h-2 rounded-full inline-block absolute right-[12px] top-[12px]'
+const statusClassBase =
+  'w-2 h-2 rounded-full inline-block absolute right-[12px] top-[12px]'
 const titleClassBase = 'text-lg font-sans inline-block transition-all mb-1'
 
 const Indicator = defineVFC<ProjIndicator>(
@@ -17,18 +21,20 @@ const Indicator = defineVFC<ProjIndicator>(
     const inner = (
       <Icon
         icon={icon}
-        className={`${className} ${link ? 'hover:text-black cursor-pointer' : ''} text-gray-500 transition-none`}
+        className={`${className} ${
+          link ? 'hover:text-black cursor-pointer' : ''
+        } text-gray-500 transition-none`}
         width={16}
         height={16}
       />
     )
-    return link
-      ? (
-        <a href={link} title={label}>
-          {inner}
-        </a>
-      )
-      : <p title={label}>{inner}</p>
+    return link ? (
+      <a href={link} title={label}>
+        {inner}
+      </a>
+    ) : (
+      <p title={label}>{inner}</p>
+    )
   }
 )
 
@@ -52,12 +58,10 @@ const ProjItem = defineVFC<ProjItem>(
     if (url) {
       useSWR(async () => {
         await fetch(config.corsProxy.replace('%s', url))
-          .then(
-            res => setStatus(res.ok ? ProjStatus.Online : ProjStatus.Offline)
+          .then(res =>
+            setStatus(res.ok ? ProjStatus.Online : ProjStatus.Offline)
           )
-          .catch(
-            () => setStatus(ProjStatus.Offline)
-          )
+          .catch(() => setStatus(ProjStatus.Offline))
       })
     }
 
@@ -70,25 +74,30 @@ const ProjItem = defineVFC<ProjItem>(
       />
     )
 
-    const statusText = status === ProjStatus.Init
-      ? undefined
-      : status === ProjStatus.Online
-      ? 'Service online'
-      : 'Service unreachable'
-    const statusComp = status === ProjStatus.Online
-      ? <span className={`bg-green-500 ${statusClassBase}`} title={statusText} />
-      : status === ProjStatus.Offline
-      ? <span className={`bg-gray-500 ${statusClassBase}`} title={statusText} />
-      : null
+    const statusText =
+      status === ProjStatus.Init
+        ? undefined
+        : status === ProjStatus.Online
+        ? 'Service online'
+        : 'Service unreachable'
+    const statusComp =
+      status === ProjStatus.Online ? (
+        <span
+          className={`bg-green-500 ${statusClassBase}`}
+          title={statusText}
+        />
+      ) : status === ProjStatus.Offline ? (
+        <span className={`bg-gray-500 ${statusClassBase}`} title={statusText} />
+      ) : null
 
     const titleLink = link ?? github
-    const titleComp = titleLink
-      ? (
-        <Link href={titleLink}>
-          <a className={`${titleClassBase} hover:text-red-800`}>{name}</a>
-        </Link>
-      )
-      : <span className={titleClassBase}>{name}</span>
+    const titleComp = titleLink ? (
+      <Link href={titleLink} className={`${titleClassBase} hover:text-red-800`}>
+        {name}
+      </Link>
+    ) : (
+      <span className={titleClassBase}>{name}</span>
+    )
 
     const descriptionComp = (
       <p className='text-gray-600 text-sm w-full mb-3 font-thin relative'>
@@ -107,31 +116,29 @@ const ProjItem = defineVFC<ProjItem>(
           />
         )}
         {link && (
-          <Link href={link}>
-            <a title='Link'>
-              <Icon
-                icon='akar-icons:link-chain'
-                className='text-gray-500 hover:text-black transition-none cursor-pointer'
-                width={iconSize}
-                height={iconSize}
-              />
-            </a>
+          <Link href={link} title='Link'>
+            <Icon
+              icon='akar-icons:link-chain'
+              className='text-gray-500 hover:text-black transition-none cursor-pointer'
+              width={iconSize}
+              height={iconSize}
+            />
           </Link>
         )}
         {github && (
-          <Link href={github}>
-            <a title='Github link'>
-              <Icon
-                icon='akar-icons:github-fill'
-                className='text-gray-500 hover:text-black transition-none cursor-pointer'
-                width={iconSize}
-                height={iconSize}
-              />
-            </a>
+          <Link href={github} title='Github link'>
+            <Icon
+              icon='akar-icons:github-fill'
+              className='text-gray-500 hover:text-black transition-none cursor-pointer'
+              width={iconSize}
+              height={iconSize}
+            />
           </Link>
         )}
-        {indicators
-          && indicators.map((indicator, key) => <Indicator {...indicator} key={key} />)}
+        {indicators &&
+          indicators.map((indicator, key) => (
+            <Indicator {...indicator} key={key} />
+          ))}
       </div>
     )
 
@@ -175,7 +182,9 @@ const ProjCategory = defineVFC<ProjCategoryProp>(
           )}
         </div>
 
-        {items.map((item, key) => <ProjItem {...item} key={key} />)}
+        {items.map((item, key) => (
+          <ProjItem {...item} key={key} />
+        ))}
       </div>
     )
   }

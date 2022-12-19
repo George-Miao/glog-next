@@ -3,10 +3,11 @@
   "useTabs": false,
   "quoteProps": "consistent",
   "singleQuote": true,
+  "jsxSingleQuote": true,
+  "useEditorConfig": true,
   "semi": false,
   "bracketSpacing": true,
   "arrowParens": "avoid",
-  "useEditorConfig": true,
   "trailingComma": "none",
   "vueIndentScriptAndStyle": false,
   "htmlWhitespaceSensitivity": "ignore"

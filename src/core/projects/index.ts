@@ -9,7 +9,8 @@ const categories = defineProjCategories([
       {
         name: 'Proxmox',
         isPrivate: true,
-        description: 'VM environment, hosts most of my services in Tharsis. Installed on R720',
+        description:
+          'VM environment, hosts most of my services in Tharsis. Installed on R720',
         icon: 'cib:proxmox'
       },
       {
@@ -27,7 +28,8 @@ const categories = defineProjCategories([
       {
         name: 'Grafana',
         isPrivate: true,
-        description: 'Matrix visualization which consumes data from Prometheus. Deployed on-premise',
+        description:
+          'Matrix visualization which consumes data from Prometheus. Deployed on-premise',
         icon: 'simple-icons:grafana'
       },
 
@@ -80,21 +82,24 @@ const categories = defineProjCategories([
         name: 'Blog',
         link: 'https://miao.dev',
         github: 'https://github.com/George-Miao/GlogHexo',
-        description: 'My blog. Use hexo for generation. Built with Next.js and WindiCSS',
+        description:
+          'My blog. Use hexo for generation. Built with Next.js and WindiCSS',
         icon: 'cib:next-js'
       },
       {
         name: 'Typings.dev',
         link: 'https://typings.dev',
         github: 'https://github.com/George-Miao/typings.dev',
-        description: 'Typing practice site for Pinyin and Shuang users inspired by Typing-cn',
+        description:
+          'Typing practice site for Pinyin and Shuang users inspired by Typing-cn',
         icon: 'ion:logo-vue'
       },
       {
         name: 'Pop.tg',
         link: 'https://www.pop.tg',
         github: 'https://github.com/Pop-tg/main',
-        description: 'URL shortener, built with Svelte, Typescript and Cloudflare Worker',
+        description:
+          'URL shortener, built with Svelte, Typescript and Cloudflare Worker',
         icon: 'cib:cloudflare'
       },
 
@@ -109,7 +114,8 @@ const categories = defineProjCategories([
         name: 'Grafana',
         link: 'https://grafana.miao.dev',
         healthCheck: 'https://grafana.miao.dev/api/health',
-        description: 'Matrix visualization which consumes data from Prometheus. Deployed on Fly.io',
+        description:
+          'Matrix visualization which consumes data from Prometheus. Deployed on Fly.io',
         icon: 'simple-icons:grafana'
       }
     ]
@@ -130,7 +136,8 @@ const categories = defineProjCategories([
         icon: 'cib:rust',
         github: 'https://github.com/George-Miao/mail-list-rss',
         healthCheck: 'https://rss.miao.do/health',
-        description: 'Translate mail subscription to a RSS feed, written in Rust'
+        description:
+          'Translate mail subscription to a RSS feed, written in Rust'
       },
       {
         name: 'Shot',
@@ -149,7 +156,8 @@ const categories = defineProjCategories([
         name: 'Knotify telegram',
         icon: 'akar-icons:telegram-fill',
         github: 'https://github.com/George-Miao/knotify-telegram',
-        description: 'Bot as a bridge, forward HTTP request and PM to my telegram',
+        description:
+          'Bot as a bridge, forward HTTP request and PM to my telegram',
         indicators: [
           {
             icon: 'cib:typescript'
@@ -172,7 +180,8 @@ const categories = defineProjCategories([
         name: 'RSS worker',
         icon: 'cib:cloudflare',
         github: 'https://github.com/George-Miao/rss-worker',
-        description: 'Cloudflare worker that generates RSS feed from various source',
+        description:
+          'Cloudflare worker that generates RSS feed from various source',
         indicators: [
           {
             icon: 'cib:typescript'

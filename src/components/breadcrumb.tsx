@@ -38,21 +38,21 @@ const BreadCrumb = defineVFC<BreadCrumbProp>(
       <p className={`${className ?? ''} py-2 relative z-10 select-none`}>
         {crumbs.map((x, i) => {
           const isLast = len === i + 1
-          const text = isLast
-            ? (
-              x.text
-            )
-            : (
-              <Link href={x.link}>
-                <a className=' hover:text-red-800 transition-all'>{x.text}</a>
-              </Link>
-            )
+          const text = isLast ? (
+            x.text
+          ) : (
+            <Link href={x.link} className='transition-all hover:text-red-800'>
+              {x.text}
+            </Link>
+          )
           return (
             <span
               key={i}
-              className={`text-sm uppercase  ${isLast ? 'text-warm-gray-700' : 'text-warm-gray-500'} `}
+              className={`text-sm uppercase  ${
+                isLast ? 'text-warm-gray-700' : 'text-warm-gray-500'
+              } `}
             >
-              <span className='text-warm-gray-400 select-none px-2'>
+              <span className='px-2 text-warm-gray-400 select-none'>
                 {separator ?? '/'}
               </span>
               {text}

@@ -15,30 +15,34 @@ const TagList = defineVFC<TagListProp>(
     return (
       <span>
         {list.map((tag, i) => {
-          const text = (prefix ?? '')
-            + (formatter?.(tag.text) ?? tag.text)
-            + (postfix ?? '')
+          const text =
+            (prefix ?? '') +
+            (formatter?.(tag.text) ?? tag.text) +
+            (postfix ?? '')
 
           const isLast = i + 1 === list.length
 
           return (
             <span key={i}>
-              <Link href={tag.link}>
-                <a
-                  className={`${className ?? ''} mr-1.5 text-red-800 filter transition-all
-                    hover:brightness-130 relative
-                    after:(
-                      absolute bottom-0
-                      w-0 h-0.5 block
-                      bg-red-800 transition-all
-                      hover:w-full
-                    )`}
-                >
-                  {text}
-                </a>
+              <Link
+                href={tag.link}
+                className={`${
+                  className ?? ''
+                } mr-1.5 text-red-800 filter transition-all
+                  hover:brightness-130 relative
+                  after:(
+                    absolute bottom-0
+                    w-0 h-0.5 block
+                    bg-red-800 transition-all
+                    hover:w-full
+                  )`}
+              >
+                {text}
               </Link>
-              {(delimiter && !isLast && <span className='mr-1.5 '>{delimiter}</span>)
-                ?? ''}
+              {(delimiter && !isLast && (
+                <span className='mr-1.5 '>{delimiter}</span>
+              )) ??
+                ''}
             </span>
           )
         })}

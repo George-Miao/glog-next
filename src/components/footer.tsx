@@ -1,13 +1,16 @@
 import { defineVFC } from '@core/helper'
 
 const commit = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA
-const url = commit && `https://github.com/George-Miao/glog-next/commit/${commit}`
-const commitComp = commit
-  && (
-    <p className='text-sm'>
-      Commit <a href={url} className='font-bold'>#{commit.substring(0, 6)}</a>
-    </p>
-  )
+const url =
+  commit && `https://github.com/George-Miao/glog-next/commit/${commit}`
+const commitComp = commit && (
+  <p className='text-sm'>
+    Commit{' '}
+    <a href={url} className='font-bold'>
+      #{commit.substring(0, 6)}
+    </a>
+  </p>
+)
 
 const Footer = defineVFC(({ className }) => {
   return (
@@ -30,7 +33,13 @@ const Footer = defineVFC(({ className }) => {
           WindiCSS
         </a>
       </p>
-      <a rel="me" href="https://mastodon.miao.dev/@pop" className='text-sm mb-2'>Mastodon</a>
+      <a
+        rel='me'
+        href='https://mastodon.miao.dev/@pop'
+        className='text-sm mb-2'
+      >
+        Mastodon
+      </a>
       {commitComp}
     </footer>
   )

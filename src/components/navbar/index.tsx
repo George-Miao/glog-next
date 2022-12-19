@@ -19,49 +19,48 @@ const NavBar = defineVFC(({ className }) => {
 
   return (
     <nav className={mainClass}>
-      <Link href={'/'}>
-        <a className='
+      <Link
+        href={'/'}
+        className='
             flex text-white
             pl-10 py-7
             @md:(my-auto pl-4)
             lg:(pl-3 w-full pt-0)
-          '>
-          <Image src='/img/logo.svg' alt='' width={24} height={24}></Image>
-          <span className='ml-4 text-xl font-bold <lg:my-auto'>Glog</span>
-        </a>
+          '
+      >
+        <Image src='/img/logo.svg' alt='' width={24} height={24}></Image>
+        <span className='ml-4 text-xl font-bold <lg:my-auto'>Glog</span>
       </Link>
-      <div className='
+      <div
+        className='
           flex
           <sm:p-1
           @sm:space-x-2
           @md:(my-auto space-x-2)
           <lg:my-auto
           lg:(flex-col w-full mt-2 mb-12)
-        '>
+        '
+      >
         {links.map((x, i) => {
           const isCurrent = useRouter().asPath.startsWith(x.link)
 
           return (
-            <Link href={x.link} key={i}>
-              <a className={btnClass(isCurrent)}>
+            <Link href={x.link} key={i} className={btnClass(isCurrent)}>
+              <Iconify
+                icon={x.icon as string}
+                width={18}
+                height={18}
+                className='mr-4 <sm:hidden md:mr-3'
+              ></Iconify>
+              <span>{x.text}</span>
+              {x.external && (
                 <Iconify
-                  icon={x.icon as string}
-                  width={18}
-                  height={18}
-                  className='mr-4 <sm:hidden md:mr-3'
-                >
-                </Iconify>
-                <span>{x.text}</span>
-                {x.external && (
-                  <Iconify
-                    className='ml-auto'
-                    icon='heroicons-outline:external-link'
-                    width={16}
-                    height={16}
-                  >
-                  </Iconify>
-                )}
-              </a>
+                  className='ml-auto'
+                  icon='heroicons-outline:external-link'
+                  width={16}
+                  height={16}
+                ></Iconify>
+              )}
             </Link>
           )
         })}

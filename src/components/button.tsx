@@ -36,20 +36,24 @@ const Button = defineVFCWithChild<ButtonProp>(
   ({ href, onClick, children, className, style, prefix, postfix }) => {
     style = style ?? 'main'
     return (
-      <Link href={href ?? ''}>
-        <a
-          className={`
-            ${className ?? ''}
-            transition-all block flex items-center
-            justify-between content-between
-            ${styleClass[style]}
-          `}
-          onClick={onClick ?? voidFn}
-        >
-          {prefix && <span className='text-sm text-warm-gray-400 mr-2'>{prefix}</span>}
-          <span className='flex-1'>{children}</span>
-          {postfix && <span className='text-sm text-warm-gray-400 ml-2'>{postfix}</span>}
-        </a>
+      // eslint-disable-next-line @next/next/link-passhref
+      <Link
+        href={href ?? ''}
+        className={`
+          ${className ?? ''}
+          transition-all block flex items-center
+          justify-between content-between
+          ${styleClass[style]}
+        `}
+        onClick={onClick ?? voidFn}
+      >
+        {prefix && (
+          <span className='text-sm mr-2 text-warm-gray-400'>{prefix}</span>
+        )}
+        <span className='flex-1'>{children}</span>
+        {postfix && (
+          <span className='text-sm ml-2 text-warm-gray-400'>{postfix}</span>
+        )}
       </Link>
     )
   }

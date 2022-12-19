@@ -73,7 +73,9 @@ export default defineVFC<Prop>(({ categories }) => {
 
       <BreadCrumb className='absolute sm:top-2 md:-top-16' />
       <Title title='Categories' className='my-4 md:mb-12' safeArea />
-      {items.map((prop, i) => <DotList {...prop} key={i} />)}
+      {items.map((prop, i) => (
+        <DotList {...prop} key={i} />
+      ))}
     </SafeArea>
   )
 })
