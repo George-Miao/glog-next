@@ -1,7 +1,9 @@
 import { useRouter } from 'next/router'
 
-import type { VFC } from 'react'
 import { config } from './config'
+
+export const genInt = (min: number, max: number) =>
+  Math.random() * (max - min) + min
 
 export interface baseProp {
   className?: string
@@ -14,21 +16,21 @@ export interface childProp {
 type Empty = Record<string, never>
 
 export const defineVFC =
-  <P = Empty>(comp: VFC<P & Required<baseProp>>) =>
+  <P = Empty>(comp: React.FC<P & Required<baseProp>>) =>
   (prop: P & baseProp) => {
     const className = prop.className ?? ''
     return comp({ ...prop, className })
   }
 
 export const defineVFCWithChild = <P = childProp>(
-  comp: VFC<childProp & P & Required<baseProp>>
+  comp: React.FC<childProp & P & Required<baseProp>>
 ) => defineVFC<childProp & P>(comp)
 
 export const defineVFCWithClassAndChild = <P = baseProp>(
-  comp: VFC<{ children: React.ReactNode } & baseProp & P>
+  comp: React.FC<{ children: React.ReactNode } & baseProp & P>
 ) => comp
 
-export const definePage = <P = baseProp>(comp: VFC<baseProp & P>) => comp
+export const definePage = <P = baseProp>(comp: React.FC<baseProp & P>) => comp
 
 export const regexIndexOf = (
   string: string,
