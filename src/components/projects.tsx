@@ -70,7 +70,7 @@ const ProjItem = defineVFC<ProjItem>(
         width={72}
         height={72}
         icon={icon}
-        className='text-true-gray-200 select-none absolute right-[-12px] bottom-[-12px]'
+        className='right-[-12px] bottom-[-12px] text-true-gray-200 select-none absolute'
       />
     )
 
@@ -100,13 +100,13 @@ const ProjItem = defineVFC<ProjItem>(
     )
 
     const descriptionComp = (
-      <p className='text-gray-600 text-sm w-full mb-3 font-thin relative'>
+      <p className='font-thin text-sm mb-3 w-full text-gray-600 relative'>
         {description}
       </p>
     )
 
     const indicatorsComp = (
-      <div className='flex item-indicators space-x-3'>
+      <div className='flex space-x-3 item-indicators'>
         {isPrivate && (
           <Icon
             className='text-gray-600'
@@ -119,7 +119,7 @@ const ProjItem = defineVFC<ProjItem>(
           <Link href={link} title='Link'>
             <Icon
               icon='akar-icons:link-chain'
-              className='text-gray-500 hover:text-black transition-none cursor-pointer'
+              className='cursor-pointer transition-none text-gray-500 hover:text-black'
               width={iconSize}
               height={iconSize}
             />
@@ -129,7 +129,7 @@ const ProjItem = defineVFC<ProjItem>(
           <Link href={github} title='Github link'>
             <Icon
               icon='akar-icons:github-fill'
-              className='text-gray-500 hover:text-black transition-none cursor-pointer'
+              className='cursor-pointer transition-none text-gray-500 hover:text-black'
               width={iconSize}
               height={iconSize}
             />
@@ -145,6 +145,7 @@ const ProjItem = defineVFC<ProjItem>(
     return (
       <div
         className={`${className} flex flex-col
+          shadow
           py-3 px-4 overflow-hidden
           md:mb-4 sm:mb-3 mb-3
           bg-true-gray-100
@@ -170,8 +171,8 @@ const ProjCategory = defineVFC<ProjCategoryProp>(
       <div className={`${className} text-left mb-8`}>
         <div className='flex mb-8 <md:flex-row-reverse'>
           <div className='flex-grow'>
-            <h1 className='text-red-800 text-xl font-sans'>{name}</h1>
-            <p className='text-gray-600 text-sm overflow-hidden text-ellipsis -mt-1'>
+            <h1 className='font-sans text-xl text-red-800'>{name}</h1>
+            <p className='-mt-1 text-sm text-ellipsis text-gray-600 overflow-hidden'>
               {description}
             </p>
           </div>
