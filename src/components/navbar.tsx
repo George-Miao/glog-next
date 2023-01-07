@@ -6,7 +6,6 @@ import { defineFC } from '@core/helper'
 import { Icon as Iconify } from '@iconify/react'
 
 import config from '@config'
-import SizeIndicator from './sizeIndicator'
 
 const activeBtn = 'bg-warm-gray-100 text-red-800 shadow-nav-active'
 const hoverBtn =

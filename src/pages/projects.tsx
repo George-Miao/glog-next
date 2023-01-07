@@ -9,14 +9,12 @@ import { config } from '@config'
 import { defineFC } from '@core/helper'
 
 import type { PseudoProjPhoto } from '@comps/projects'
-const pseudoProjPhotos: PseudoProjPhoto[] = config.proj.map(
-  (category, key) => ({
-    src: '',
-    width: 200,
-    height: 200,
-    ...category
-  })
-)
+const pseudoProjPhotos: PseudoProjPhoto[] = config.proj.map(category => ({
+  src: '',
+  width: 200,
+  height: 200,
+  ...category
+}))
 export default defineFC(() => {
   return (
     <SafeArea>

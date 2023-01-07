@@ -15,7 +15,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel='stylesheet' href='https://use.typekit.net/bkc5luv.css' />
         <link
           rel='apple-touch-icon'
           sizes='180x180'

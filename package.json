@@ -28,6 +28,7 @@
   "devDependencies": {
     "@iconify/react": "^4.0.1",
     "@next/codemod": "^13.1.1",
+    "@next/font": "^13.1.1",
     "@types/glob": "^8.0.0",
     "@types/markdown-it": "^12.2.3",
     "@types/node": "18.11.18",
@@ -70,6 +71,7 @@
     "postcss-nesting": "^10.1.2",
     "postcss-preset-env": "^7.2.3",
     "rimraf": "^3.0.2",
+    "sharp": "^0.31.3",
     "ts-node": "^10.4.0",
     "typescript": "4.9.4",
     "windicss-webpack-plugin": "^1.6.2"

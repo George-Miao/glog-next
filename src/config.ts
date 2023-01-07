@@ -1,29 +1,32 @@
 import type { FeedOptions } from 'feed'
 import type { DefaultSeoProps } from 'next-seo'
-import type { OpenGraph, Twitter } from 'next-seo/lib/types'
-import type { Photo } from 'react-photo-album'
 
-import type { DotListItemProp } from '@comps/dotList'
-import type { ProjCategory } from '@type/proj'
-import type { NavBtn } from '@type/navbar'
+import { Fira_Code, Josefin_Sans, Merriweather } from '@next/font/google'
 
-export interface GlogConfig {
-  proj: ProjCategory[]
-  domain: string
-  siteTitle: string
-  description: string
-  image: string
-  favicon: string
-  corsProxy: string
-  twitter: Twitter
-  openGraph: OpenGraph
-  resumeList: DotListItemProp[]
-  linksList: DotListItemProp[]
-  gallery: Photo[]
-  navbar: {
-    links: NavBtn[]
-  }
-}
+import type { GlogConfig } from '@type/config'
+
+const firaCode = Fira_Code({
+  weight: '400',
+  style: 'normal',
+  subsets: ['latin'],
+  variable: '--font-fira-code'
+})
+const merriweather = Merriweather({
+  weight: ['300', '400', '700'],
+  display: 'swap',
+  preload: true,
+  subsets: ['latin'],
+  style: ['italic', 'normal'],
+  variable: '--font-merriweather'
+})
+const josefinSans = Josefin_Sans({
+  weight: 'variable',
+  display: 'swap',
+  preload: true,
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  variable: '--font-josefin-sans'
+})
 
 export const config: GlogConfig = {
   domain: 'miao.dev',
@@ -308,6 +311,7 @@ export const config: GlogConfig = {
     }
   ],
   gallery: [],
+  fonts: [firaCode, merriweather, josefinSans],
   navbar: {
     links: [
       {
@@ -366,5 +370,7 @@ export const feedBase: FeedOptions = {
   },
   copyright: ''
 }
+
+export const fontVars = config.fonts.map(f => f.variable).join(' ')
 
 export default config

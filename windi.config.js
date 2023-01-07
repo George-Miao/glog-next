@@ -19,7 +19,7 @@ export default defineConfig({
       fontFamily: {
         sans: [
           'DASH',
-          'Josefin-sans',
+          'var(--font-josefin-sans)',
           '-apple-system',
           'BlinkMacSystemFont',
           'helvetica neue',
@@ -29,11 +29,11 @@ export default defineConfig({
           ...chineseFont,
           'sans-serif'
         ],
-        mono: ['fira-mono', 'monospace'],
+        mono: ['var(--font-fira-code)', 'monospace'],
         content: [
           'DASH',
-          'merriweather',
-          'Josefin-sans',
+          'var(--font-merriweather)',
+          'var(--font-josefin-sans)',
           ...chineseFont,
           '-apple-system',
           'BlinkMacSystemFont',
