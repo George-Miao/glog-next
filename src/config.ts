@@ -36,13 +36,6 @@ export const config: GlogConfig = {
   favicon: 'https://example.com/favicon.ico', // TODO: favicon
   corsProxy: 'https://cors-proxy.miao.dev/?url=%s',
   photoProxy: process.env.PHOTO_URL ?? '',
-  s3: {
-    endpoint: process.env.S3_ENDPOINT ?? '',
-    accessKeyId: process.env.S3_KEYID ?? '',
-    secretAccessKey: process.env.S3_SECRET_KEY ?? '',
-    bucket: process.env.S3_BUCKET ?? '',
-    prefix: process.env.S3_PREFIX ?? ''
-  },
   twitter: {
     site: '@PopDotLol',
     cardType: 'summary_large_image'
@@ -318,7 +311,6 @@ export const config: GlogConfig = {
       ]
     }
   ],
-  gallery: [],
   fonts: [firaCode, merriweather, josefinSans],
   navbar: {
     links: [

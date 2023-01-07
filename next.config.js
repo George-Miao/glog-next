@@ -36,6 +36,9 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   swcMinify: true,
   compress: true,
+  experimental: {
+    appDir: true
+  },
   webpack(config) {
     config.plugins.push(new WindiCSSWebpackPlugin())
     return config
