@@ -5,14 +5,33 @@ import { PhotoAlbum } from 'react-photo-album'
 import SafeArea from '@comps/layout/safeArea'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
-import config from '@config'
-import { defineFC, genWhole, toTitleCase } from '@core/helper'
+import { getPhotos } from '@core/gallery'
+import { defineFC, toTitleCase } from '@core/helper'
+import { Icon } from '@iconify/react'
 
 import type { RenderPhotoProps } from 'react-photo-album'
 import type { DetailedPhoto } from '@type/gallery'
-import { Icon } from '@iconify/react'
+
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next'
+
+export const getServerSideProps: GetServerSideProps<{
+  photos: DetailedPhoto[]
+}> = async () => {
+  return {
+    props: {
+      photos: await getPhotos().then(x => {
+        console.log(x)
+        return x
+      })
+    }
+  }
+}
 
 const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
+  const camera =
+    photo.exif?.model &&
+    photo.exif?.make &&
+    `${photo.exif.make} ${photo.exif.model} `
   return (
     <div
       className='flex flex-col
@@ -20,8 +39,9 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
       opacity-0 p-3
       transition-all top-0 right-0 bottom-0
       left-0 text-neutral-100  leading-4
-      justify-between select-none
-      absolute hover:opacity-100
+      z-20 justify-between
+      select-none absolute
+      hover:opacity-100
     '
       style={{
         backgroundImage: `linear-gradient(
@@ -33,10 +53,10 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
       }}
     >
       <div className='flex'>
-        {photo.camera && (
+        {camera && (
           <>
             <Icon icon={'material-symbols:camera'} inline className='mr-1' />
-            {toTitleCase(photo.camera ?? 'Unknown')}
+            {toTitleCase(camera)}
           </>
         )}
       </div>
@@ -53,9 +73,9 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
           </>
         )}
 
-        {photo.date && (
+        {photo.timestamp && (
           <span className='ml-auto'>
-            {photo.date?.toLocaleDateString(undefined, {
+            {new Date(photo.timestamp).toLocaleDateString(undefined, {
               day: 'numeric',
               year: 'numeric',
               month: 'short'
@@ -76,51 +96,42 @@ const Photo = defineFC<RenderPhotoProps<DetailedPhoto>>(
     return (
       <article style={style} className='relative overflow-hidden'>
         <PhotoDetail photo={photo} />
-
+        <div className='bg-neutral-100 p-1 top-0 right-0 bottom-0 left-0 absolute' />
         <Image
           src={src}
           alt={alt}
           title={title ?? undefined}
           width={Math.floor(width)}
           height={Math.floor(height)}
-          placeholder='empty'
+          quality={100}
+          // unoptimized={true}
+          className='opacity-0 transition-all z-10 relative'
+          onLoadingComplete={e => e.classList.add('opacity-100')}
         />
       </article>
     )
   }
 )
-const photos: DetailedPhoto[] = new Array(10)
-  .fill(0)
-  .map<DetailedPhoto>(() => {
-    const [height, width] = [genWhole(250, 400), genWhole(250, 400)]
-    return {
-      src: `https://placekitten.com/${width}/${height}`,
-      width,
-      height,
-      location: 'Meow',
-      camera: 'FUJIFILM X100V',
-      date: new Date()
-    }
-  })
-  .concat(...config.gallery)
 
-export default defineFC(() => {
-  return (
-    <SafeArea>
-      <SEO title='Gallery' />
-      <Title title='Gallery' subtitle='Photos shoot' safeArea />
+export default defineFC<InferGetServerSidePropsType<typeof getServerSideProps>>(
+  ({ photos }) => {
+    return (
+      <SafeArea>
+        <SEO title='Gallery' />
+        <Title title='Gallery' subtitle='Photos shoot' safeArea />
 
-      <PhotoAlbum
-        componentsProps={{
-          containerProps: {
-            className: 'mt-10 sm:mt-20'
-          }
-        }}
-        layout='rows'
-        targetRowHeight={300}
-        photos={photos}
-        renderPhoto={Photo}
-      />
-    </SafeArea>
-  )
-})
+        <PhotoAlbum
+          componentsProps={{
+            containerProps: {
+              className: 'mt-10 sm:mt-20'
+            }
+          }}
+          layout='rows'
+          targetRowHeight={300}
+          photos={photos}
+          renderPhoto={Photo}
+        />
+      </SafeArea>
+    )
+  }
+)

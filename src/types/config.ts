@@ -7,7 +7,16 @@ import type { NavBtn } from '@type/navbar'
 
 import type { NextFontWithVariable } from '@next/font/dist/types'
 
+export interface S3Config {
+  endpoint: string
+  accessKeyId: string
+  secretAccessKey: string
+  bucket: string
+  prefix: string
+}
+
 export interface GlogConfig {
+  s3: S3Config
   proj: ProjCategory[]
   fonts: NextFontWithVariable[]
   domain: string
@@ -16,6 +25,7 @@ export interface GlogConfig {
   image: string
   favicon: string
   corsProxy: string
+  photoProxy: string
   twitter: Twitter
   openGraph: OpenGraph
   resumeList: DotListItemProp[]
