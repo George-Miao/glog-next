@@ -1,4 +1,4 @@
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 import Link from 'next/link'
 
 export interface TagListProp {
@@ -10,7 +10,7 @@ export interface TagListProp {
   delimiter?: string
 }
 
-const TagList = defineVFC<TagListProp>(
+const TagList = defineFC<TagListProp>(
   ({ list, formatter, prefix, postfix, className, delimiter }) => {
     return (
       <span>

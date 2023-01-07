@@ -4,37 +4,22 @@ import { sanitize } from 'isomorphic-dompurify'
 
 import { md } from '@core/render'
 
-import {
-  blockExcerptPattern,
-  cache,
-  moreExcerptPattern,
-  postsDir
-} from './common'
+import { blockExcerptPattern, moreExcerptPattern, postsDir } from './common'
 
 import { count } from '@wordpress/wordcount'
-import type { Ingot, Meta, MetaValidated, Rendered } from './type'
+import type { Ingot, Meta, MetaValidated, Rendered } from '@type/post'
 
-export const renderPost = async (slug: string): Promise<Rendered> => {
-  if (process.env.NODE_ENV === 'production' && cache.rendered?.[slug]) {
-    console.log(`Cache hit <${slug}>`)
-    return cache.rendered[slug]
-  } else {
-    return await readData(slug)
-      .then(extractMeta)
-      .then(({ meta: metaUnchecked, raw, excerpt }) => {
-        const { html, text } = renderMarkdown(raw)
-        const meta = checkMeta(metaUnchecked)
-        meta.wordCount = count(text, 'words', {
-          l10n: { shortcodes: ['en', 'cn', 'zh'], type: 'words' }
-        })
-        return { meta, raw, slug, html, text, excerpt }
+export const renderPost = async (slug: string): Promise<Rendered> =>
+  await readData(slug)
+    .then(extractMeta)
+    .then(({ meta: metaUnchecked, raw, excerpt }) => {
+      const { html, text } = renderMarkdown(raw)
+      const meta = checkMeta(metaUnchecked)
+      meta.wordCount = count(text, 'words', {
+        l10n: { shortcodes: ['en', 'cn', 'zh'], type: 'words' }
       })
-      .then(r => {
-        cache.rendered[slug] = r
-        return r
-      })
-  }
-}
+      return { meta, raw, slug, html, text, excerpt }
+    })
 
 const readData = async (slug: string): Promise<string> => {
   const path = `${postsDir}/${slug}.md`

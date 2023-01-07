@@ -1,4 +1,4 @@
-import { defineVFCWithChild } from '@core/helper'
+import { defineFCWithChild } from '@core/helper'
 
 import Footer from '../footer'
 import NavBar from '../navbar'
@@ -11,7 +11,7 @@ import NavBar from '../navbar'
  * however content should
  * not take the entire <main />
  */
-const Layout = defineVFCWithChild(({ children, className }) => {
+const Layout = defineFCWithChild(({ children, className }) => {
   return (
     <div
       className='min-h-screen

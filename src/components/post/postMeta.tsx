@@ -1,5 +1,5 @@
-import { defineVFC } from '@core/helper'
-import type { MetaValidated } from '@core/post/type'
+import { defineFC } from '@core/helper'
+import type { MetaValidated } from '@type/post'
 import type { TagListProp } from '../tagList'
 import TagList from '../tagList'
 
@@ -9,7 +9,7 @@ const timeFormatConfig: Intl.DateTimeFormatOptions = {
   month: 'short'
 }
 
-const PostMeta = defineVFC<{ meta: MetaValidated; className?: string }>(
+const PostMeta = defineFC<{ meta: MetaValidated; className?: string }>(
   ({ meta, className }) => {
     const { categories, created, tags, wordCount } = meta
 
@@ -40,11 +40,11 @@ const PostMeta = defineVFC<{ meta: MetaValidated; className?: string }>(
 
     return (
       <div className={`${className ?? ''} font-sm`}>
-        <p className='text-warm-gray-500 text-sm relative z-10 mb-2'>
+        <p className='text-sm mb-2 text-warm-gray-500 z-10 relative'>
           {createFormatted} / {wordCount} words / in <TagList {...catList} />
         </p>
 
-        <p className='text-warm-gray-500 text-xs relative z-10 mb-4'>
+        <p className='text-xs mb-4 text-warm-gray-500 z-10 relative'>
           <TagList {...tagList}></TagList>
         </p>
       </div>

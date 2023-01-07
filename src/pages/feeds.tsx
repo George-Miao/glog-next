@@ -3,7 +3,7 @@ import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 
 const genItems = (name: string): DotListItemProp[] => [
   {
@@ -23,7 +23,7 @@ const genItems = (name: string): DotListItemProp[] => [
   }
 ]
 
-export default defineVFC(() => {
+export default defineFC(() => {
   return (
     <SafeArea>
       <SEO title='Feeds' />

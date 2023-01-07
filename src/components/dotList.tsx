@@ -1,4 +1,4 @@
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 
 export interface DotListItemProp {
   title: string
@@ -10,7 +10,7 @@ export interface DotListItemProp {
 
 export const defineDotListItems = (items: DotListItemProp[]) => items
 
-export const DotListItem = defineVFC<DotListItemProp>(
+export const DotListItem = defineFC<DotListItemProp>(
   ({ title, value, link, subtitle, className }) => {
     const subtitleClass =
       'flex-none mr-4 font-light text-warm-gray-400 inline-block leading-5'
@@ -65,7 +65,7 @@ export interface DotListProp {
   id?: string
 }
 
-export const DotList = defineVFC<DotListProp>(
+export const DotList = defineFC<DotListProp>(
   ({ items, title, className, id }) => {
     return (
       <div

@@ -1,22 +1,25 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
-import useSWR from 'swr'
+import React, { useEffect, useState } from 'react'
 
-import { defineVFC } from '@core/helper'
-import { ProjItem, ProjStatus } from '@core/projects/types'
+import { config } from '@config'
+import { defineFC } from '@core/helper'
 import { Icon } from '@iconify/react'
+import { ProjItem, ProjStatus } from '@type/proj'
 
-import { config } from '@core/config'
+import type { Photo, RenderPhotoProps } from 'react-photo-album'
+
 import type {
   ProjCategory as ProjCategoryProp,
   ProjIndicator
-} from '@core/projects/types'
+} from '@type/proj'
+
+export interface PseudoProjPhoto extends ProjCategoryProp, Photo {}
 
 const statusClassBase =
   'w-2 h-2 rounded-full inline-block absolute right-[12px] top-[12px]'
 const titleClassBase = 'text-lg font-sans inline-block transition-all mb-1'
 
-const Indicator = defineVFC<ProjIndicator>(
+const Indicator = defineFC<ProjIndicator>(
   ({ icon, className, label, link }) => {
     const inner = (
       <Icon
@@ -38,7 +41,7 @@ const Indicator = defineVFC<ProjIndicator>(
   }
 )
 
-const ProjItem = defineVFC<ProjItem>(
+const ProjItem = defineFC<ProjItem>(
   ({
     description,
     name,
@@ -55,15 +58,14 @@ const ProjItem = defineVFC<ProjItem>(
 
     const url = healthCheck ?? link
 
-    if (url) {
-      useSWR(async () => {
-        await fetch(config.corsProxy.replace('%s', url))
-          .then(res =>
-            setStatus(res.ok ? ProjStatus.Online : ProjStatus.Offline)
-          )
-          .catch(() => setStatus(ProjStatus.Offline))
-      })
-    }
+    useEffect(() => {
+      if (!url) {
+        return
+      }
+      fetch(config.corsProxy.replace('%s', url))
+        .then(res => setStatus(res.ok ? ProjStatus.Online : ProjStatus.Offline))
+        .catch(() => setStatus(ProjStatus.Offline))
+    }, [url])
 
     const iconComp = icon && (
       <Icon
@@ -165,10 +167,10 @@ const ProjItem = defineVFC<ProjItem>(
   }
 )
 
-const ProjCategory = defineVFC<ProjCategoryProp>(
-  ({ items, name, className, description, icon }) => {
+const ProjCategory = defineFC<RenderPhotoProps<PseudoProjPhoto>>(
+  ({ className, photo: { items, name, description, icon }, wrapperStyle }) => {
     return (
-      <div className={`${className} text-left mb-8`}>
+      <div className={`${className} text-left mb-8`} style={wrapperStyle}>
         <div className='flex mb-8 <md:flex-row-reverse'>
           <div className='flex-grow'>
             <h1 className='font-sans text-xl text-red-800'>{name}</h1>

@@ -8,7 +8,7 @@ import Head from 'next/head'
 import Layout from '@comps/layout/layout'
 
 import SEO from '@comps/seo'
-import { defaultSeo } from '@core/config'
+import { defaultSeo } from '@config'
 import type { AppProps } from 'next/app'
 
 function App({ Component, pageProps }: AppProps) {

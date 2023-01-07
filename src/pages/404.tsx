@@ -2,9 +2,9 @@ import Button from '@comps/button'
 import Oops from '@comps/oops'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 
-const ServerErrorPage = defineVFC(() => {
+const ServerErrorPage = defineFC(() => {
   return (
     <>
       <SEO title='Not Found' />

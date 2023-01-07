@@ -1,7 +1,7 @@
 import Button from '@comps/button'
 import PostMeta from '@comps/post/postMeta'
-import { defineVFC } from '@core/helper'
-import type { MetaValidated } from '@core/post/type'
+import { defineFC } from '@core/helper'
+import type { MetaValidated } from '@type/post'
 import Title from '../title'
 
 export interface SummaryProp {
@@ -10,21 +10,19 @@ export interface SummaryProp {
   excerpt: string | null
 }
 
-const PostSummary = defineVFC<SummaryProp>(({ meta, slug, excerpt }) => {
+const PostSummary = defineFC<SummaryProp>(({ meta, slug, excerpt }) => {
   const href = `/writing/posts/${slug}`
   return (
     <summary
-      className='relative delim
-        grid gap-3
-        <md:(py-12)
-        md:(pl-12 pt-32 pb-24)
-      '
+      className='grid gap-3
+        relative delim
+        md:(pl-12 pt-32 pb-24) <md:(py-12) '
     >
-      <Title title={meta.title} link={href}></Title>
+      <Title title={meta.title} link={href} />
 
       <PostMeta meta={meta}></PostMeta>
 
-      <p className='<sm:text-sm text-warm-gray-600 relative z-10 mb-10'>
+      <p className='mb-10 text-warm-gray-600 z-10 relative <sm:text-sm'>
         {excerpt}
       </p>
 

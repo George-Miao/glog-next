@@ -1,15 +1,10 @@
 import { md } from '@core/render'
+import type { Changelog } from '@type/changelog'
 import { readFile } from 'fs/promises'
 import { sanitize } from 'isomorphic-dompurify'
 import { allIndexOf } from './helper'
 import { renderMarkdown } from './post/map'
 import { renderAllPost } from './post/reduce'
-
-export interface Changelog {
-  title: string
-  date: number
-  content: string
-}
 
 const titlePattern = /#([^#].*?)-(.*)/i
 

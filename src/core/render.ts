@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 import MarkdownIt from 'markdown-it'
-import { config } from './config'
+
+import { config } from '@config'
 
 const anchor = require('markdown-it-anchor')
 const container = require('markdown-it-container')

@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router'
 
-import { config } from './config'
+import { config } from '@config'
 
-export const genInt = (min: number, max: number) =>
-  Math.random() * (max - min) + min
+export const genWhole = (min: number, max: number) =>
+  Math.floor(Math.random() * (max - min) + min)
 
 export interface baseProp {
   className?: string
@@ -15,20 +15,16 @@ export interface childProp {
 
 type Empty = Record<string, never>
 
-export const defineVFC =
+export const defineFC =
   <P = Empty>(comp: React.FC<P & Required<baseProp>>) =>
   (prop: P & baseProp) => {
     const className = prop.className ?? ''
     return comp({ ...prop, className })
   }
 
-export const defineVFCWithChild = <P = childProp>(
+export const defineFCWithChild = <P = childProp>(
   comp: React.FC<childProp & P & Required<baseProp>>
-) => defineVFC<childProp & P>(comp)
-
-export const defineVFCWithClassAndChild = <P = baseProp>(
-  comp: React.FC<{ children: React.ReactNode } & baseProp & P>
-) => comp
+) => defineFC<childProp & P>(comp)
 
 export const definePage = <P = baseProp>(comp: React.FC<baseProp & P>) => comp
 
@@ -54,3 +50,8 @@ export const allIndexOf = (string: string, regex: RegExp) => {
 }
 
 export const useUrl = () => `https://${config.domain}${useRouter().asPath}`
+
+export const toTitleCase = (str: string) =>
+  str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
+  })

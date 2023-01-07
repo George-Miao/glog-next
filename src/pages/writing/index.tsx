@@ -1,6 +1,6 @@
 import type { GetStaticProps } from 'next'
 
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 import { renderAllPost } from '@core/post/reduce'
 
 import Button from '@comps/button'
@@ -31,7 +31,7 @@ const buttons = [
   ['Categories', '/writing/categories']
 ]
 
-export default defineVFC<PostListProp>(({ list }) => {
+export default defineFC<PostListProp>(({ list }) => {
   return (
     <SafeArea className='grid gap-8 md:gap-16 items-center'>
       <SEO title='Writing' />

@@ -1,6 +1,6 @@
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 
-const Logo = defineVFC(() => (
+const Logo = defineFC(() => (
   <svg
     data-name='Layer 1'
     xmlns='http://www.w3.org/2000/svg'

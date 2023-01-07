@@ -1,6 +1,6 @@
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 
-const Oops = defineVFC(() => {
+const Oops = defineFC(() => {
   return (
     <p className='relative z-100 oops'>
       OOPS

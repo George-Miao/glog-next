@@ -1,5 +1,5 @@
 import Button from '@comps/button'
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 
 interface PostLink {
   slug: string
@@ -11,7 +11,7 @@ export interface PostFooterProp {
   next: PostLink | null
 }
 
-const PostFooter = defineVFC<PostFooterProp>(({ prev, next }) => {
+const PostFooter = defineFC<PostFooterProp>(({ prev, next }) => {
   return (
     <div className='mt-12 flex justify-between space-x-4'>
       {prev ? (

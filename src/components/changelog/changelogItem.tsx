@@ -1,11 +1,11 @@
 import HTMLContent from '@comps/HTMLContent'
-import type { Changelog } from '@core/changelog'
-import { defineVFC } from '@core/helper'
+import type { Changelog } from '@type/changelog'
+import { defineFC } from '@core/helper'
 
 const toId = (str: string) =>
   encodeURIComponent(str.replaceAll(/\s+/gi, '_').toLowerCase())
 
-const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
+const ChangeLogItem = defineFC<Changelog & { bottomLine?: false }>(
   ({ content, date, title, className, bottomLine }) => {
     const showLine = bottomLine === undefined ? true : bottomLine
 
@@ -28,10 +28,9 @@ const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
       >
         <aside
           className='
-            <md:(mb-6)
-            md:(mr-4 mb-4 col-span-3)'
+            md:(mr-4 mb-4 col-span-3) <md:(mb-6) '
         >
-          <div className='md:(sticky top-12)'>
+          <div className='md:(sticky top-12) '>
             <a
               className='text-xl mb-2 block hover:text-red-800'
               href={`#${id}`}
@@ -39,8 +38,8 @@ const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
               {title}
             </a>
             <span
-              className='block
-              text-sm text-warm-gray-500 block'
+              className='text-sm
+              text-warm-gray-500 block '
             >
               {formattedDate}
             </span>
@@ -52,4 +51,4 @@ const ChangeLogCell = defineVFC<Changelog & { bottomLine?: false }>(
   }
 )
 
-export default ChangeLogCell
+export default ChangeLogItem

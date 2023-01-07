@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -16,10 +20,24 @@
     "incremental": true,
     "baseUrl": "./src",
     "paths": {
-      "@core/*": ["core/*"],
-      "@comps/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"]
+      "@core/*": [
+        "core/*"
+      ],
+      "@config": [
+        "config"
+      ],
+      "@type/*": [
+        "types/*"
+      ],
+      "@comps/*": [
+        "components/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ]
     }
   },
   "include": [
@@ -31,5 +49,7 @@
     "windi.config.js",
     "next-site.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { defineVFCWithChild } from '@core/helper'
+import { defineFCWithChild } from '@core/helper'
 
 export interface ButtonProp {
   href?: string
@@ -32,11 +32,10 @@ const styleClass: Record<Styles, string> = {
   `
 }
 
-const Button = defineVFCWithChild<ButtonProp>(
+const Button = defineFCWithChild<ButtonProp>(
   ({ href, onClick, children, className, style, prefix, postfix }) => {
     style = style ?? 'main'
     return (
-      // eslint-disable-next-line @next/next/link-passhref
       <Link
         href={href ?? ''}
         className={`

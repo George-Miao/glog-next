@@ -1,26 +1,17 @@
 import BreadCrumb from '@comps/breadcrumb'
-import type { DotListProp } from '@comps/dotList'
 import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
-import Title from '@comps/title'
-
 import SEO from '@comps/seo'
-import { defineVFC } from '@core/helper'
+import Title from '@comps/title'
+import { defineFC } from '@core/helper'
 import { renderAllPost } from '@core/post/reduce'
-import type { GetStaticProps } from 'next'
 
-interface ArticleItem {
-  slug: string
-  title: string
-  created: number
-}
-interface Category {
-  name: string
-  items: ArticleItem[]
-}
+import type { DotListProp } from '@comps/dotList'
+import type { GetStaticProps } from 'next'
+import type { ArticleItem, Articles } from '@type/article'
 
 interface Prop {
-  categories: Category[]
+  categories: Articles[]
 }
 
 export const getStaticProps: GetStaticProps<Prop> = () =>
@@ -49,7 +40,7 @@ export const getStaticProps: GetStaticProps<Prop> = () =>
     }
   })
 
-export default defineVFC<Prop>(({ categories }) => {
+export default defineFC<Prop>(({ categories }) => {
   const items: DotListProp[] = categories.map(cat => {
     return {
       title: cat.name,
@@ -68,7 +59,7 @@ export default defineVFC<Prop>(({ categories }) => {
     }
   })
   return (
-    <SafeArea className='md:(px-8) grid gap-4'>
+    <SafeArea className='grid gap-4 md:(px-8)'>
       <SEO title='Categories' />
 
       <BreadCrumb className='absolute sm:top-2 md:-top-16' />

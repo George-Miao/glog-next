@@ -1,6 +1,6 @@
 import { render as renderChangelog } from '@core/changelog'
-import { config, feedBase } from '@core/config'
-import { exists } from '@core/utils'
+import { config, feedBase } from '@config'
+import { exists } from '@core/comptime_utils'
 import { Feed } from 'feed'
 import { mkdir, writeFile } from 'fs/promises'
 import { renderAllPost } from './reduce'

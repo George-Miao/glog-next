@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 import Link from 'next/link'
 
 export interface BreadCrumb {
@@ -29,7 +29,7 @@ const useCrumbs = () => {
   return crumbs
 }
 
-const BreadCrumb = defineVFC<BreadCrumbProp>(
+const BreadCrumb = defineFC<BreadCrumbProp>(
   ({ crumbs: customCrumbs, className, separator }) => {
     const crumbs = customCrumbs ?? useCrumbs()
     const len = crumbs.length

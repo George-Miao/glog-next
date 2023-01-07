@@ -27,5 +27,3 @@ export enum ProjStatus {
   Online,
   Offline
 }
-
-export const defineProjCategories = (val: ProjCategory[]) => val

@@ -1,4 +1,4 @@
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 
 const commit = process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA
 const url =
@@ -12,7 +12,7 @@ const commitComp = commit && (
   </p>
 )
 
-const Footer = defineVFC(({ className }) => {
+const Footer = defineFC(({ className }) => {
   return (
     <footer
       className={`

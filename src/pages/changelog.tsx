@@ -1,11 +1,11 @@
-import ChangeLogCell from '@comps/changelog/changelogCell'
+import ChangeLogItem from '@comps/changelog/changelogItem'
 import SafeArea from '@comps/layout/safeArea'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
 import { render } from '@core/changelog'
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 
-import type { Changelog } from '@core/changelog'
+import type { Changelog } from '@type/changelog'
 import type { GetStaticProps } from 'next'
 
 interface Prop {
@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<Prop> = async () => {
   }
 }
 
-export default defineVFC<Prop>(({ changelogs }) => {
+export default defineFC<Prop>(({ changelogs }) => {
   const len = changelogs.length
   return (
     <SafeArea>
@@ -34,8 +34,8 @@ export default defineVFC<Prop>(({ changelogs }) => {
       <section className='grid '>
         {changelogs.map((changelog, id) => {
           if (id === len - 1)
-            return <ChangeLogCell key={id} {...changelog} bottomLine={false} />
-          else return <ChangeLogCell key={id} {...changelog} />
+            return <ChangeLogItem key={id} {...changelog} bottomLine={false} />
+          else return <ChangeLogItem key={id} {...changelog} />
         })}
       </section>
     </SafeArea>

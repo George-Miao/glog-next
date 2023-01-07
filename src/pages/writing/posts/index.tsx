@@ -5,7 +5,7 @@ import SafeArea from '@comps/layout/safeArea'
 import type { PostListProp } from '@comps/post/postList'
 import PostList from '@comps/post/postList'
 import SEO from '@comps/seo'
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 import { renderAllPost } from '@core/post/reduce'
 
 export const getStaticProps: GetStaticProps<PostListProp> = () =>
@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps<PostListProp> = () =>
     }
   })
 
-export default defineVFC<PostListProp>(({ list }) => {
+export default defineFC<PostListProp>(({ list }) => {
   return (
     <SafeArea>
       <SEO title='Posts' />

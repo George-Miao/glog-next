@@ -1,8 +1,8 @@
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 import Link from 'next/link'
-import type { TitleProp } from './type'
+import type { TitleProp } from '@type/title'
 
-const Title = defineVFC<TitleProp>(
+const Title = defineFC<TitleProp>(
   ({ title, link, uppercase, className, safeArea, subtitle }) => {
     const isPlainStr = typeof title === 'string'
 
@@ -29,7 +29,7 @@ const Title = defineVFC<TitleProp>(
     )
 
     const subtitleComp = subtitle && (
-      <p className='relative z-12 text-warm-gray-500 ml-1 md:ml-5 mt-3'>
+      <p className='mt-3 ml-1 text-warm-gray-500 z-12 relative md:ml-5'>
         {subtitle}
       </p>
     )
@@ -44,8 +44,8 @@ const Title = defineVFC<TitleProp>(
         {subtitleComp}
         <div
           className='
-          absolute -left-16 -top-20 block z-5
-          font-bold text-[190px] leading-[190px] text-warm-gray-200
+          font-bold -top-20 -left-16 text-[190px] text-warm-gray-200
+          leading-[190px] z-5 absolute block
           select-none <md:hidden'
         >
           {bigOChar}

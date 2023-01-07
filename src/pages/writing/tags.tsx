@@ -3,23 +3,15 @@ import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
-import { defineVFC } from '@core/helper'
+import { defineFC } from '@core/helper'
 import { renderAllPost } from '@core/post/reduce'
 
 import type { DotListProp } from '@comps/dotList'
 import type { GetStaticProps } from 'next'
-interface ArticleItem {
-  slug: string
-  title: string
-  created: number
-}
-interface Tag {
-  name: string
-  items: ArticleItem[]
-}
+import type { ArticleItem, Articles } from '@type/article'
 
 interface Prop {
-  tags: Tag[]
+  tags: Articles[]
 }
 
 export const getStaticProps: GetStaticProps<Prop> = () =>
@@ -48,7 +40,7 @@ export const getStaticProps: GetStaticProps<Prop> = () =>
     }
   })
 
-export default defineVFC<Prop>(({ tags }) => {
+export default defineFC<Prop>(({ tags }) => {
   const items: DotListProp[] = tags.map(tag => {
     return {
       title: tag.name,
@@ -67,7 +59,7 @@ export default defineVFC<Prop>(({ tags }) => {
     }
   })
   return (
-    <SafeArea className='md:(px-8) grid gap-4'>
+    <SafeArea className='grid gap-4 md:(px-8)'>
       <SEO title='Tags' />
 
       <BreadCrumb className='absolute sm:top-2 md:-top-16' />
