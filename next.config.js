@@ -73,7 +73,12 @@ const nextConfig = {
     ]
   },
   images: {
-    domains: ['imagedelivery.net', 'img.shields.io', 'placekitten.com', 'c2.staticflickr.com', 'c4.staticflickr.com']
+    domains: [
+      'imagedelivery.net',
+      'img.shields.io',
+      'placekitten.com',
+      'glog-photo.miao.dev'
+    ]
   }
 }
 

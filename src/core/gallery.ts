@@ -41,7 +41,7 @@ export const getPhotos: () => Promise<DetailedPhoto[]> = async () => {
   console.log(res)
   return res.map<DetailedPhoto>(x => {
     const { height, width } = x.size
-    return { height, width, src: x.url, ...x }
+    return { height, width, src: x.url + '?v=1', ...x }
   })
 }
 
