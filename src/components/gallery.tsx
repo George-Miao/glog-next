@@ -97,31 +97,31 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
   )
 })
 
-const Photo = defineFC<RenderPhotoProps<DetailedPhoto>>(
-  ({
+const Photo = defineFC<RenderPhotoProps<DetailedPhoto>>(p => {
+  const {
     photo,
     layout: { width, height },
     imageProps: { src, alt, title, style }
-  }) => {
-    return (
-      <article style={style} className='relative overflow-hidden'>
-        <PhotoDetail photo={photo} />
-        <div className='bg-neutral-100 p-1 top-0 right-0 bottom-0 left-0 absolute' />
-        <Image
-          src={src}
-          alt={alt}
-          title={title ?? undefined}
-          width={Math.floor(width)}
-          height={Math.floor(height)}
-          quality={100}
-          // unoptimized={true}
-          className='opacity-0 transition-all z-10 relative'
-          onLoadingComplete={e => e.classList.add('opacity-100')}
-        />
-      </article>
-    )
-  }
-)
+  } = p
+  console.log(p)
+  return (
+    <article style={style} className='relative overflow-hidden'>
+      <PhotoDetail photo={photo} />
+      <div className='bg-neutral-100 p-1 top-0 right-0 bottom-0 left-0 absolute' />
+      <Image
+        src={src}
+        alt={alt}
+        title={title ?? undefined}
+        width={Math.floor(width * 2)}
+        height={Math.floor(height * 2)}
+        quality={100}
+        // unoptimized={true}
+        className='h-full w-full opacity-0 transition-all z-10 relative'
+        onLoadingComplete={e => e.classList.add('opacity-100')}
+      />
+    </article>
+  )
+})
 
 const Gallery = defineFC(() => {
   const [photos, setPhotos] = useState<DetailedPhoto[] | null>(null)
@@ -135,6 +135,8 @@ const Gallery = defineFC(() => {
           className: 'mt-10 sm:mt-20'
         }
       }}
+      columns={w => (w > 500 ? 2 : 1)}
+      breakpoints={[620, 900]}
       layout='rows'
       targetRowHeight={300}
       photos={photos}
