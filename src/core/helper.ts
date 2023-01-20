@@ -26,8 +26,6 @@ export const defineFCWithChild = <P = childProp>(
   comp: React.FC<childProp & P & Required<baseProp>>
 ) => defineFC<childProp & P>(comp)
 
-export const definePage = <P = baseProp>(comp: React.FC<baseProp & P>) => comp
-
 export const regexIndexOf = (
   string: string,
   regex: RegExp,
