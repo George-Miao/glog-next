@@ -46,9 +46,9 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
     <div
       className='flex flex-col
       text-sm
-      opacity-0 p-3
-      transition-all top-0 right-0 bottom-0
-      left-0 text-neutral-100  leading-4
+      text-transparent opacity-0
+      opacity-70 p-3 top-0 right-0
+      bottom-0 left-0  leading-4
       z-20 justify-between
       select-none absolute
       hover:opacity-100
@@ -71,25 +71,30 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
         )}
       </div>
 
-      <div className='flex w-full items-center '>
-        {photo.location && (
-          <>
+      <div className='flex flex-wrap w-full gap-1 items-center justify-between'>
+        {photo.timestamp && (
+          <span className='flex'>
             <Icon
-              icon={'material-symbols:location-on-outline'}
+              icon='material-symbols:date-range-outline'
               inline
               className='mr-1'
             />
-            <span>{photo.location ?? 'Unknown'}</span>
-          </>
-        )}
-
-        {photo.timestamp && (
-          <span className='ml-auto'>
             {new Date(photo.timestamp).toLocaleDateString(undefined, {
               day: 'numeric',
               year: 'numeric',
               month: 'short'
             })}
+          </span>
+        )}
+
+        {photo.location && (
+          <span className='flex'>
+            <Icon
+              icon={'material-symbols:location-on-outline'}
+              inline
+              className='mr-1'
+            />
+            {photo.location ?? 'Unknown'}
           </span>
         )}
       </div>
@@ -112,8 +117,8 @@ const Photo = defineFC<RenderPhotoProps<DetailedPhoto>>(p => {
         src={src}
         alt={alt}
         title={title ?? undefined}
-        width={Math.floor(width * 2)}
-        height={Math.floor(height * 2)}
+        width={Math.floor(width * 1.5)}
+        height={Math.floor(height * 1.5)}
         quality={100}
         // unoptimized={true}
         className='h-full w-full opacity-0 transition-all z-10 relative'
@@ -141,6 +146,7 @@ const Gallery = defineFC(() => {
       targetRowHeight={300}
       photos={photos}
       renderPhoto={Photo}
+      rowConstraints={w => (w > 400 ? { maxPhotos: 3 } : { maxPhotos: 1 })}
     />
   ) : (
     <PlaceHolder />
