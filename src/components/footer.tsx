@@ -22,7 +22,7 @@ const Footer = defineFC(({ className }) => {
         mx-auto block flex flex-col items-center
       `}
     >
-      <p className='mb-2'>George Miao © 2022</p>
+      <p className='mb-2'>George Miao © 2022 - {new Date().getFullYear()}</p>
       <p className='text-sm mb-2'>
         Built with
         <a className='font-bold mx-1' href='https://nextjs.org/'>
