@@ -1,6 +1,6 @@
 ---
 title: 年轻人的第一个XP展板
-categories: [Tutorial]
+categories: [Article]
 tags: [zh-Hans-CN, NSFW]
 created: 2021-06-21 19:02:56
 ---

@@ -1,6 +1,6 @@
 ---
 title: Use fly.io to deploy your rust app
-categories: [Tutorial]
+categories: [Article]
 tags: [en-US, Rust, fly.io]
 created: 2022-05-24 17:12:29
 ---
@@ -81,7 +81,7 @@ Voilà! Now we have a simple http server, with Rust!
 
 ## Start our journey with fly.io
 
-It's time to introduce `flyctl`, which is the official CLI used to interact with fly.io API. It's feature rich, and very easy to use. I hope all cloud platforms have something similar! You can install `flyctl` by following the tutorial on [their document](https://fly.io/docs/getting-started/installing-flyctl/) and [login](https://fly.io/docs/getting-started/log-in-to-fly/).
+It's time to introduce `flyctl`, which is the official CLI used to interact with fly.io API. It's feature rich, and very easy to use. I hope all cloud platforms have something similar! You can install `flyctl` by following the Article on [their document](https://fly.io/docs/getting-started/installing-flyctl/) and [login](https://fly.io/docs/getting-started/log-in-to-fly/).
 
 Now initialize the project:
 

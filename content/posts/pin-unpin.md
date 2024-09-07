@@ -1,7 +1,7 @@
 ---
 title: Pin 和 Unpin，以及为什么 Rust 需要它们
 created: 2021-08-27 00:24:50
-categories: [Translate, Tutorial]
+categories: [Translate, Article]
 tags: [zh-Hans-CN, Rust]
 ---
 
