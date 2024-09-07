@@ -12,7 +12,7 @@
   }
 
   & a {
-    @apply text-red-800 font-normal whitespace-nowrap;
+    @apply text-red-800 font-normal;
 
     & code {
       @apply font-mono;
@@ -257,7 +257,7 @@
   }
 
   & code:not([class*='hljs']) {
-    @apply font-mono text-sm break-all px-2 mr-1 whitespace-nowrap;
+    @apply font-mono text-sm break-all px-1 whitespace-nowrap;
 
     color: #c7254e;
     background-color: #f9f2f4;
