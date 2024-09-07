@@ -204,3 +204,4 @@ public/robots.txt
 # Vercel dir
 .vercel
 
+.direnv/

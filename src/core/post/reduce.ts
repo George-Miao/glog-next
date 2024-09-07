@@ -1,4 +1,4 @@
-import glob from 'glob'
+import { glob } from 'glob'
 
 import { postsDir, slugPattern } from './common'
 import { renderPost } from './map'
@@ -10,25 +10,17 @@ const getSlugFromPath = (path: string) => {
 }
 
 export const getPostList: () => Promise<PostPath[]> = async () => {
-  return new Promise((res, rej) =>
-    glob(`${postsDir}/*.md`, (err, match) => {
-      if (err) rej(err)
-      else {
-        res(
-          match.map(path => {
-            const slug = getSlugFromPath(path)
-            if (!slug) {
-              throw Error(`Bad post filename, unable to retreive slug: ${path}`)
-            }
-            return {
-              path,
-              slug
-            }
-          })
-        )
-      }
-    })
-  )
+  const files = await glob(`${postsDir}/*.md`)
+  return files.map(path => {
+    const slug = getSlugFromPath(path)
+    if (!slug) {
+      throw Error(`Bad post filename, unable to retreive slug: ${path}`)
+    }
+    return {
+      path,
+      slug
+    }
+  })
 }
 
 export const renderAllPost: () => Promise<Rendered[]> = () =>
