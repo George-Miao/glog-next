@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { config } from '@config'
 import { defineFC } from '@core/helper'
 import { Icon } from '@iconify/react'
-import { ProjItem, ProjStatus } from '@type/proj'
+import { type ProjItem, ProjStatus } from '@type/proj'
 
 import type { Photo, RenderPhotoProps } from 'react-photo-album'
 
@@ -41,7 +41,7 @@ const Indicator = defineFC<ProjIndicator>(
   }
 )
 
-const ProjItem = defineFC<ProjItem>(
+const ProjItemComp = defineFC<ProjItem>(
   ({
     description,
     name,
@@ -80,8 +80,8 @@ const ProjItem = defineFC<ProjItem>(
       status === ProjStatus.Init
         ? undefined
         : status === ProjStatus.Online
-        ? 'Service online'
-        : 'Service unreachable'
+          ? 'Service online'
+          : 'Service unreachable'
     const statusComp =
       status === ProjStatus.Online ? (
         <span
@@ -137,10 +137,10 @@ const ProjItem = defineFC<ProjItem>(
             />
           </Link>
         )}
-        {indicators &&
-          indicators.map((indicator, key) => (
-            <Indicator {...indicator} key={key} />
-          ))}
+        {indicators?.map((indicator, key) => (
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          <Indicator {...indicator} key={key} />
+        ))}
       </div>
     )
 
@@ -186,7 +186,8 @@ const ProjCategory = defineFC<RenderPhotoProps<PseudoProjPhoto>>(
         </div>
 
         {items.map((item, key) => (
-          <ProjItem {...item} key={key} />
+          // biome-ignore lint/suspicious/noArrayIndexKey: Order will NOT change
+          <ProjItemComp {...item} key={key} />
         ))}
       </div>
     )

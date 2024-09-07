@@ -52,6 +52,7 @@ export const allIndexOf = (string: string, regex: RegExp) => {
 export const useUrl = () => `https://${config.domain}${useRouter().asPath}`
 
 export const toTitleCase = (str: string) =>
-  str.replace(/\w\S*/g, function (txt) {
-    return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
-  })
+  str.replace(
+    /\w\S*/g,
+    txt => txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
+  )

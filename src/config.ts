@@ -75,7 +75,11 @@ export const config: GlogConfig = {
       value: '2019 Summer',
       subtitle: 'HOYA summer'
     },
-    { title: 'Montverde Academy', value: '2018 - 2020', subtitle: 'Highschool' }
+    {
+      title: 'Montverde Academy',
+      value: '2018 - 2020',
+      subtitle: 'Highschool'
+    }
   ],
   linksList: [
     {

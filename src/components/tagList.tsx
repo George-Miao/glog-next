@@ -26,9 +26,7 @@ const TagList = defineFC<TagListProp>(
             <span key={i}>
               <Link
                 href={tag.link}
-                className={`${
-                  className ?? ''
-                } mr-1.5 text-red-800 filter transition-all
+                className={`${className ?? ''} mr-1.5 text-red-800 filter transition-all
                   hover:brightness-130 relative
                   after:(
                     absolute bottom-0

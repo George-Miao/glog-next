@@ -27,10 +27,7 @@
     "Saas",
     "unoptimized"
   ],
-  "hide-files.files": [
-    ".next",
-    ".vercel"
-  ],
+  "hide-files.files": [".next", ".vercel"],
   "grammarly.selectors": [
     {
       "language": "markdown",
