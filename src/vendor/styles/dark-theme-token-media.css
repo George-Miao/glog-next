@@ -1,0 +1,14 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-token-blue: hsl(202, 100%, 75%);
+    --c-token-gray: hsl(229, 23%, 44%);
+    --c-token-green: hsl(89, 51%, 61%);
+    --c-token-indigo: hsl(221, 89%, 72%);
+    --c-token-indigo-light: hsl(230, 94%, 82%);
+    --c-token-orange: hsl(22, 100%, 70%);
+    --c-token-purple: hsl(261, 85%, 79%);
+    --c-token-red: hsl(351, 95%, 71%);
+    --c-token-violet: hsl(315, 43%, 47%);
+    --c-token-white: hsl(230, 63%, 85%);
+  }
+}

@@ -1,0 +1,8 @@
+:root.dark {
+  --c-code-block-border: hsl(0, 0%, 0%);
+  --c-code-block-highlight: hsl(221, 89%, 72%);
+  --c-code-block-text: hsl(222, 17%, 73%);
+  --bg-code-block-highlight: hsla(225, 22%, 41%, 0.3);
+  --bg-code-block: hsl(240, 15%, 10%);
+  --bg-code-block-title: hsl(240, 15%, 8%);
+}

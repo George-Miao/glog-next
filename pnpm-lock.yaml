@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       next:
-        specifier: ^13.5.6
-        version: 13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^14.2.8
+        version: 14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -72,24 +72,21 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
-      highlight.js:
-        specifier: ^11.10.0
-        version: 11.10.0
       isomorphic-dompurify:
         specifier: ^0.24.0
         version: 0.24.0
       markdown-it:
-        specifier: ^13.0.2
-        version: 13.0.2
+        specifier: ^14.1.0
+        version: 14.1.0
       markdown-it-abbr:
         specifier: ^1.0.4
         version: 1.0.4
       markdown-it-anchor:
         specifier: ^8.6.7
-        version: 8.6.7(@types/markdown-it@12.2.3)(markdown-it@13.0.2)
+        version: 8.6.7(@types/markdown-it@12.2.3)(markdown-it@14.1.0)
       markdown-it-attrs:
         specifier: ^4.2.0
-        version: 4.2.0(markdown-it@13.0.2)
+        version: 4.2.0(markdown-it@14.1.0)
       markdown-it-container:
         specifier: ^3.0.0
         version: 3.0.0
@@ -105,9 +102,6 @@ importers:
       markdown-it-footnote:
         specifier: ^3.0.3
         version: 3.0.3
-      markdown-it-highlightjs:
-        specifier: ^4.1.0
-        version: 4.1.0
       markdown-it-image-lazy-loading:
         specifier: ^1.2.0
         version: 1.2.0
@@ -140,19 +134,22 @@ importers:
         version: 1.0.6
       next-remote-watch:
         specifier: ^2.0.0
-        version: 2.0.0(next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 2.0.0(next@14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       next-seo:
         specifier: ^5.15.0
-        version: 5.15.0(next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.15.0(next@14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-sitemap:
         specifier: ^3.1.55
-        version: 3.1.55(@next/env@13.5.6)(next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 3.1.55(@next/env@14.2.8)(next@14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       postcss-nesting:
         specifier: ^10.2.0
-        version: 10.2.0(postcss@8.4.31)
+        version: 10.2.0(postcss@8.4.45)
       postcss-preset-env:
         specifier: ^7.8.3
-        version: 7.8.3(postcss@8.4.31)
+        version: 7.8.3(postcss@8.4.45)
+      prismjs:
+        specifier: ^1.29.0
+        version: 1.29.0
       sharp:
         specifier: ^0.31.3
         version: 0.31.3
@@ -977,8 +974,8 @@ packages:
     resolution: {integrity: sha512-hHhqrFWEdLIXk9orU3O4i8hg3rEgXhf89nCEJcATdZT9M2/JiCIRErW06d7TuVT335Ed16YAugK20hflmXvUCw==}
     hasBin: true
 
-  '@next/env@13.5.6':
-    resolution: {integrity: sha512-Yac/bV5sBGkkEXmAX5FWPS9Mmo2rthrOPRQQNfycJPkjUAUclomCPH7QFVCDQ4Mp2k2K1SSM6m0zrxYrOwtFQw==}
+  '@next/env@14.2.8':
+    resolution: {integrity: sha512-L44a+ynqkolyNBnYfF8VoCiSrjSZWgEHYKkKLGcs/a80qh7AkfVUD/MduVPgdsWZ31tgROR+yJRA0PZjSVBXWQ==}
 
   '@next/eslint-plugin-next@13.1.1':
     resolution: {integrity: sha512-SBrOFS8PC3nQ5aeZmawJkjKkWjwK9RoxvBSv/86nZp0ubdoVQoko8r8htALd9ufp16NhacCdqhu9bzZLDWtALQ==}
@@ -986,56 +983,56 @@ packages:
   '@next/font@13.5.6':
     resolution: {integrity: sha512-urmUq05uCVJsBqAAJEV+xK5OTTodrSxdiG+351SOSjlWctywdBM6qX+K9pIe3K48RxjfnxlBbXjGyOJAji+pfw==}
 
-  '@next/swc-darwin-arm64@13.5.6':
-    resolution: {integrity: sha512-5nvXMzKtZfvcu4BhtV0KH1oGv4XEW+B+jOfmBdpFI3C7FrB/MfujRpWYSBBO64+qbW8pkZiSyQv9eiwnn5VIQA==}
+  '@next/swc-darwin-arm64@14.2.8':
+    resolution: {integrity: sha512-1VrQlG8OzdyvvGZhGJFnaNE2P10Jjy/2FopnqbY0nSa/gr8If3iINxvOEW3cmVeoAYkmW0RsBazQecA2dBFOSw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@next/swc-darwin-x64@13.5.6':
-    resolution: {integrity: sha512-6cgBfxg98oOCSr4BckWjLLgiVwlL3vlLj8hXg2b+nDgm4bC/qVXXLfpLB9FHdoDu4057hzywbxKvmYGmi7yUzA==}
+  '@next/swc-darwin-x64@14.2.8':
+    resolution: {integrity: sha512-87t3I86rNRSOJB1gXIUzaQWWSWrkWPDyZGsR0Z7JAPtLeX3uUOW2fHxl7dNWD2BZvbvftctTQjgtfpp7nMtmWg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@next/swc-linux-arm64-gnu@13.5.6':
-    resolution: {integrity: sha512-txagBbj1e1w47YQjcKgSU4rRVQ7uF29YpnlHV5xuVUsgCUf2FmyfJ3CPjZUvpIeXCJAoMCFAoGnbtX86BK7+sg==}
+  '@next/swc-linux-arm64-gnu@14.2.8':
+    resolution: {integrity: sha512-ta2sfVzbOpTbgBrF9HM5m+U58dv6QPuwU4n5EX4LLyCJGKc433Z0D9h9gay/HSOjLEXJ2fJYrMP5JYYbHdxhtw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-arm64-musl@13.5.6':
-    resolution: {integrity: sha512-cGd+H8amifT86ZldVJtAKDxUqeFyLWW+v2NlBULnLAdWsiuuN8TuhVBt8ZNpCqcAuoruoSWynvMWixTFcroq+Q==}
+  '@next/swc-linux-arm64-musl@14.2.8':
+    resolution: {integrity: sha512-+IoLTPK6Z5uIgDhgeWnQF5/o5GBN7+zyUNrs4Bes1W3g9++YELb8y0unFybS8s87ntAKMDl6jeQ+mD7oNwp/Ng==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-x64-gnu@13.5.6':
-    resolution: {integrity: sha512-Mc2b4xiIWKXIhBy2NBTwOxGD3nHLmq4keFk+d4/WL5fMsB8XdJRdtUlL87SqVCTSaf1BRuQQf1HvXZcy+rq3Nw==}
+  '@next/swc-linux-x64-gnu@14.2.8':
+    resolution: {integrity: sha512-pO+hVXC+mvzUOQJJRG4RX4wJsRJ5BkURSf6dD6EjUXAX4Ml9es1WsEfkaZ4lcpmFzFvY47IkDaffks/GdCn9ag==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-linux-x64-musl@13.5.6':
-    resolution: {integrity: sha512-CFHvP9Qz98NruJiUnCe61O6GveKKHpJLloXbDSWRhqhkJdZD2zU5hG+gtVJR//tyW897izuHpM6Gtf6+sNgJPQ==}
+  '@next/swc-linux-x64-musl@14.2.8':
+    resolution: {integrity: sha512-bCat9izctychCtf3uL1nqHq31N5e1VxvdyNcBQflkudPMLbxVnlrw45Vi87K+lt1CwrtVayHqzo4ie0Szcpwzg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-win32-arm64-msvc@13.5.6':
-    resolution: {integrity: sha512-aFv1ejfkbS7PUa1qVPwzDHjQWQtknzAZWGTKYIAaS4NMtBlk3VyA6AYn593pqNanlicewqyl2jUhQAaFV/qXsg==}
+  '@next/swc-win32-arm64-msvc@14.2.8':
+    resolution: {integrity: sha512-gbxfUaSPV7EyUobpavida2Hwi62GhSJaSg7iBjmBWoxkxlmETOD7U4tWt763cGIsyE6jM7IoNavq0BXqwdW2QA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@next/swc-win32-ia32-msvc@13.5.6':
-    resolution: {integrity: sha512-XqqpHgEIlBHvzwG8sp/JXMFkLAfGLqkbVsyN+/Ih1mR8INb6YCc2x/Mbwi6hsAgUnqQztz8cvEbHJUbSl7RHDg==}
+  '@next/swc-win32-ia32-msvc@14.2.8':
+    resolution: {integrity: sha512-PUXzEzjTTlUh3b5VAn1nlpwvujTnuCMMwbiCnaTazoVlN1nA3kWjlmp42IfURA2N/nyrlVEw7pURa/o4Qxj1cw==}
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
 
-  '@next/swc-win32-x64-msvc@13.5.6':
-    resolution: {integrity: sha512-Cqfe1YmOS7k+5mGu92nl5ULkzpKuxJrP3+4AEuPmrpFZ3BHxTY3TnHmU1On3bFmFFs6FbTcdF58CCUProGpIGQ==}
+  '@next/swc-win32-x64-msvc@14.2.8':
+    resolution: {integrity: sha512-EnPKv0ttq02E9/1KZ/8Dn7kuutv6hy1CKc0HlNcvzOQcm4/SQtvfws5gY0zrG9tuupd3HfC2L/zcTrnBhpjTuQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -1066,8 +1063,11 @@ packages:
   '@rushstack/eslint-patch@1.10.4':
     resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
 
-  '@swc/helpers@0.5.2':
-    resolution: {integrity: sha512-E4KcWTpoLHqwPHLxidpOqQbcrZVgi0rsmmZXUle1jXmJfuIf/UWpczUJ7MZZ5tlxytgJXyp0w4PGkkeLiuIdZw==}
+  '@swc/counter@0.1.3':
+    resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
+
+  '@swc/helpers@0.5.5':
+    resolution: {integrity: sha512-KGYxvIOXcceOAbEk4bi/dVLEK9z8sZ0uBB3Il5b1rhfClSpcX0yfRO0KmTkqR2cnQDymwLB+25ZyMzICg/cm/A==}
 
   '@tootallnate/once@2.0.0':
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -1849,10 +1849,6 @@ packages:
   entities@2.2.0:
     resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
 
-  entities@3.0.1:
-    resolution: {integrity: sha512-WiyBqoomrwMdFG1e0kqvASYfnlb0lp8M5o5Fw2OFq1hNZxxcNk8Ik0Xm7LxzBhuidnZB/UtBqVCgUz3kBOP51Q==}
-    engines: {node: '>=0.12'}
-
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
@@ -2240,9 +2236,6 @@ packages:
     resolution: {integrity: sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A==}
     engines: {node: '>=10.13.0'}
 
-  glob-to-regexp@0.4.1:
-    resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
-
   glob@11.0.0:
     resolution: {integrity: sha512-9UiX/Bl6J2yaBbxKoEBRm4Cipxgok8kQYcOPEhScPwebu2I0HoQOuYdIO6S3hLuWoZgpDpwQZMzTFxgpkyT76g==}
     engines: {node: 20 || >=22}
@@ -2341,10 +2334,6 @@ packages:
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
-
-  highlight.js@11.10.0:
-    resolution: {integrity: sha512-SYVnVFswQER+zu1laSya563s+F8VDGt7o35d4utbamowvUNLLMovFqwCLSocpZTz3MgaSRA1IbqRWZv97dtErQ==}
-    engines: {node: '>=12.0.0'}
 
   hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -2733,8 +2722,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  linkify-it@4.0.1:
-    resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==}
+  linkify-it@5.0.0:
+    resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
 
   loader-utils@2.0.4:
     resolution: {integrity: sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==}
@@ -2831,9 +2820,6 @@ packages:
   markdown-it-footnote@3.0.3:
     resolution: {integrity: sha512-YZMSuCGVZAjzKMn+xqIco9d1cLGxbELHZ9do/TSYVzraooV8ypsppKNmUJ0fVH5ljkCInQAtFpm8Rb3eXSrt5w==}
 
-  markdown-it-highlightjs@4.1.0:
-    resolution: {integrity: sha512-aYcgme5aYn10BHEvLZaCNgwxU2oaAX9inK9dwCv38wJdq7tal5FzZrLdQQY8MR3I1H07S3BKgYGRX2kKuPT+sA==}
-
   markdown-it-image-lazy-loading@1.2.0:
     resolution: {integrity: sha512-/aeNoa7DxCe3Ey01sF68shdj5JML+ixzr0adWAliwJZp0lpezl84iLCWybhcmCmSZgX0RcO7wGKzXMOI57RbKQ==}
 
@@ -2864,12 +2850,12 @@ packages:
   markdown-it-task-checkbox@1.0.6:
     resolution: {integrity: sha512-7pxkHuvqTOu3iwVGmDPeYjQg+AIS9VQxzyLP9JCg9lBjgPAJXGEkChK6A2iFuj3tS0GV3HG2u5AMNhcQqwxpJw==}
 
-  markdown-it@13.0.2:
-    resolution: {integrity: sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==}
+  markdown-it@14.1.0:
+    resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
     hasBin: true
 
-  mdurl@1.0.1:
-    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
+  mdurl@2.0.0:
+    resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
 
   media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
@@ -3011,17 +2997,20 @@ packages:
       '@next/env': '*'
       next: '*'
 
-  next@13.5.6:
-    resolution: {integrity: sha512-Y2wTcTbO4WwEsVb4A8VSnOsG1I9ok+h74q0ZdxkwM3EODqrs4pasq7O0iUxbcS9VtWMicG7f3+HAj0r1+NtKSw==}
-    engines: {node: '>=16.14.0'}
+  next@14.2.8:
+    resolution: {integrity: sha512-EyEyJZ89r8C5FPlS/401AiF3O8jeMtHIE+bLom9MwcdWJJFBgRl+MR/2VgO0v5bI6tQORNY0a0DR5sjpFNrjbg==}
+    engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
+      '@playwright/test': ^1.41.2
       react: ^18.2.0
       react-dom: ^18.2.0
       sass: ^1.3.0
     peerDependenciesMeta:
       '@opentelemetry/api':
+        optional: true
+      '@playwright/test':
         optional: true
       sass:
         optional: true
@@ -3432,6 +3421,10 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
+  postcss@8.4.45:
+    resolution: {integrity: sha512-7KTLTdzdZZYscUc65XmjFiB73vBhBfbPztCYdUNvlaso9PrzjzcmjqBPR0lNGkcVlcO4BjiO5rK/qNz+XAen1Q==}
+    engines: {node: ^10 || ^12 || >=14}
+
   prebuild-install@7.1.2:
     resolution: {integrity: sha512-UnNke3IQb6sgarcZIDU3gbMeTp/9SSU1DAIkil7PrqG1vZlBtY5msYccSKSHDqa3hNg436IXK+SNImReuA1wEQ==}
     engines: {node: '>=10'}
@@ -3440,6 +3433,10 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  prismjs@1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
 
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -3456,6 +3453,10 @@ packages:
 
   pump@3.0.0:
     resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
+
+  punycode.js@2.3.1:
+    resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
+    engines: {node: '>=6'}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -4047,8 +4048,8 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  uc.micro@1.0.6:
-    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
+  uc.micro@2.1.0:
+    resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
   unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
@@ -4125,10 +4126,6 @@ packages:
   w3c-xmlserializer@4.0.0:
     resolution: {integrity: sha512-d+BFHzbiCx6zGfz0HyQ6Rg69w9k19nviJspaj4yNscGjrHu94sVP+aRm75yEbCh+r2/yR+7q6hux9LVtbuTGBw==}
     engines: {node: '>=14'}
-
-  watchpack@2.4.0:
-    resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}
-    engines: {node: '>=10.13.0'}
 
   webidl-conversions@7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
@@ -4252,7 +4249,7 @@ snapshots:
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.24.7
-      picocolors: 1.0.0
+      picocolors: 1.1.0
 
   '@babel/compat-data@7.25.4': {}
 
@@ -4419,7 +4416,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.0
+      picocolors: 1.1.0
 
   '@babel/parser@7.25.6':
     dependencies:
@@ -5098,79 +5095,79 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@csstools/postcss-cascade-layers@1.1.1(postcss@8.4.31)':
+  '@csstools/postcss-cascade-layers@1.1.1(postcss@8.4.45)':
     dependencies:
       '@csstools/selector-specificity': 2.2.0(postcss-selector-parser@6.1.2)
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  '@csstools/postcss-color-function@1.1.1(postcss@8.4.31)':
+  '@csstools/postcss-color-function@1.1.1(postcss@8.4.45)':
     dependencies:
-      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.31)
-      postcss: 8.4.31
+      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.45)
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-font-format-keywords@1.0.1(postcss@8.4.31)':
+  '@csstools/postcss-font-format-keywords@1.0.1(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-hwb-function@1.0.2(postcss@8.4.31)':
+  '@csstools/postcss-hwb-function@1.0.2(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-ic-unit@1.0.1(postcss@8.4.31)':
+  '@csstools/postcss-ic-unit@1.0.1(postcss@8.4.45)':
     dependencies:
-      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.31)
-      postcss: 8.4.31
+      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.45)
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-is-pseudo-class@2.0.7(postcss@8.4.31)':
+  '@csstools/postcss-is-pseudo-class@2.0.7(postcss@8.4.45)':
     dependencies:
       '@csstools/selector-specificity': 2.2.0(postcss-selector-parser@6.1.2)
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  '@csstools/postcss-nested-calc@1.0.0(postcss@8.4.31)':
+  '@csstools/postcss-nested-calc@1.0.0(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-normalize-display-values@1.0.1(postcss@8.4.31)':
+  '@csstools/postcss-normalize-display-values@1.0.1(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-oklab-function@1.1.1(postcss@8.4.31)':
+  '@csstools/postcss-oklab-function@1.1.1(postcss@8.4.45)':
     dependencies:
-      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.31)
-      postcss: 8.4.31
+      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.45)
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-progressive-custom-properties@1.3.0(postcss@8.4.31)':
+  '@csstools/postcss-progressive-custom-properties@1.3.0(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-stepped-value-functions@1.0.1(postcss@8.4.31)':
+  '@csstools/postcss-stepped-value-functions@1.0.1(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-text-decoration-shorthand@1.0.0(postcss@8.4.31)':
+  '@csstools/postcss-text-decoration-shorthand@1.0.0(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-trigonometric-functions@1.0.2(postcss@8.4.31)':
+  '@csstools/postcss-trigonometric-functions@1.0.2(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  '@csstools/postcss-unset-value@1.0.2(postcss@8.4.31)':
+  '@csstools/postcss-unset-value@1.0.2(postcss@8.4.45)':
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
   '@csstools/selector-specificity@2.2.0(postcss-selector-parser@6.1.2)':
     dependencies:
@@ -5261,7 +5258,7 @@ snapshots:
       - '@babel/preset-env'
       - supports-color
 
-  '@next/env@13.5.6': {}
+  '@next/env@14.2.8': {}
 
   '@next/eslint-plugin-next@13.1.1':
     dependencies:
@@ -5269,31 +5266,31 @@ snapshots:
 
   '@next/font@13.5.6': {}
 
-  '@next/swc-darwin-arm64@13.5.6':
+  '@next/swc-darwin-arm64@14.2.8':
     optional: true
 
-  '@next/swc-darwin-x64@13.5.6':
+  '@next/swc-darwin-x64@14.2.8':
     optional: true
 
-  '@next/swc-linux-arm64-gnu@13.5.6':
+  '@next/swc-linux-arm64-gnu@14.2.8':
     optional: true
 
-  '@next/swc-linux-arm64-musl@13.5.6':
+  '@next/swc-linux-arm64-musl@14.2.8':
     optional: true
 
-  '@next/swc-linux-x64-gnu@13.5.6':
+  '@next/swc-linux-x64-gnu@14.2.8':
     optional: true
 
-  '@next/swc-linux-x64-musl@13.5.6':
+  '@next/swc-linux-x64-musl@14.2.8':
     optional: true
 
-  '@next/swc-win32-arm64-msvc@13.5.6':
+  '@next/swc-win32-arm64-msvc@14.2.8':
     optional: true
 
-  '@next/swc-win32-ia32-msvc@13.5.6':
+  '@next/swc-win32-ia32-msvc@14.2.8':
     optional: true
 
-  '@next/swc-win32-x64-msvc@13.5.6':
+  '@next/swc-win32-x64-msvc@14.2.8':
     optional: true
 
   '@nodelib/fs.scandir@2.1.5':
@@ -5317,8 +5314,11 @@ snapshots:
 
   '@rushstack/eslint-patch@1.10.4': {}
 
-  '@swc/helpers@0.5.2':
+  '@swc/counter@0.1.3': {}
+
+  '@swc/helpers@0.5.5':
     dependencies:
+      '@swc/counter': 0.1.3
       tslib: 2.7.0
 
   '@tootallnate/once@2.0.0': {}
@@ -5660,14 +5660,14 @@ snapshots:
 
   atob@2.1.2: {}
 
-  autoprefixer@10.4.20(postcss@8.4.31):
+  autoprefixer@10.4.20(postcss@8.4.45):
     dependencies:
       browserslist: 4.23.3
       caniuse-lite: 1.0.30001658
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.0
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -5967,19 +5967,19 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  css-blank-pseudo@3.0.3(postcss@8.4.31):
+  css-blank-pseudo@3.0.3(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  css-has-pseudo@3.0.4(postcss@8.4.31):
+  css-has-pseudo@3.0.4(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  css-prefers-color-scheme@6.0.3(postcss@8.4.31):
+  css-prefers-color-scheme@6.0.3(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
   css-select@4.3.0:
     dependencies:
@@ -6178,8 +6178,6 @@ snapshots:
       tapable: 2.2.1
 
   entities@2.2.0: {}
-
-  entities@3.0.1: {}
 
   entities@4.5.0: {}
 
@@ -6790,8 +6788,6 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
-  glob-to-regexp@0.4.1: {}
-
   glob@11.0.0:
     dependencies:
       foreground-child: 3.3.0
@@ -6907,8 +6903,6 @@ snapshots:
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
-
-  highlight.js@11.10.0: {}
 
   hosted-git-info@2.8.9: {}
 
@@ -7331,9 +7325,9 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  linkify-it@4.0.1:
+  linkify-it@5.0.0:
     dependencies:
-      uc.micro: 1.0.6
+      uc.micro: 2.1.0
 
   loader-utils@2.0.4:
     dependencies:
@@ -7398,14 +7392,14 @@ snapshots:
 
   markdown-it-abbr@1.0.4: {}
 
-  markdown-it-anchor@8.6.7(@types/markdown-it@12.2.3)(markdown-it@13.0.2):
+  markdown-it-anchor@8.6.7(@types/markdown-it@12.2.3)(markdown-it@14.1.0):
     dependencies:
       '@types/markdown-it': 12.2.3
-      markdown-it: 13.0.2
+      markdown-it: 14.1.0
 
-  markdown-it-attrs@4.2.0(markdown-it@13.0.2):
+  markdown-it-attrs@4.2.0(markdown-it@14.1.0):
     dependencies:
-      markdown-it: 13.0.2
+      markdown-it: 14.1.0
 
   markdown-it-container@3.0.0: {}
 
@@ -7416,10 +7410,6 @@ snapshots:
   markdown-it-external-links@0.0.6: {}
 
   markdown-it-footnote@3.0.3: {}
-
-  markdown-it-highlightjs@4.1.0:
-    dependencies:
-      highlight.js: 11.10.0
 
   markdown-it-image-lazy-loading@1.2.0:
     dependencies:
@@ -7443,15 +7433,16 @@ snapshots:
 
   markdown-it-task-checkbox@1.0.6: {}
 
-  markdown-it@13.0.2:
+  markdown-it@14.1.0:
     dependencies:
       argparse: 2.0.1
-      entities: 3.0.1
-      linkify-it: 4.0.1
-      mdurl: 1.0.1
-      uc.micro: 1.0.6
+      entities: 4.5.0
+      linkify-it: 5.0.0
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.1.0
 
-  mdurl@1.0.1: {}
+  mdurl@2.0.0: {}
 
   media-typer@0.3.0: {}
 
@@ -7582,50 +7573,50 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next-remote-watch@2.0.0(next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  next-remote-watch@2.0.0(next@14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       chalk: 4.1.2
       chokidar: 3.6.0
       commander: 5.1.0
       express: 4.19.2
-      next: 13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
       - supports-color
 
-  next-seo@5.15.0(next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next-seo@5.15.0(next@14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      next: 13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  next-sitemap@3.1.55(@next/env@13.5.6)(next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  next-sitemap@3.1.55(@next/env@14.2.8)(next@14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@corex/deepmerge': 4.0.43
-      '@next/env': 13.5.6
+      '@next/env': 14.2.8
       minimist: 1.2.8
-      next: 13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next@14.2.8(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@next/env': 13.5.6
-      '@swc/helpers': 0.5.2
+      '@next/env': 14.2.8
+      '@swc/helpers': 0.5.5
       busboy: 1.6.0
       caniuse-lite: 1.0.30001658
+      graceful-fs: 4.2.11
       postcss: 8.4.31
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       styled-jsx: 5.1.1(@babel/core@7.25.2)(react@18.3.1)
-      watchpack: 2.4.0
     optionalDependencies:
-      '@next/swc-darwin-arm64': 13.5.6
-      '@next/swc-darwin-x64': 13.5.6
-      '@next/swc-linux-arm64-gnu': 13.5.6
-      '@next/swc-linux-arm64-musl': 13.5.6
-      '@next/swc-linux-x64-gnu': 13.5.6
-      '@next/swc-linux-x64-musl': 13.5.6
-      '@next/swc-win32-arm64-msvc': 13.5.6
-      '@next/swc-win32-ia32-msvc': 13.5.6
-      '@next/swc-win32-x64-msvc': 13.5.6
+      '@next/swc-darwin-arm64': 14.2.8
+      '@next/swc-darwin-x64': 14.2.8
+      '@next/swc-linux-arm64-gnu': 14.2.8
+      '@next/swc-linux-arm64-musl': 14.2.8
+      '@next/swc-linux-x64-gnu': 14.2.8
+      '@next/swc-linux-x64-musl': 14.2.8
+      '@next/swc-win32-arm64-msvc': 14.2.8
+      '@next/swc-win32-ia32-msvc': 14.2.8
+      '@next/swc-win32-x64-msvc': 14.2.8
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
@@ -7837,192 +7828,192 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-attribute-case-insensitive@5.0.2(postcss@8.4.31):
+  postcss-attribute-case-insensitive@5.0.2(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  postcss-clamp@4.1.0(postcss@8.4.31):
+  postcss-clamp@4.1.0(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-color-functional-notation@4.2.4(postcss@8.4.31):
+  postcss-color-functional-notation@4.2.4(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-color-hex-alpha@8.0.4(postcss@8.4.31):
+  postcss-color-hex-alpha@8.0.4(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-color-rebeccapurple@7.1.1(postcss@8.4.31):
+  postcss-color-rebeccapurple@7.1.1(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-custom-media@8.0.2(postcss@8.4.31):
+  postcss-custom-media@8.0.2(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-custom-properties@12.1.11(postcss@8.4.31):
+  postcss-custom-properties@12.1.11(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-custom-selectors@6.0.3(postcss@8.4.31):
+  postcss-custom-selectors@6.0.3(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  postcss-dir-pseudo-class@6.0.5(postcss@8.4.31):
+  postcss-dir-pseudo-class@6.0.5(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  postcss-double-position-gradients@3.1.2(postcss@8.4.31):
+  postcss-double-position-gradients@3.1.2(postcss@8.4.45):
     dependencies:
-      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.31)
-      postcss: 8.4.31
+      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.45)
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-env-function@4.0.6(postcss@8.4.31):
+  postcss-env-function@4.0.6(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-focus-visible@6.0.4(postcss@8.4.31):
+  postcss-focus-visible@6.0.4(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  postcss-focus-within@5.0.4(postcss@8.4.31):
+  postcss-focus-within@5.0.4(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  postcss-font-variant@5.0.0(postcss@8.4.31):
+  postcss-font-variant@5.0.0(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
-  postcss-gap-properties@3.0.5(postcss@8.4.31):
+  postcss-gap-properties@3.0.5(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
-  postcss-image-set-function@4.0.7(postcss@8.4.31):
+  postcss-image-set-function@4.0.7(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-initial@4.0.1(postcss@8.4.31):
+  postcss-initial@4.0.1(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
-  postcss-lab-function@4.2.1(postcss@8.4.31):
+  postcss-lab-function@4.2.1(postcss@8.4.45):
     dependencies:
-      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.31)
-      postcss: 8.4.31
+      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.45)
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-logical@5.0.4(postcss@8.4.31):
+  postcss-logical@5.0.4(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
-  postcss-media-minmax@5.0.0(postcss@8.4.31):
+  postcss-media-minmax@5.0.0(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
-  postcss-nesting@10.2.0(postcss@8.4.31):
+  postcss-nesting@10.2.0(postcss@8.4.45):
     dependencies:
       '@csstools/selector-specificity': 2.2.0(postcss-selector-parser@6.1.2)
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  postcss-opacity-percentage@1.1.3(postcss@8.4.31):
+  postcss-opacity-percentage@1.1.3(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
-  postcss-overflow-shorthand@3.0.4(postcss@8.4.31):
+  postcss-overflow-shorthand@3.0.4(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-page-break@3.0.4(postcss@8.4.31):
+  postcss-page-break@3.0.4(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
-  postcss-place@7.0.5(postcss@8.4.31):
+  postcss-place@7.0.5(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-value-parser: 4.2.0
 
-  postcss-preset-env@7.8.3(postcss@8.4.31):
+  postcss-preset-env@7.8.3(postcss@8.4.45):
     dependencies:
-      '@csstools/postcss-cascade-layers': 1.1.1(postcss@8.4.31)
-      '@csstools/postcss-color-function': 1.1.1(postcss@8.4.31)
-      '@csstools/postcss-font-format-keywords': 1.0.1(postcss@8.4.31)
-      '@csstools/postcss-hwb-function': 1.0.2(postcss@8.4.31)
-      '@csstools/postcss-ic-unit': 1.0.1(postcss@8.4.31)
-      '@csstools/postcss-is-pseudo-class': 2.0.7(postcss@8.4.31)
-      '@csstools/postcss-nested-calc': 1.0.0(postcss@8.4.31)
-      '@csstools/postcss-normalize-display-values': 1.0.1(postcss@8.4.31)
-      '@csstools/postcss-oklab-function': 1.1.1(postcss@8.4.31)
-      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.31)
-      '@csstools/postcss-stepped-value-functions': 1.0.1(postcss@8.4.31)
-      '@csstools/postcss-text-decoration-shorthand': 1.0.0(postcss@8.4.31)
-      '@csstools/postcss-trigonometric-functions': 1.0.2(postcss@8.4.31)
-      '@csstools/postcss-unset-value': 1.0.2(postcss@8.4.31)
-      autoprefixer: 10.4.20(postcss@8.4.31)
+      '@csstools/postcss-cascade-layers': 1.1.1(postcss@8.4.45)
+      '@csstools/postcss-color-function': 1.1.1(postcss@8.4.45)
+      '@csstools/postcss-font-format-keywords': 1.0.1(postcss@8.4.45)
+      '@csstools/postcss-hwb-function': 1.0.2(postcss@8.4.45)
+      '@csstools/postcss-ic-unit': 1.0.1(postcss@8.4.45)
+      '@csstools/postcss-is-pseudo-class': 2.0.7(postcss@8.4.45)
+      '@csstools/postcss-nested-calc': 1.0.0(postcss@8.4.45)
+      '@csstools/postcss-normalize-display-values': 1.0.1(postcss@8.4.45)
+      '@csstools/postcss-oklab-function': 1.1.1(postcss@8.4.45)
+      '@csstools/postcss-progressive-custom-properties': 1.3.0(postcss@8.4.45)
+      '@csstools/postcss-stepped-value-functions': 1.0.1(postcss@8.4.45)
+      '@csstools/postcss-text-decoration-shorthand': 1.0.0(postcss@8.4.45)
+      '@csstools/postcss-trigonometric-functions': 1.0.2(postcss@8.4.45)
+      '@csstools/postcss-unset-value': 1.0.2(postcss@8.4.45)
+      autoprefixer: 10.4.20(postcss@8.4.45)
       browserslist: 4.23.3
-      css-blank-pseudo: 3.0.3(postcss@8.4.31)
-      css-has-pseudo: 3.0.4(postcss@8.4.31)
-      css-prefers-color-scheme: 6.0.3(postcss@8.4.31)
+      css-blank-pseudo: 3.0.3(postcss@8.4.45)
+      css-has-pseudo: 3.0.4(postcss@8.4.45)
+      css-prefers-color-scheme: 6.0.3(postcss@8.4.45)
       cssdb: 7.11.2
-      postcss: 8.4.31
-      postcss-attribute-case-insensitive: 5.0.2(postcss@8.4.31)
-      postcss-clamp: 4.1.0(postcss@8.4.31)
-      postcss-color-functional-notation: 4.2.4(postcss@8.4.31)
-      postcss-color-hex-alpha: 8.0.4(postcss@8.4.31)
-      postcss-color-rebeccapurple: 7.1.1(postcss@8.4.31)
-      postcss-custom-media: 8.0.2(postcss@8.4.31)
-      postcss-custom-properties: 12.1.11(postcss@8.4.31)
-      postcss-custom-selectors: 6.0.3(postcss@8.4.31)
-      postcss-dir-pseudo-class: 6.0.5(postcss@8.4.31)
-      postcss-double-position-gradients: 3.1.2(postcss@8.4.31)
-      postcss-env-function: 4.0.6(postcss@8.4.31)
-      postcss-focus-visible: 6.0.4(postcss@8.4.31)
-      postcss-focus-within: 5.0.4(postcss@8.4.31)
-      postcss-font-variant: 5.0.0(postcss@8.4.31)
-      postcss-gap-properties: 3.0.5(postcss@8.4.31)
-      postcss-image-set-function: 4.0.7(postcss@8.4.31)
-      postcss-initial: 4.0.1(postcss@8.4.31)
-      postcss-lab-function: 4.2.1(postcss@8.4.31)
-      postcss-logical: 5.0.4(postcss@8.4.31)
-      postcss-media-minmax: 5.0.0(postcss@8.4.31)
-      postcss-nesting: 10.2.0(postcss@8.4.31)
-      postcss-opacity-percentage: 1.1.3(postcss@8.4.31)
-      postcss-overflow-shorthand: 3.0.4(postcss@8.4.31)
-      postcss-page-break: 3.0.4(postcss@8.4.31)
-      postcss-place: 7.0.5(postcss@8.4.31)
-      postcss-pseudo-class-any-link: 7.1.6(postcss@8.4.31)
-      postcss-replace-overflow-wrap: 4.0.0(postcss@8.4.31)
-      postcss-selector-not: 6.0.1(postcss@8.4.31)
+      postcss: 8.4.45
+      postcss-attribute-case-insensitive: 5.0.2(postcss@8.4.45)
+      postcss-clamp: 4.1.0(postcss@8.4.45)
+      postcss-color-functional-notation: 4.2.4(postcss@8.4.45)
+      postcss-color-hex-alpha: 8.0.4(postcss@8.4.45)
+      postcss-color-rebeccapurple: 7.1.1(postcss@8.4.45)
+      postcss-custom-media: 8.0.2(postcss@8.4.45)
+      postcss-custom-properties: 12.1.11(postcss@8.4.45)
+      postcss-custom-selectors: 6.0.3(postcss@8.4.45)
+      postcss-dir-pseudo-class: 6.0.5(postcss@8.4.45)
+      postcss-double-position-gradients: 3.1.2(postcss@8.4.45)
+      postcss-env-function: 4.0.6(postcss@8.4.45)
+      postcss-focus-visible: 6.0.4(postcss@8.4.45)
+      postcss-focus-within: 5.0.4(postcss@8.4.45)
+      postcss-font-variant: 5.0.0(postcss@8.4.45)
+      postcss-gap-properties: 3.0.5(postcss@8.4.45)
+      postcss-image-set-function: 4.0.7(postcss@8.4.45)
+      postcss-initial: 4.0.1(postcss@8.4.45)
+      postcss-lab-function: 4.2.1(postcss@8.4.45)
+      postcss-logical: 5.0.4(postcss@8.4.45)
+      postcss-media-minmax: 5.0.0(postcss@8.4.45)
+      postcss-nesting: 10.2.0(postcss@8.4.45)
+      postcss-opacity-percentage: 1.1.3(postcss@8.4.45)
+      postcss-overflow-shorthand: 3.0.4(postcss@8.4.45)
+      postcss-page-break: 3.0.4(postcss@8.4.45)
+      postcss-place: 7.0.5(postcss@8.4.45)
+      postcss-pseudo-class-any-link: 7.1.6(postcss@8.4.45)
+      postcss-replace-overflow-wrap: 4.0.0(postcss@8.4.45)
+      postcss-selector-not: 6.0.1(postcss@8.4.45)
       postcss-value-parser: 4.2.0
 
-  postcss-pseudo-class-any-link@7.1.6(postcss@8.4.31):
+  postcss-pseudo-class-any-link@7.1.6(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
-  postcss-replace-overflow-wrap@4.0.0(postcss@8.4.31):
+  postcss-replace-overflow-wrap@4.0.0(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
 
-  postcss-selector-not@6.0.1(postcss@8.4.31):
+  postcss-selector-not@6.0.1(postcss@8.4.45):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.45
       postcss-selector-parser: 6.1.2
 
   postcss-selector-parser@6.1.2:
@@ -8033,6 +8024,12 @@ snapshots:
   postcss-value-parser@4.2.0: {}
 
   postcss@8.4.31:
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.1.0
+      source-map-js: 1.2.0
+
+  postcss@8.4.45:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.1.0
@@ -8055,6 +8052,8 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
+  prismjs@1.29.0: {}
+
   prop-types@15.8.1:
     dependencies:
       loose-envify: 1.4.0
@@ -8074,6 +8073,8 @@ snapshots:
     dependencies:
       end-of-stream: 1.4.4
       once: 1.4.0
+
+  punycode.js@2.3.1: {}
 
   punycode@2.3.1: {}
 
@@ -8735,7 +8736,7 @@ snapshots:
 
   typescript@4.9.4: {}
 
-  uc.micro@1.0.6: {}
+  uc.micro@2.1.0: {}
 
   unbox-primitive@1.0.2:
     dependencies:
@@ -8806,11 +8807,6 @@ snapshots:
   w3c-xmlserializer@4.0.0:
     dependencies:
       xml-name-validator: 4.0.0
-
-  watchpack@2.4.0:
-    dependencies:
-      glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.11
 
   webidl-conversions@7.0.0: {}
 

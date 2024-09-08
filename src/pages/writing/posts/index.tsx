@@ -32,7 +32,7 @@ export default defineFC<PostListProp>(({ list }) => {
       <p className='text-warm-gray-500 font-bold text-md mb-6 mx-auto text-center'>
         Latest Posts
       </p>
-      <PostList list={list}></PostList>
+      <PostList list={list} />
     </SafeArea>
   )
 })

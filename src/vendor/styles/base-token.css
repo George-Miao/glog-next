@@ -1,0 +1,74 @@
+.token.class-name,
+.token.maybe-class-name,
+.token.variable {
+  color: var(--c-token-white);
+}
+
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.entity,
+.token.prolog {
+  color: var(--c-token-gray);
+}
+
+.token.builtin,
+.token.imports,
+.token.property {
+  color: var(--c-token-blue);
+}
+
+.token.attr-name,
+.token.function,
+.token.module {
+  color: var(--c-token-indigo);
+}
+
+.token.script,
+.token.punctuation {
+  color: var(--c-token-indigo-light);
+}
+
+.token.atrule,
+.token.important,
+.token.keyword,
+.token.operator {
+  color: var(--c-token-purple);
+}
+
+.token.number,
+.token.regex,
+.token.statement,
+.token.url,
+.token.keyword.nil,
+.token.keyword.null,
+.language-css .token.string {
+  color: var(--c-token-orange);
+}
+
+.token.boolean,
+.token.selector,
+.token.tag,
+.token.unit {
+  color: var(--c-token-red);
+}
+
+.token.attr-value,
+.token.char,
+.token.class,
+.token.string {
+  color: var(--c-token-green);
+}
+
+.token.namespace {
+  opacity: 0.8;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.bold,
+.token.important {
+  font-weight: 700;
+}

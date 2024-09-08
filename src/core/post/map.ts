@@ -1,4 +1,4 @@
-import { readFile } from 'fs/promises'
+import { readFile } from 'node:fs/promises'
 import matter from 'gray-matter'
 import { sanitize } from 'isomorphic-dompurify'
 
@@ -9,7 +9,19 @@ import { blockExcerptPattern, moreExcerptPattern, postsDir } from './common'
 import { count } from '@wordpress/wordcount'
 import type { Ingot, Meta, MetaValidated, Rendered } from '@type/post'
 
-export const renderPost = async (slug: string): Promise<Rendered> =>
+const rendered = {} as Record<string, Rendered>
+
+export const renderPost = async (slug: string) => {
+  if (process.env.NODE_ENV !== 'production') {
+    return await doRender(slug)
+  }
+  if (!rendered[slug]) {
+    rendered[slug] = await doRender(slug)
+  }
+  return rendered[slug]
+}
+
+const doRender = async (slug: string): Promise<Rendered> =>
   await readData(slug)
     .then(extractMeta)
     .then(({ meta: metaUnchecked, raw, excerpt }) => {
@@ -67,10 +79,8 @@ const checkMeta = (meta: Meta): MetaValidated => {
   const check = <K extends keyof Meta>(name: K) => {
     const value = meta[name]
     if (!value) throw Error(`Missing meta in post ${name}`)
-    else {
-      if (value instanceof Date) return +value as MetaValidated[K]
-      else return value as unknown as MetaValidated[K]
-    }
+    if (value instanceof Date) return +value as MetaValidated[K]
+    return value as unknown as MetaValidated[K]
   }
 
   return {

@@ -56,7 +56,8 @@
   }
 
   & [class*='tip'],
-  & [class*='warn'] {
+  & [class*='warn'],
+  & [class*='notice'] {
     @apply border-l-red-800 border-l-2;
 
     padding: 0.5rem;
@@ -77,15 +78,23 @@
   }
 
   & [class*='tip'] {
-    @apply bg-true-gray-100;
+    @apply bg-neutral-100;
 
     &::before {
       content: 'Tips';
     }
   }
 
+  & [class*='notice'] {
+    @apply bg-neutral-100;
+
+    &::before {
+      content: 'Notice';
+    }
+  }
+
   & [class*='warn'] {
-    background: rgba(255, 200, 193, 0.45);
+    background: rgba(255, 240, 240, 0.45);
 
     &::before {
       @apply text-red-800;
@@ -251,12 +260,19 @@
   & pre {
     @apply;
 
+    &[class*='language-'] {
+      @apply border-1 border-solid border-warm-gray-300;
+    }
+
     & code {
-      @apply font-mono block p-4 text-sm overflow-x-scroll;
+      @apply font-mono block text-sm;
+      /* color: #c7254e; */
+      /* background-color: #f9f2f4; */
+      vertical-align: text-bottom;
     }
   }
 
-  & code:not([class*='hljs']) {
+  & :not(pre) > code {
     @apply font-mono text-sm break-all px-1 whitespace-nowrap;
 
     color: #c7254e;

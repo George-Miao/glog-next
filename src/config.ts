@@ -1,7 +1,7 @@
 import type { FeedOptions } from 'feed'
 import type { DefaultSeoProps } from 'next-seo'
 
-import { Fira_Code, Josefin_Sans, Merriweather } from '@next/font/google'
+import { Fira_Code, Josefin_Sans, Merriweather } from "next/font/google"
 
 import type { GlogConfig } from '@type/config'
 

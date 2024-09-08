@@ -2,6 +2,8 @@
 
 import MarkdownIt from 'markdown-it'
 
+import codeBlock from '@vendor/markdown-it-code-block'
+
 import { config } from '@config'
 
 const anchor = require('markdown-it-anchor')
@@ -15,7 +17,7 @@ export const md = MarkdownIt({
   .use(anchor, { permalink: anchor.permalink.headerLink() })
   .use(container, 'tip')
   .use(container, 'warn')
-  .use(require('markdown-it-highlightjs'), { auto: false })
+  .use(container, 'notice')
   .use(require('markdown-it-external-links'), {
     internalDomains: [config.domain],
     externalRel: 'external nofollow'
@@ -23,7 +25,6 @@ export const md = MarkdownIt({
   .use(require('markdown-it-image-lazy-loading'))
   .use(require('markdown-it-plain-text'))
   .use(require('markdown-it-abbr'))
-  .use(require('markdown-it-attrs'))
   .use(require('markdown-it-deflist'))
   .use(require('markdown-it-emoji'))
   .use(require('markdown-it-footnote'))
@@ -41,3 +42,4 @@ export const md = MarkdownIt({
   .use(require('markdown-it-latex2img'), {
     style: 'filter: opacity(75%);text-align:center;border:none;'
   })
+  .use(codeBlock)

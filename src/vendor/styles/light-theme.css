@@ -1,0 +1,8 @@
+:root {
+  --c-code-block-border: hsl(214, 21%, 90%);
+  --c-code-block-highlight: hsl(221, 89%, 62%, 0.7);
+  --c-code-block-text: hsl(229, 23%, 44%);
+  --bg-code-block-highlight: hsl(214, 95%, 93%, 0.3);
+  --bg-code-block: hsl(0, 0%, 100%);
+  --bg-code-block-title: hsl(204, 45%, 98%, 0.6);
+}

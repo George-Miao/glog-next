@@ -21,10 +21,12 @@
       "@type/*": ["types/*"],
       "@comps/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@vendor/*": ["vendor/*"]
     }
   },
   "include": [
+    "node_modules/.pnpm/markdown-it-code-block@0.1.0_markdown-it@14.1.0_prismjs@1.29.0/node_modules/prismjs",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

@@ -1,6 +1,9 @@
 import 'styles/globals.css'
-import 'styles/highlight.css'
 import 'windi.css'
+import 'vendor/styles/light-theme.css'
+import 'vendor/styles/light-theme-token.css'
+import 'vendor/styles/base.css'
+import 'vendor/styles/base-token.css'
 
 import { DefaultSeo } from 'next-seo'
 import Head from 'next/head'

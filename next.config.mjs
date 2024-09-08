@@ -1,5 +1,8 @@
 // trunk-ignore(eslint/@typescript-eslint/no-var-requires)
-const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
+import WindiCSSWebpackPlugin from 'windicss-webpack-plugin'
+
+import fs from 'node:fs'
+import path from 'node:path'
 
 const headers = {
   json: [
@@ -79,7 +82,10 @@ const nextConfig = {
       'placekitten.com',
       'glog-photo.miao.dev'
     ]
+  },
+  experimental: {
+    esmExternals: false
   }
 }
 
-module.exports = nextConfig
+export default nextConfig

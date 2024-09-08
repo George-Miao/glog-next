@@ -1,0 +1,12 @@
+:root {
+  --c-token-blue: hsl(202, 100%, 65%);
+  --c-token-gray: hsl(229, 23%, 64%);
+  --c-token-green: hsl(89, 51%, 51%);
+  --c-token-indigo: hsl(221, 89%, 62%);
+  --c-token-indigo-light: hsl(230, 94%, 72%);
+  --c-token-orange: hsl(22, 100%, 60%);
+  --c-token-purple: hsl(261, 85%, 69%);
+  --c-token-red: hsl(351, 95%, 61%);
+  --c-token-violet: hsl(315, 43%, 37%);
+  --c-token-white: hsl(230, 63%, 75%);
+}
