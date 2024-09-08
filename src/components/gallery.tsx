@@ -46,9 +46,9 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
     <div
       className='flex flex-col
       text-sm
-      opacity-0 p-3
-      transition-all top-0 right-0 bottom-0
-      left-0 text-neutral-100  leading-4
+      text-transparent opacity-0
+      opacity-70 p-3 top-0 right-0
+      bottom-0 left-0  leading-4
       z-20 justify-between
       select-none absolute
       hover:opacity-100
@@ -71,20 +71,14 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
         )}
       </div>
 
-      <div className='flex w-full items-center '>
-        {photo.location && (
-          <>
+      <div className='flex flex-wrap w-full gap-1 items-center justify-between'>
+        {photo.timestamp && (
+          <span className='flex'>
             <Icon
-              icon={'material-symbols:location-on-outline'}
+              icon='material-symbols:date-range-outline'
               inline
               className='mr-1'
             />
-            <span>{photo.location ?? 'Unknown'}</span>
-          </>
-        )}
-
-        {photo.timestamp && (
-          <span className='ml-auto'>
             {new Date(photo.timestamp).toLocaleDateString(undefined, {
               day: 'numeric',
               year: 'numeric',
@@ -92,36 +86,47 @@ const PhotoDetail = defineFC<{ photo: DetailedPhoto }>(({ photo }) => {
             })}
           </span>
         )}
+
+        {photo.location && (
+          <span className='flex'>
+            <Icon
+              icon={'material-symbols:location-on-outline'}
+              inline
+              className='mr-1'
+            />
+            {photo.location ?? 'Unknown'}
+          </span>
+        )}
       </div>
     </div>
   )
 })
 
-const Photo = defineFC<RenderPhotoProps<DetailedPhoto>>(
-  ({
+const Photo = defineFC<RenderPhotoProps<DetailedPhoto>>(p => {
+  const {
     photo,
     layout: { width, height },
     imageProps: { src, alt, title, style }
-  }) => {
-    return (
-      <article style={style} className='relative overflow-hidden'>
-        <PhotoDetail photo={photo} />
-        <div className='bg-neutral-100 p-1 top-0 right-0 bottom-0 left-0 absolute' />
-        <Image
-          src={src}
-          alt={alt}
-          title={title ?? undefined}
-          width={Math.floor(width)}
-          height={Math.floor(height)}
-          quality={100}
-          // unoptimized={true}
-          className='opacity-0 transition-all z-10 relative'
-          onLoadingComplete={e => e.classList.add('opacity-100')}
-        />
-      </article>
-    )
-  }
-)
+  } = p
+  console.log(p)
+  return (
+    <article style={style} className='relative overflow-hidden'>
+      <PhotoDetail photo={photo} />
+      <div className='bg-neutral-100 p-1 top-0 right-0 bottom-0 left-0 absolute' />
+      <Image
+        src={src}
+        alt={alt}
+        title={title ?? undefined}
+        width={Math.floor(width * 1.5)}
+        height={Math.floor(height * 1.5)}
+        quality={100}
+        // unoptimized={true}
+        className='h-full w-full opacity-0 transition-all z-10 relative'
+        onLoadingComplete={e => e.classList.add('opacity-100')}
+      />
+    </article>
+  )
+})
 
 const Gallery = defineFC(() => {
   const [photos, setPhotos] = useState<DetailedPhoto[] | null>(null)
@@ -135,10 +140,13 @@ const Gallery = defineFC(() => {
           className: 'mt-10 sm:mt-20'
         }
       }}
+      columns={w => (w > 500 ? 2 : 1)}
+      breakpoints={[620, 900]}
       layout='rows'
       targetRowHeight={300}
       photos={photos}
       renderPhoto={Photo}
+      rowConstraints={w => (w > 400 ? { maxPhotos: 3 } : { maxPhotos: 1 })}
     />
   ) : (
     <PlaceHolder />

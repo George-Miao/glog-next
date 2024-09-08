@@ -17,7 +17,7 @@ export const DotListItem = defineFC<DotListItemProp>(
 
     return (
       <a className={`block mb-2 ${className}`} href={link ?? undefined}>
-        <p className='block flex items-center group w-full overflow-hidden'>
+        <p className='flex w-full block items-center group overflow-hidden'>
           <span
             className={`flex-none
             font-medium text-gray-1000
@@ -31,8 +31,8 @@ export const DotListItem = defineFC<DotListItemProp>(
           </span>
 
           <span
-            className='flex-shrink-[10000000] mx-2 sm:mx-4 w-full border-t
-          border-gray-300 border-dashed
+            className='border-t border-dashed border-gray-300 flex-shrink-[10000000] mx-2
+          w-full sm:mx-4
           dark:border-gray-800'
           />
 
@@ -41,16 +41,16 @@ export const DotListItem = defineFC<DotListItemProp>(
           )}
 
           <span
-            className='whitespace-nowrap
-            text-warm-gray-600
-            font-mono font-thin text-sm
-            flex-none contents inline-block leading-5
+            className='flex-none
+            font-mono
+            font-thin text-sm text-warm-gray-600
+            leading-5 whitespace-nowrap contents inline-block
             overflow-hidden break-all'
           >
             {value}
           </span>
         </p>
-        <p className='sm:hidden text-sm'>
+        <p className='text-sm sm:hidden'>
           {subtitle && <span className={subtitleClass}>{subtitle}</span>}
         </p>
       </a>

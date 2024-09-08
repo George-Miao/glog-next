@@ -22,24 +22,17 @@ const Footer = defineFC(({ className }) => {
         mx-auto block flex flex-col items-center
       `}
     >
-      <p className='mb-2'>George Miao © 2022</p>
+      <p className='mb-2'>George Miao © 2022 - {new Date().getFullYear()}</p>
       <p className='text-sm mb-2'>
         Built with
-        <a className='mx-1 font-bold' href='https://nextjs.org/'>
+        <a className='font-bold mx-1' href='https://nextjs.org/'>
           NextJS
         </a>
         &
-        <a className='mx-1 font-bold' href='https://windicss.org/'>
+        <a className='font-bold mx-1' href='https://windicss.org/'>
           WindiCSS
         </a>
       </p>
-      <a
-        rel='me'
-        href='https://mastodon.miao.dev/@pop'
-        className='text-sm mb-2'
-      >
-        Mastodon
-      </a>
       {commitComp}
     </footer>
   )
