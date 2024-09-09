@@ -3,7 +3,9 @@ title: 在 Fly.io 上用 nix 和 docker 部署 Headscale
 categories:
   - Article
 tags:
-  - zh-CN
+  - zh-Hans-CN
+  - nix
+  - fly.io
 created: 2024-09-06 23:29:00
 ---
 
