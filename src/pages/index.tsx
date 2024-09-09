@@ -48,12 +48,6 @@ const Home = defineFC(() => {
           url='https://github.com/George-Miao'
         />
         <Badge
-          rel='me'
-          text='@Pop@miao.dev'
-          icon='mdi:mastodon'
-          url='https://mastodon.miao.dev/@pop'
-        />
-        <Badge
           text='Gm@miao.dev'
           icon='material-symbols:mail-rounded'
           url='mailto:gm@miao.dev'
