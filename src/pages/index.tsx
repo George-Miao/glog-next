@@ -55,8 +55,8 @@ const Home = defineFC(() => {
       </p>
       <div className={`${content.content} mt-4 md:mt-8`}>
         <p>
-          I&rsquo;m an undergraduate student and developer currently at Syracuse
-          University. Languages used most are Rust and Typescript.
+          I&rsquo;m a master student and developer currently at University of
+          Maryland.
         </p>
       </div>
 

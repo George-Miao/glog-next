@@ -1,7 +1,7 @@
 import type { FeedOptions } from 'feed'
 import type { DefaultSeoProps } from 'next-seo'
 
-import { Fira_Code, Josefin_Sans, Merriweather } from "next/font/google"
+import { Fira_Code, Josefin_Sans, Merriweather } from 'next/font/google'
 
 import type { GlogConfig } from '@type/config'
 
@@ -51,8 +51,13 @@ export const config: GlogConfig = {
   },
   resumeList: [
     {
+      title: 'University of Maryland',
+      value: '2025 - Present',
+      subtitle: 'Master'
+    },
+    {
       title: 'Syracuse University',
-      value: '2020 - Now',
+      value: '2020 - 2024',
       subtitle: 'Undergraduate'
     },
     {
