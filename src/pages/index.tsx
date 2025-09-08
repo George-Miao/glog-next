@@ -52,6 +52,7 @@ const Home = defineFC(() => {
           icon='material-symbols:mail-rounded'
           url='mailto:gm@miao.dev'
         />
+        <Badge text='George-Miao' icon='mdi:resume' url='./resume.pdf' />
       </p>
       <div className={`${content.content} mt-4 md:mt-8`}>
         <p>
