@@ -41,7 +41,7 @@ const Home = defineFC(() => {
     <SafeArea>
       <Title title="Hi, I'm George Miao" safeArea className='mt-4 mb-8' />
       <br />
-      <p className='flex gap-2 '>
+      <p className='flex gap-2 flex-col sm:flex-row'>
         <Badge
           text='George-Miao'
           icon='mdi:github'
@@ -56,7 +56,7 @@ const Home = defineFC(() => {
       </p>
       <div className={`${content.content} mt-4 md:mt-8`}>
         <p>
-          I&rsquo;m a master student and developer at University of
+          I&rsquo;m a master student and developer at the University of
           Maryland.
         </p>
       </div>

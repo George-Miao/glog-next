@@ -62,7 +62,7 @@ export const config: GlogConfig = {
     },
     {
       title: 'Moseeker Shanghai',
-      value: '2021',
+      value: '2021 Spring',
       subtitle: 'Intern as frontend dev'
     },
     {
