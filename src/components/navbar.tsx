@@ -27,7 +27,8 @@ export const btnClass = (isActive: boolean) => `
 const NavBar = defineFC(({ className }) => {
   const mainClass = `
     ${className ?? ''}
-    fixed flex flex-col z-100
+    transition-all
+    fixed flex flex-col z-50
     sm:px-8
     md:(my-8 flex-row)
     <lg:(justify-between h-24 my-auto w-full)
@@ -36,16 +37,21 @@ const NavBar = defineFC(({ className }) => {
 
   return (
     <nav className={mainClass}>
-      {/* <SizeIndicator /> */}
       <Link
         href={'/'}
         className='
-            flex text-white
+            flex text-white items-baseline
             py-7 pl-10
             @md:(my-auto pl-4) lg:(pl-3 w-full pt-0) '
       >
-        <Image src='/img/logo.svg' alt='' width={24} height={24}></Image>
-        <span className='font-bold text-xl ml-4 <lg:my-auto'>Glog</span>
+        <Image
+          src='/img/logo.svg'
+          alt='Logo'
+          width={20}
+          height={20}
+          className='relative top-[2px]'
+        />
+        <span className='font-bold text-xl ml-2 <lg:my-auto'>Glog</span>
       </Link>
       <div
         className='
@@ -55,11 +61,11 @@ const NavBar = defineFC(({ className }) => {
           @md:space-x-1
           lg:(flex-col w-full mt-2 mb-12) <lg:my-auto '
       >
-        {config.navbar.links.map((x, i) => {
+        {config.navbar.links.map(x => {
           const isCurrent = useRouter().asPath.startsWith(x.link)
 
           return (
-            <Link href={x.link} key={i} className={btnClass(isCurrent)}>
+            <Link href={x.link} key={x.text} className={btnClass(isCurrent)}>
               <Iconify
                 icon={x.icon as string}
                 width={18}

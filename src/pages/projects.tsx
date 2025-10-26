@@ -18,7 +18,7 @@ export default defineFC(() => {
   return (
     <SafeArea>
       <SEO title='Proj.' />
-      <Title title='Proj.' safeArea />
+      <Title title='Proj.' className='mb-24' />
       <PhotoAlbum
         layout='masonry'
         photos={pseudoProjPhotos}
@@ -27,7 +27,7 @@ export default defineFC(() => {
         padding={4}
         componentsProps={{
           containerProps: {
-            className: 'flex mt-8 sm:mt-12 md:mt-0'
+            className: 'flex pt-12'
           }
         }}
         // breakpointCols={{

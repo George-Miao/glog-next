@@ -3,7 +3,7 @@ import Link from 'next/link'
 import type { TitleProp } from '@type/title'
 
 const Title = defineFC<TitleProp>(
-  ({ title, link, uppercase, className, safeArea, subtitle }) => {
+  ({ title, link, uppercase, className, safeArea = true, subtitle }) => {
     const isPlainStr = typeof title === 'string'
 
     const bigOChar = isPlainStr ? title[0] : title.char

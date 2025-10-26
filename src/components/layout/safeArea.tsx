@@ -5,7 +5,7 @@ const SafeArea = defineFCWithChild<{
 }>(({ className, children, hideOverflow }) => {
   return (
     <div
-      className={` ${className ?? ''} max-w-3xl mx-auto ${
+      className={` ${className ?? ''} max-w-4xl mx-auto ${
         hideOverflow ? 'overflow-hidden' : ''
       }`}
     >
