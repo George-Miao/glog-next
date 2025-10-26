@@ -1,4 +1,3 @@
-import React from 'react'
 import { PhotoAlbum } from 'react-photo-album'
 
 import SafeArea from '@comps/layout/safeArea'
@@ -12,7 +11,7 @@ import type { PseudoProjPhoto } from '@comps/projects'
 const pseudoProjPhotos: PseudoProjPhoto[] = config.proj.map(category => ({
   src: '',
   width: 200,
-  height: 200,
+  height: 0,
   ...category
 }))
 export default defineFC(() => {
@@ -24,7 +23,8 @@ export default defineFC(() => {
         layout='masonry'
         photos={pseudoProjPhotos}
         renderPhoto={ProjCategory}
-        columns={w => (w < 400 ? 1 : w < 650 ? 2 : 3)}
+        columns={w => (w < 540 ? 1 : 2)}
+        padding={4}
         componentsProps={{
           containerProps: {
             className: 'flex mt-8 sm:mt-12 md:mt-0'

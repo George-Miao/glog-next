@@ -52,9 +52,9 @@ export default defineFC<PostListProp>(({ list }) => {
           md:(px-10 pt-8 pb-6)
         '
       >
-        {buttons.map(([text, link], i) => (
+        {buttons.map(([text, link]) => (
           <Button
-            key={i}
+            key={link}
             href={link}
             style='underline'
             className='w-full'
@@ -67,7 +67,7 @@ export default defineFC<PostListProp>(({ list }) => {
       <p className='text-warm-gray-500 font-bold text-md -mb-2 md:-mb-12 mx-auto'>
         Latest Posts
       </p>
-      <PostList list={list}></PostList>
+      <PostList list={list} />
       <Button
         href={'/writing/posts'}
         className='ml-auto w-36 text-sm'

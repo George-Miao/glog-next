@@ -24,7 +24,7 @@ export const DotListItem = defineFC<DotListItemProp>(
             flex-shrink
             overflow-hidden overflow-ellipsis
             whitespace-nowrap
-            ${link ? 'group-hover:text-red-800 ' : ''}
+            ${link ? 'group-hover:text-red-800 transition ' : ''}
             `}
           >
             {title}
@@ -45,7 +45,7 @@ export const DotListItem = defineFC<DotListItemProp>(
             font-mono
             font-thin text-sm text-warm-gray-600
             leading-5 whitespace-nowrap contents inline-block
-            overflow-hidden break-all'
+            overflow-hidden break-none'
           >
             {value}
           </span>
@@ -84,8 +84,8 @@ export const DotList = defineFC<DotListProp>(
         )}
 
         <div className='col-span-9 '>
-          {items.map((item, i) => (
-            <DotListItem {...item} key={i}></DotListItem>
+          {items.map(item => (
+            <DotListItem {...item} key={item.title} />
           ))}
         </div>
       </div>

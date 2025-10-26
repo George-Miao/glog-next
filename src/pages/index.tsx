@@ -48,11 +48,11 @@ const Home = defineFC(() => {
           url='https://github.com/George-Miao'
         />
         <Badge
-          text='Gm@miao.dev'
+          text='gm@miao.dev'
           icon='material-symbols:mail-rounded'
           url='mailto:gm@miao.dev'
         />
-        <Badge text='George-Miao' icon='mdi:resume' url='./resume.pdf' />
+        <Badge text='Resume' icon='mdi:resume' url='./resume.pdf' />
       </p>
       <div className={`${content.content} mt-4 md:mt-8`}>
         <p>
@@ -61,12 +61,9 @@ const Home = defineFC(() => {
         </p>
       </div>
 
-      <DotList items={config.resumeList} title='Resume' className='mb-16' />
-      <DotList
-        items={config.linksList}
-        title='Link exchange'
-        className='mb-16'
-      />
+      <DotList items={config.education} title='Education' />
+      <DotList items={config.professional} title='Experience' />
+      <DotList items={config.links} title='Link exchange' className='mb-16' />
       <Button
         href={'/writing'}
         className='ml-auto text-sm w-36'

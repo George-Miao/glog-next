@@ -49,49 +49,57 @@ export const config: GlogConfig = {
       username: 'George-Miao'
     }
   },
-  resumeList: [
+  education: [
     {
       title: 'University of Maryland',
       value: '2025 - Present',
-      subtitle: 'Master'
+      subtitle: 'Master',
+      link: 'https://umd.edu'
+    },
+    {
+      title: 'Waseda University',
+      value: '2024 Spring',
+      subtitle: 'Exchange Student',
+      link: 'https://www.waseda.jp'
     },
     {
       title: 'Syracuse University',
       value: '2020 - 2024',
-      subtitle: 'Undergraduate'
+      subtitle: 'Undergraduate',
+      link: 'https://syracuse.edu'
+    }
+  ],
+  professional: [
+    {
+      title: 'Limit Lab',
+      value: '2022 - 2024',
+      subtitle: 'Co-Founder, CTO',
+      link: 'https://limit.dev/'
     },
     {
-      title: 'Moseeker Shanghai',
+      title: 'SOURCE',
+      value: '2023 Fall',
+      subtitle: 'Research assistant',
+      link: 'https://undergraduateresearch.syracuse.edu/source-opportunites/'
+    },
+    {
+      title: 'MoSeeker Inc.',
       value: '2021 Spring',
-      subtitle: 'Intern as frontend dev'
+      subtitle: 'Intern as frontend dev',
+      link: 'https://www.moseeker.com/'
     },
     {
       title: 'Syracuse University',
-      value: '2020 - 2021',
+      value: '2020 Fall',
       subtitle: 'Research assistant'
-    },
-    {
-      title: 'Cornell University',
-      value: '2020 Summer',
-      subtitle: 'SCE Precollege program'
-    },
-    {
-      title: 'Georegtown University',
-      value: '2019 Summer',
-      subtitle: 'HOYA summer'
-    },
-    {
-      title: 'Montverde Academy',
-      value: '2018 - 2020',
-      subtitle: 'Highschool'
     }
   ],
-  linksList: [
+  links: [
     {
       title: 'NovaDNG',
       value: 'NovaDNG.studio',
-      link: 'https://novadng.studio',
-      subtitle: '字体学徒'
+      subtitle: '字体学徒',
+      link: 'https://novadng.studio'
     },
     {
       title: 'Yuuta',
@@ -101,131 +109,50 @@ export const config: GlogConfig = {
   ],
   proj: [
     {
-      name: 'Tharsis',
-      description: 'My home server rack',
-      icon: 'bx:bxs-planet',
+      name: 'Projects',
+      icon: 'eos-icons:flask',
+      description: 'Created, maintained or contributed',
       items: [
         {
-          name: 'Proxmox',
-          isPrivate: true,
+          name: 'Compio',
+          icon: {
+            url: 'https://raw.githubusercontent.com/compio-rs/compio-logo/refs/heads/master/generated/bold.svg'
+          },
+          link: 'https://compio.rs',
+          github: 'https://github.com/compio-rs/compio',
+          description: 'Completion IO based asynchronous runtime for Rust',
+          indicators: [{ icon: 'cib:rust' }]
+        },
+        {
+          name: 'OpenDAL',
+          icon: 'devicon-plain:apache',
+          github: 'https://github.com/apache/opendal',
+          description: 'Apache OpenDAL: One Layer, All Storage.',
+          indicators: [{ icon: 'cib:rust' }]
+        },
+        {
+          name: 'qbit-rs',
+          icon: 'cib:rust',
+          github: 'https://github.com/George-Miao/qbit',
           description:
-            'VM environment, hosts most of my services in Tharsis. Installed on R720',
-          icon: 'cib:proxmox'
-        },
-        {
-          name: 'OPNsense',
-          isPrivate: true,
-          description: 'Router, installed on a separated R420',
-          icon: 'simple-icons:opnsense'
-        },
-        {
-          name: 'Prometheus',
-          isPrivate: true,
-          description: 'Matrix collector',
-          icon: 'simple-icons:prometheus'
-        },
-        {
-          name: 'Grafana',
-          isPrivate: true,
-          description:
-            'Matrix visualization which consumes data from Prometheus. Deployed on-premise',
-          icon: 'simple-icons:grafana'
-        },
-
-        {
-          name: 'Teamcity',
-          isPrivate: true,
-          description: 'CI/CD system by Jetbrains',
-          icon: 'simple-icons:teamcity'
-        },
-        {
-          name: 'SSH',
-          isPrivate: true,
-          description:
-            'SSH bastion, with security provided by Cloudflare Access',
-          icon: 'mdi:ssh'
-        }
-      ]
-    },
-    {
-      name: 'Tharsis US',
-      description: 'ITX server in Syracuse, NY',
-      icon: 'bx:planet',
-      items: [
-        {
-          name: 'Proxmox',
-          isPrivate: true,
-          description:
-            'VM environment, hosts most of my services in Tharsis US',
-          icon: 'cib:proxmox'
-        },
-        {
-          name: 'Home Assistant',
-          isPrivate: true,
-          description: 'Home automation system',
-          icon: 'mdi:home-assistant'
-        },
-        {
-          name: 'AdGuard Home',
-          github: 'https://github.com/AdguardTeam/AdGuardHome',
-          link: 'https://adguard.com/en/welcome.html',
-          description: 'AdGuard for DNS filtering',
-          icon: 'simple-icons:adguard'
-        }
-      ]
-    },
-    {
-      name: 'Sites',
-      icon: 'ic:twotone-web-asset',
-      description: 'Deployed and maintaining',
-      items: [
-        {
-          name: 'Blog',
-          link: 'https://miao.dev',
-          github: 'https://github.com/George-Miao/GlogHexo',
-          description:
-            'My blog. Use hexo for generation. Built with Next.js and WindiCSS',
-          icon: 'cib:next-js'
+            "A Rust library for interacting with qBittorrent's Web API"
         },
         {
           name: 'Typings.dev',
+          icon: 'ion:logo-vue',
           link: 'https://typings.dev',
           github: 'https://github.com/George-Miao/typings.dev',
-          description:
-            'Typing practice site for Pinyin and Shuang users inspired by Typing-cn',
-          icon: 'ion:logo-vue'
+          description: 'Typing practice site for Pinyin and Shuang users',
+          indicators: [{ icon: 'ion:logo-vue' }]
         },
-        {
-          name: 'Pop.tg',
-          link: 'https://www.pop.tg',
-          github: 'https://github.com/Pop-tg/main',
-          description:
-            'URL shortener, built with Svelte, Typescript and Cloudflare Worker',
-          icon: 'cib:cloudflare'
-        },
-
         {
           name: 'Rushia button',
           link: 'https://rushia.moe',
           github: 'https://github.com/Rushia-cn/Rushia-button',
           description: 'Button panel of vtuber, Uruha Rushia',
-          icon: 'vs:butterfly'
+          icon: 'vs:butterfly',
+          indicators: [{ icon: 'ion:logo-vue' }, { icon: 'cib:typescript' }]
         },
-        {
-          name: 'Grafana',
-          link: 'https://grafana.miao.dev',
-          healthCheck: 'https://grafana.miao.dev/api/health',
-          description:
-            'Matrix visualization which consumes data from Prometheus. Deployed on Fly.io',
-          icon: 'simple-icons:grafana'
-        }
-      ]
-    },
-    {
-      name: 'Projects',
-      icon: 'eos-icons:flask',
-      description: 'Works have done and doing',
-      items: [
         {
           name: 'Stargazer Reborn',
           icon: 'cib:rust',
@@ -260,11 +187,7 @@ export const config: GlogConfig = {
           github: 'https://github.com/George-Miao/knotify-telegram',
           description:
             'Bot as a bridge, forward HTTP request and PM to my telegram',
-          indicators: [
-            {
-              icon: 'cib:typescript'
-            }
-          ]
+          indicators: [{ icon: 'cib:typescript' }]
         },
         {
           name: 'Golden Axe',
@@ -272,11 +195,7 @@ export const config: GlogConfig = {
           github: 'https://github.com/suisei-cn/golden-axe-rs',
           description: 'Anti-vandalism bot for Telegram',
           healthCheck: 'https://golden-axe.fly.dev/health',
-          indicators: [
-            {
-              icon: 'cib:rust'
-            }
-          ]
+          indicators: [{ icon: 'cib:rust' }]
         },
         {
           name: 'RSS worker',
@@ -284,38 +203,221 @@ export const config: GlogConfig = {
           github: 'https://github.com/George-Miao/rss-worker',
           description:
             'Cloudflare worker that generates RSS feed from various source',
+          indicators: [{ icon: 'cib:cloudflare' }, { icon: 'cib:typescript' }]
+        }
+      ]
+    },
+    {
+      name: 'Vec.sh CGS',
+      description: 'ITX server at College Park, MD',
+      icon: 'bx:planet',
+      items: [
+        {
+          name: 'Proxmox',
+          description: 'VM environment',
+          icon: 'cib:proxmox'
+        },
+        {
+          name: 'Home Assistant',
+          description: 'Home automation system',
+          icon: 'mdi:home-assistant'
+        },
+        {
+          name: 'TrueNAS Scale',
+          description: 'Storage server',
+          icon: 'simple-icons:truenas'
+        },
+        {
+          name: 'K8s Cluster',
+          description: 'K8s cluster deployed with talos and OpenTofu on PVE',
+          icon: 'cib:kubernetes',
           indicators: [
-            {
-              icon: 'cib:typescript'
-            }
+            { icon: 'simple-icons:talos', link: 'https://www.talos.dev' },
+            { icon: 'simple-icons:opentofu', link: 'https://opentofu.org' }
           ]
         }
       ]
     },
     {
-      name: 'Misc',
-      icon: 'material-symbols:auto-awesome-outline-rounded',
-      description: 'Other things',
+      name: 'Vec.sh IAD',
+      description: 'K8s cluster on Hetzner Cloud',
+      icon: 'simple-icons:hetzner',
       items: [
         {
-          name: 'Bitwarden',
+          name: 'Vaultwarden',
           icon: 'simple-icons:bitwarden',
-          isPrivate: true,
-          description: 'Opensource password manager'
-        },
+          description: 'Opensource password manager server'
+        }
+      ]
+    },
+    {
+      name: 'Vec.sh YUL',
+      icon: 'simple-icons:caprover',
+      description: 'CapRover server on OVH Cloud',
+      items: [
         {
-          name: 'Upptime status',
+          name: 'Uptime status',
           icon: 'ic:outline-monitor-heart',
-          link: 'https://status.miao.dev',
-          github: 'https://github.com/George-Miao/upptime',
+          link: 'https://uptime.miao.do',
           description: 'Status page of my services'
         },
         {
-          name: 'Conduit Matrix server',
-          icon: 'cib:matrix',
-          link: 'https://conduit.rs',
-          healthCheck: 'https://matrix.miao.dev/_matrix/client/versions',
-          description: 'Open source, decentralized chat'
+          name: 'Affine',
+          icon: 'simple-icons:affine',
+          link: 'https://affine.miao.do',
+          description: 'A collaborative design tool'
+        },
+        {
+          name: 'Bin',
+          icon: 'akar-icons:trash-bin',
+          link: 'https://bin.miao.do',
+          description: 'A paste bin.'
+        },
+
+        {
+          name: 'Filestash',
+          icon: 'solar:folder-with-files-bold-duotone',
+          link: 'https://file.miao.do',
+          description: 'Web-based file manager'
+        },
+        {
+          name: 'Filebrowser',
+          icon: 'solar:folder-with-files-bold-duotone',
+          link: 'https://filebrowser.miao.do',
+          description: 'Another web-based file manager'
+        },
+        {
+          name: 'Flame',
+          icon: 'mdi:fire',
+          link: 'https://flame.miao.do',
+          description: 'Startpage that I never used'
+        },
+        {
+          name: 'Grafana',
+          icon: 'simple-icons:grafana',
+          link: 'https://grafana.miao.do',
+          description: 'Grafana is... Grafana'
+        },
+        {
+          name: 'Immich',
+          icon: 'simple-icons:immich',
+          link: 'https://immich.miao.do ',
+          description: 'Self-hosted photo management solution'
+        },
+        {
+          name: 'Jellyfin',
+          icon: 'simple-icons:jellyfin',
+          link: 'https://jellyfin.miao.do',
+          description: 'Self-hosted media server'
+        },
+        {
+          name: 'Loki',
+          icon: 'simple-icons:grafana',
+          link: 'https://loki.miao.do',
+          description: 'Log aggregation system'
+        },
+        {
+          name: 'Poste.io',
+          icon: 'mi:email',
+          link: 'https://mail.miao.do',
+          description: 'Mail server'
+        },
+        {
+          name: 'Overseerr',
+          icon: 'cbi:overseerr',
+          link: 'https://overseerr.miao.do',
+          description: 'Media request management system'
+        },
+        {
+          name: 'Sonarr',
+          icon: 'simple-icons:sonarr',
+          link: 'https://sonarr.miao.do',
+          description: 'TV series collection manager'
+        },
+        {
+          name: 'Prowlarr',
+          icon: 'cbi:prowlarr',
+          link: 'https://prowlarr.miao.do',
+          description: 'Indexers manager for Sonarr and Radarr'
+        },
+        {
+          name: 'Owncast',
+          icon: 'fluent:live-20-filled',
+          link: 'https://owncast.miao.do',
+          description: 'Self-hosted live video streaming'
+        },
+        {
+          name: 'Qbittorrent',
+          icon: 'cbi:qbittorrent',
+          link: 'https://qb.miao.do/',
+          description: 'Web UI of qBittorrent'
+        },
+        {
+          name: 'Riven',
+          icon: {
+            url: 'https://raw.githubusercontent.com/rivenmedia/riven/main/assets/riven-dark.png'
+          },
+          link: 'https://riven.miao.do',
+          description: 'Plex torrent streaming'
+        },
+        {
+          name: 'Plex',
+          icon: 'mdi:plex',
+          link: 'https://plex.miao.do',
+          description: 'Plex media server'
+        },
+        {
+          name: 'Stirling PDF',
+          icon: 'proicons:pdf',
+          link: 'https://pdf.miao.do',
+          description: 'PDF Toolkit'
+        },
+        {
+          name: 'Scrutiny',
+          icon: 'mdi:harddisk',
+          link: 'https://scrutiny.miao.do',
+          description: 'HDD health monitoring'
+        }
+      ]
+    },
+    {
+      name: 'Tharsis',
+      description: 'Full size server rack',
+      icon: 'bx:bxs-planet',
+      items: [
+        {
+          name: 'Proxmox',
+          description:
+            'VM environment, hosts most of my services in Tharsis. Installed on R720',
+          icon: 'cib:proxmox'
+        },
+        {
+          name: 'OPNsense',
+          description: 'Router, installed on a separated R420',
+          icon: 'simple-icons:opnsense'
+        },
+        {
+          name: 'Prometheus',
+          description: 'Matrix collector',
+          icon: 'simple-icons:prometheus'
+        },
+        {
+          name: 'Grafana',
+          description:
+            'Matrix visualization which consumes data from Prometheus. Deployed on-premise',
+          icon: 'simple-icons:grafana'
+        },
+
+        {
+          name: 'Teamcity',
+          description: 'CI/CD system by Jetbrains',
+          icon: 'simple-icons:teamcity'
+        },
+        {
+          name: 'SSH',
+          description:
+            'SSH bastion, with security provided by Cloudflare Access',
+          icon: 'mdi:ssh'
         }
       ]
     }
@@ -333,11 +435,11 @@ export const config: GlogConfig = {
         icon: 'mdi:timeline-text',
         text: 'changelog'
       },
-      {
-        link: '/gallery',
-        icon: 'material-symbols:camera-outline-rounded',
-        text: 'gallery'
-      },
+      // {
+      //   link: '/gallery',
+      //   icon: 'material-symbols:camera-outline-rounded',
+      //   text: 'gallery'
+      // },
       {
         link: '/projects',
         icon: 'mdi:flask',

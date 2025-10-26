@@ -29,7 +29,7 @@ const Title = defineFC<TitleProp>(
     )
 
     const subtitleComp = subtitle && (
-      <p className='mt-3 ml-1 text-warm-gray-500 z-12 relative md:ml-5'>
+      <p className='mt-1 ml-1 text-warm-gray-500 z-12 relative md:ml-5'>
         {subtitle}
       </p>
     )
@@ -44,7 +44,7 @@ const Title = defineFC<TitleProp>(
         {subtitleComp}
         <div
           className='
-          font-bold -top-20 -left-16 text-[190px] text-warm-gray-200
+          font-bold -top-15 -left-16 text-[190px] text-warm-gray-200
           leading-[190px] z-5 absolute block
           select-none <md:hidden'
         >

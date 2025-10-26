@@ -1,13 +1,13 @@
 import type { OpenGraph, Twitter } from 'next-seo/lib/types'
 
 import type { DotListItemProp } from '@comps/dotList'
-import type { ProjCategory } from '@type/proj'
+import type { ProjSection } from '@type/proj'
 import type { NavBtn } from '@type/navbar'
 
 import type { NextFontWithVariable } from '@next/font/dist/types'
 
 export interface GlogConfig {
-  proj: ProjCategory[]
+  proj: ProjSection[]
   fonts: NextFontWithVariable[]
   domain: string
   siteTitle: string
@@ -18,8 +18,9 @@ export interface GlogConfig {
   photoProxy: string
   twitter: Twitter
   openGraph: OpenGraph
-  resumeList: DotListItemProp[]
-  linksList: DotListItemProp[]
+  education: DotListItemProp[]
+  professional: DotListItemProp[]
+  links: DotListItemProp[]
   navbar: {
     links: NavBtn[]
   }
