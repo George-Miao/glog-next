@@ -1,8 +1,9 @@
 import { defineFC } from '@core/helper'
+import type { ReactNode } from 'react'
 
 export interface DotListItemProp {
-  title: string
-  subtitle?: string
+  title: ReactNode
+  subtitle?: ReactNode
   value: string
   link?: string
   className?: string
@@ -60,13 +61,14 @@ export const DotListItem = defineFC<DotListItemProp>(
 
 export interface DotListProp {
   items: DotListItemProp[]
-  title?: string
+  title?: ReactNode
+  subtitle?: ReactNode
   className?: string
   id?: string
 }
 
 export const DotList = defineFC<DotListProp>(
-  ({ items, title, className, id }) => {
+  ({ items, title, subtitle, className, id }) => {
     return (
       <div
         className={`${className ?? ''}
@@ -80,12 +82,15 @@ export const DotList = defineFC<DotListProp>(
             id={id ?? ''}
           >
             {title}
+            {subtitle && (
+              <span className='text-xs text-gray-500 ml-4'>{subtitle}</span>
+            )}
           </h3>
         )}
 
         <div className='col-span-9 '>
           {items.map(item => (
-            <DotListItem {...item} key={item.title} />
+            <DotListItem {...item} key={item.value} />
           ))}
         </div>
       </div>

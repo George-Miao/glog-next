@@ -432,7 +432,7 @@ export const config: GlogConfig = {
       },
       {
         link: '/changelog',
-        icon: 'mdi:timeline-text',
+        icon: 'el:time',
         text: 'changelog'
       },
       // {
@@ -446,9 +446,9 @@ export const config: GlogConfig = {
         text: 'projects'
       },
       {
-        link: '/feeds',
-        icon: 'foundation:rss',
-        text: 'feeds'
+        link: '/thingy',
+        icon: 'material-symbols:box-outline-sharp',
+        text: 'Thingy'
       }
     ]
   }
