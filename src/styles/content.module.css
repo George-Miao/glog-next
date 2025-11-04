@@ -1,5 +1,7 @@
 .content {
-  @apply w-full relative box-border overflow-hidden z-20 text-[16px] font-content font-light;
+  @apply font-content font-light text-justify w-full text-[16px] z-20 relative box-border overflow-hidden hyphens-auto;
+
+  hanging-punctuation: first;
 
   & s {
     color: #878787;
@@ -12,7 +14,7 @@
   }
 
   & a {
-    @apply text-red-800 font-normal;
+    @apply font-normal text-red-800;
 
     & code {
       @apply font-mono;
@@ -42,15 +44,15 @@
   }
 
   & blockquote {
-    @apply border-l-2 ml-0 pl-4 py-1 border-warm-gray-300 italic block text-warm-gray-600;
+    @apply border-l-2 border-warm-gray-300 ml-0 py-1 pl-4 text-warm-gray-600 italic block;
 
     & p {
-      @apply p-0 m-0;
+      @apply m-0 p-0;
     }
   }
 
   & mark {
-    @apply inline py-1 px-2;
+    @apply py-1 px-2 inline;
 
     background-color: #fcffc0;
   }
@@ -60,14 +62,13 @@
   & [class*='notice'] {
     @apply border-l-red-800 border-l-2;
 
-    padding: 0.5rem;
-    padding-left: 1.15rem;
+    padding: 0.5rem 1.15rem;
     text-decoration: none;
     text-decoration: none;
     margin: 2rem 0;
 
     &::before {
-      @apply block font-bold;
+      @apply font-bold block;
 
       margin: 0.75rem 0 1rem;
     }
@@ -104,13 +105,13 @@
 
   & ul,
   & ol {
-    @apply mb-6 mt-3;
+    @apply mt-3 mb-6;
 
     & li {
-      @apply mb-3 font-content leading-6;
+      @apply font-content mb-3 leading-6;
 
       &::marker {
-        @apply select-none text-xs leading-7;
+        @apply text-xs leading-7 select-none;
 
         color: #736e6e;
       }
@@ -122,7 +123,7 @@
   }
 
   & ul {
-    @apply pl-6 list-disc;
+    @apply list-disc pl-6;
   }
 
   & ol {
@@ -148,13 +149,13 @@
   & > h5,
   & > h6 {
     & a {
-      @apply font-sans transition-colors duration-100 text-warm-gray-800 hover:text-warm-gray-600 font-normal;
+      @apply font-sans font-normal transition-colors text-warm-gray-800 duration-100 hover:text-warm-gray-600;
     }
   }
 
   & h1,
   & h2 {
-    @apply my-7 pt-4 pb-3 border-b-1;
+    @apply border-b-1 my-7 pt-4 pb-3;
   }
 
   & h3 {
@@ -187,14 +188,14 @@
   }
 
   & img {
-    @apply max-w-[98%] rounded mt-1 mb-4 mx-auto h-auto block ring-1 ring-true-gray-200;
+    @apply rounded h-auto mx-auto mt-1 mb-4 max-w-[98%] ring-1 ring-true-gray-200 block;
 
     & ~ em {
-      @apply text-warm-gray-400 mt-2 mb-8 text-sm block text-center;
+      @apply mt-2 text-sm text-center mb-8 text-warm-gray-400 block;
     }
 
     &[src*='math.now.sh'] {
-      @apply ring-0 cursor-auto;
+      @apply cursor-auto ring-0;
 
       &:not([style='display:inline-block']) {
         @apply inline;
@@ -220,9 +221,9 @@
   }
 
   & table {
-    @apply p-2 mb-6 w-full
-      border-1 border-collapse
-      text-sm;
+    @apply border-collapse border-1 text-sm
+      mb-6 w-full
+      p-2;
 
     & td,
     & th {
@@ -261,11 +262,11 @@
     @apply;
 
     &[class*='language-'] {
-      @apply border-1 border-solid border-warm-gray-300;
+      @apply border-solid border-1 border-warm-gray-300;
     }
 
     & code {
-      @apply font-mono block text-sm;
+      @apply font-mono text-sm block;
       /* color: #c7254e; */
       /* background-color: #f9f2f4; */
       vertical-align: text-bottom;
@@ -273,7 +274,7 @@
   }
 
   & :not(pre) > code {
-    @apply font-mono text-sm break-all px-1 whitespace-nowrap;
+    @apply font-mono text-sm px-1 break-all whitespace-nowrap;
 
     color: #c7254e;
     background-color: #f9f2f4;

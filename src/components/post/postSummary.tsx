@@ -20,7 +20,7 @@ const PostSummary = defineFC<SummaryProp>(({ meta, slug, excerpt }) => {
     >
       <Title title={meta.title} link={href} />
 
-      <PostMeta meta={meta}></PostMeta>
+      <PostMeta meta={meta} />
 
       <p className='mb-10 text-warm-gray-600 z-10 relative <sm:text-sm'>
         {excerpt}

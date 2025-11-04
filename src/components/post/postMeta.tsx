@@ -45,7 +45,7 @@ const PostMeta = defineFC<{ meta: MetaValidated; className?: string }>(
         </p>
 
         <p className='text-xs mb-4 text-warm-gray-500 z-10 relative'>
-          <TagList {...tagList}></TagList>
+          <TagList {...tagList} />
         </p>
       </div>
     )

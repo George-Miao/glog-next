@@ -11,8 +11,8 @@ const PostList = defineFC<PostListProp>(({ list }) => {
   return (
     <>
       <SafeArea className='grid'>
-        {list.map((post, i) => (
-          <PostSummary key={i} {...post}></PostSummary>
+        {list.map(post => (
+          <PostSummary key={post.slug} {...post} />
         ))}
       </SafeArea>
     </>
