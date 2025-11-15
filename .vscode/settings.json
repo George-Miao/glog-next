@@ -27,11 +27,13 @@
     "Saas",
     "unoptimized"
   ],
-  "hide-files.files": [".next", ".vercel"],
-  "grammarly.selectors": [
-    {
-      "language": "markdown",
-      "scheme": "file"
-    }
-  ]
+  "biome.lsp.bin": "/nix/store/81xfcapc52ha467x70pyrv6r5r78lwnx-biome-2.3.4/bin/biome",
+  "biome.suggestInstallingGlobally": false,
+  "editor.defaultFormatter": "biomejs.biome",
+  "[json][jsonc][typescript][javascript][typescriptreact][javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "always"
+  }
 }

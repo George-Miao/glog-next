@@ -1,5 +1,5 @@
 {
-  description = "Forrit flake";
+  description = "Glog flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

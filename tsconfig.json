@@ -1,39 +1,39 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
+    "rootDirs": [".", "./.react-router/types"],
+    "types": ["./app/vite.d.ts", "vite/client"],
     "paths": {
-      "@core/*": ["core/*"],
-      "@config": ["config"],
-      "@type/*": ["types/*"],
-      "@comps/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
-      "@vendor/*": ["vendor/*"]
+      "@config": ["app/config"],
+      "@type/*": ["app/types/*"],
+      "@comps/*": ["app/components/*"],
+      "@pages/*": ["app/pages/*"],
+      "@utils/*": ["app/utils/*"],
+      "@styles/*": ["app/styles/*"],
+      "@vendor/*": ["app/vendor/*"]
     }
   },
   "include": [
     "node_modules/.pnpm/markdown-it-code-block@0.1.0_markdown-it@14.1.0_prismjs@1.29.0/node_modules/prismjs",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "next.config.ts",
-    "postcss.config.js",
-    "windi.config.js",
-    "next-site.js"
+    "not_postcss.config.js",
+    "**/*",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*"
   ],
   "exclude": ["node_modules"]
 }

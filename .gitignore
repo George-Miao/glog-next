@@ -205,3 +205,4 @@ public/robots.txt
 .vercel
 
 .direnv/
+.react-router/
