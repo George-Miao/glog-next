@@ -6,9 +6,9 @@ compatibility_date = "2025-11-16"
 [build]
 command = "pnpm build"
 
-[route]
+[[routes]]
 custom_domain = true
-pattern = "miao.dev/*"
+pattern = "miao.dev"
 
 [assets]
 html_handling = "auto-trailing-slash"

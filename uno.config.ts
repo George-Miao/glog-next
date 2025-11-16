@@ -14,7 +14,11 @@ export default defineUnoConfig({
   presets: [
     presetWind3(),
     presetWebFonts({
-      provider: 'google',
+      provider: 'bunny',
+      timeouts: {
+        warning: 1000,
+        failure: 10000
+      },
       fonts: {
         sans: ['Josefin Sans:100,200,300,400,500,600,700'],
         mono: ['Cascadia Code:400'],
