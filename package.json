@@ -12,7 +12,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "react-router dev",
-    "build": "react-router build",
+    "build": "react-router build && bin/build_postprocess.sh",
     "preview": "vite preview",
     "check:type": "react-router typegen && tsc",
     "check:format": "react-router typegen && tsc",

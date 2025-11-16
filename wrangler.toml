@@ -1,0 +1,19 @@
+name = "glog"
+preview_urls = true
+workers_dev = true
+compatibility_date = "2025-11-16"
+
+[build]
+command = "pnpm build"
+
+[route]
+custom_domain = true
+pattern = "miao.dev/*"
+
+[assets]
+html_handling = "auto-trailing-slash"
+directory = "./build/client"
+not_found_handling = "404-page"
+
+[observability]
+enabled = true

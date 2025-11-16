@@ -7,6 +7,7 @@ export default {
   async prerender() {
     const fixed = [
       '/',
+      '/404',
       '/sitemap.xml',
       '/posts.rss.xml',
       '/posts.atom.xml',
