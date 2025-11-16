@@ -1,8 +1,4 @@
-// trunk-ignore(eslint/@typescript-eslint/no-var-requires)
 import WindiCSSWebpackPlugin from 'windicss-webpack-plugin'
-
-import fs from 'node:fs'
-import path from 'node:path'
 
 const headers = {
   json: [

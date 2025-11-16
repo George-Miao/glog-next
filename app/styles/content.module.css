@@ -1,0 +1,279 @@
+.content {
+  @apply font-content font-light text-justify w-full text-[16px] z-20 relative box-border overflow-hidden hyphens-auto;
+
+  hanging-punctuation: first;
+
+  & s {
+    color: #878787;
+  }
+
+  & p {
+    @apply mb-5 break-words;
+
+    vertical-align: middle;
+  }
+
+  & a {
+    @apply font-normal text-red-800;
+
+    & code {
+      @apply font-mono;
+    }
+
+    &:hover,
+    & code:hover {
+      color: rgb(228, 73, 96);
+    }
+
+    &[rel*="external"] {
+      text-decoration: underline;
+    }
+  }
+
+  & hr {
+    @apply my-3;
+  }
+
+  & ins {
+    text-decoration: underline;
+  }
+
+  & sup,
+  & sub {
+    line-height: 0;
+  }
+
+  & blockquote {
+    @apply border-l-2 border-neutral-300 ml-0 py-1 pl-4 text-neutral-600 italic block;
+
+    & p {
+      @apply m-0 p-0;
+    }
+  }
+
+  & mark {
+    @apply py-1 px-2 inline;
+
+    background-color: #fcffc0;
+  }
+
+  & [class*="tip"],
+  & [class*="warn"],
+  & [class*="notice"] {
+    @apply border-l-red-800 border-l-2;
+
+    padding: 0.5rem 1.15rem;
+    text-decoration: none;
+    text-decoration: none;
+    margin: 2rem 0;
+
+    &::before {
+      @apply font-bold block;
+
+      margin: 0.75rem 0 1rem;
+    }
+
+    & p {
+      margin: 0.35rem 0;
+    }
+  }
+
+  & [class*="tip"] {
+    @apply bg-neutral-100;
+
+    &::before {
+      content: "Tips";
+    }
+  }
+
+  & [class*="notice"] {
+    @apply bg-neutral-100;
+
+    &::before {
+      content: "Notice";
+    }
+  }
+
+  & [class*="warn"] {
+    background: rgba(255, 240, 240, 0.45);
+
+    &::before {
+      @apply text-red-800;
+      content: "Warn";
+    }
+  }
+
+  & ul,
+  & ol {
+    @apply mt-3 mb-6;
+
+    & li {
+      @apply font-content mb-3 leading-6;
+
+      &::marker {
+        @apply text-xs leading-7 select-none;
+
+        color: #736e6e;
+      }
+
+      & p {
+        @apply m-0 p-0;
+      }
+    }
+  }
+
+  & ul {
+    @apply list-disc pl-6;
+  }
+
+  & ol {
+    @apply list-decimal pl-6;
+
+    & li::marker {
+      @apply font-mono leading-7;
+    }
+  }
+
+  & [class*="footnotes-list"] {
+    @apply text-sm;
+
+    & * {
+      @apply mb-0 pb-0;
+    }
+  }
+
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    & a {
+      @apply font-sans font-normal transition-colors text-neutral-800 duration-100 hover:text-neutral-600;
+    }
+  }
+
+  & h1,
+  & h2 {
+    @apply border-b-1 my-7 pt-4 pb-3;
+  }
+
+  & h3 {
+    @apply pt-3 pb-2;
+  }
+
+  & h4,
+  & h5 {
+    @apply pt-2 pb-1;
+  }
+
+  & h1 {
+    @apply text-4xl;
+  }
+
+  & h2 {
+    @apply text-3xl;
+  }
+
+  & h3 {
+    @apply text-2xl;
+  }
+
+  & h4 {
+    @apply text-xl;
+  }
+
+  & h5 {
+    @apply text-lg;
+  }
+
+  & img {
+    @apply rounded h-auto mx-auto mt-1 mb-4 max-w-[98%] ring-1 ring-neutral-200 block;
+
+    & ~ em {
+      @apply mt-2 text-sm text-center mb-8 text-neutral-400 block;
+    }
+
+    &[src*="math.now.sh"] {
+      @apply cursor-auto ring-0;
+
+      &:not([style="display:inline-block"]) {
+        @apply inline;
+      }
+
+      &[style*="display:inline-block"] {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  & p,
+  & figure {
+    @apply leading-7;
+  }
+
+  & figure {
+    margin-left: 0;
+    margin-right: 0;
+    & span {
+      word-break: break-all;
+    }
+  }
+
+  & table {
+    @apply border-collapse border-1 text-sm mb-6 w-full p-2;
+
+    & td,
+    & th {
+      @apply border-1 relative;
+    }
+
+    & th {
+      @apply p-3;
+    }
+
+    & td {
+      @apply p-2;
+    }
+  }
+
+  & hr {
+    height: 1px;
+    border: 0;
+    background-color: #dedede;
+    margin: 1rem auto 1.57143em auto;
+  }
+
+  & dl {
+    @apply text-sm;
+
+    & dt {
+      @apply font-bold mt-4 mb-3;
+    }
+
+    & dd {
+      @apply text-neutral-700;
+    }
+  }
+
+  & pre {
+    &[class*="language-"] {
+      @apply border-solid border-1 border-neutral-300;
+    }
+
+    & code {
+      @apply font-mono text-sm block;
+      /* color: #c7254e; */
+      /* background-color: #f9f2f4; */
+      vertical-align: text-bottom;
+    }
+  }
+
+  & :not(pre) > code {
+    @apply font-mono text-sm px-1 break-all whitespace-nowrap;
+
+    color: #c7254e;
+    background-color: #f9f2f4;
+    vertical-align: text-bottom;
+  }
+}
