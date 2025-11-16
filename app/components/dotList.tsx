@@ -67,7 +67,7 @@ export interface DotListProp {
   title?: ReactNode
   subtitle?: ReactNode
   className?: string
-  id?: string
+  id: string
 }
 
 export function DotList({

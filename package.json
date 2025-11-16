@@ -16,10 +16,11 @@
     "preview": "vite preview",
     "check:type": "react-router typegen && tsc",
     "check:format": "react-router typegen && tsc",
-    "format": "biome format --write src",
+    "format": "biome format --write .",
     "serve": "vite preview"
   },
   "dependencies": {
+    "@forge42/seo-tools": "^1.4.5",
     "@react-router/node": "^7.9.6",
     "@react-router/serve": "^7.9.6",
     "@unocss/reset": "^66.5.6",
@@ -39,8 +40,6 @@
     "@types/react": "19.2.4",
     "@types/react-responsive-masonry": "^2.6.0",
     "@types/wordpress__wordcount": "^2.4.5",
-    "@typescript-eslint/eslint-plugin": "^8.46.4",
-    "@typescript-eslint/parser": "^8.46.4",
     "@wordpress/wordcount": "^4.35.0",
     "feed": "^5.1.0",
     "glob": "^11.0.3",

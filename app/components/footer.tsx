@@ -1,10 +1,10 @@
+import commit from 'virtual:git-sha'
 import cx from 'classix'
 import { Link } from 'react-router'
 
-const commit = '123123'
 const url =
   commit && `https://github.com/George-Miao/glog-next/commit/${commit}`
-const commitComp = commit && (
+const commitComp = (
   <p className='text-sm'>
     Commit{' '}
     <Link to={url} className='font-bold'>

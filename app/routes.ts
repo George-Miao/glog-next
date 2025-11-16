@@ -1,7 +1,7 @@
 import {
-  type RouteConfig,
   index,
   prefix,
+  type RouteConfig,
   route
 } from '@react-router/dev/routes'
 
@@ -15,5 +15,8 @@ export default [
     route('categories', './pages/writing/categories.tsx'),
     route('tags', './pages/writing/tags.tsx'),
     route(':slug', './pages/writing/content.tsx')
-  ])
+  ]),
+  route('sitemap.xml', './pages/sitemap.tsx'),
+  route('robot.txt', './pages/robot.txt.tsx'),
+  route('*', './pages/feed.tsx')
 ] satisfies RouteConfig

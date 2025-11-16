@@ -5,8 +5,8 @@ export const config: GlogConfig = {
   domain: 'miao.dev',
   siteTitle: 'Glog',
   description: "George Miao's Site",
-  image: 'https://example.com/image.png', // TODO: image
-  favicon: 'https://example.com/favicon.ico', // TODO: favicon
+  image: 'https://miao.dev/image.png', // TODO: image
+  favicon: 'https://miao.dev/favicon.ico', // TODO: favicon
   twitter: {
     site: '@PopDotLol',
     cardType: 'summary_large_image'
@@ -425,16 +425,16 @@ export const config: GlogConfig = {
   }
 }
 
-// export const defaultSeo: DefaultSeoProps = {
-//   defaultTitle: config.siteTitle,
-//   description: config.description,
-//   titleTemplate: `%s | ${config.siteTitle}`,
-//   twitter: config.twitter,
-//   openGraph: {
-//     ...config.openGraph,
-//     description: config.description
-//   }
-// }
+export const seo = {
+  defaultTitle: config.siteTitle,
+  description: config.description,
+  titleTemplate: `%s | ${config.siteTitle}`,
+  twitter: config.twitter,
+  openGraph: {
+    ...config.openGraph,
+    description: config.description
+  }
+}
 
 export const feedBase: FeedOptions = {
   title: config.domain,

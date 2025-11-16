@@ -1,51 +1,17 @@
 import { Feed } from 'feed'
-import { mkdir, writeFile } from 'node:fs/promises'
 import { config, feedBase } from '../../config'
 import { renderChangelog } from '../changelog'
-import { exists } from '../utils'
 import { renderAllPost } from './reduce'
-
-let feedCache: Feed | null = null
-let changelogCache: Feed | null = null
 
 const author = {
   name: 'George Miao',
-  email: 'gm@miao.com',
+  email: 'gm@miao.dev',
   link: `https://${config.domain}`
 }
 
 const copyright = 'All rights reserved 2025, George Miao'
 
-export const generateAllFeeds = async () => {
-  const cwd = process.cwd()
-  const feedDir = `${cwd}/public/feeds`
-
-  await exists(feedDir).then(exist => {
-    if (!exist) {
-      return mkdir(feedDir, {
-        recursive: true
-      })
-    }
-  })
-
-  const [posts, changelogs] = await Promise.all([
-    generatePostFeed(),
-    generateChanglogFeed()
-  ])
-
-  await Promise.all([
-    writeFile(`${feedDir}/posts.rss.xml`, posts.rss2()),
-    writeFile(`${feedDir}/posts.atom.xml`, posts.atom1()),
-    writeFile(`${feedDir}/posts.json`, posts.json1()),
-    writeFile(`${feedDir}/changelog.rss.xml`, changelogs.rss2()),
-    writeFile(`${feedDir}/changelog.atom.xml`, changelogs.atom1()),
-    writeFile(`${feedDir}/changelog.json`, changelogs.json1())
-  ])
-}
-
-export const generatePostFeed = async () => {
-  if (process.env.NODE_ENV === 'production' && feedCache) return feedCache
-
+export const postFeed = async () => {
   const feed = new Feed({ ...feedBase, author, copyright })
 
   feed.items = await renderAllPost().then(posts =>
@@ -71,15 +37,10 @@ export const generatePostFeed = async () => {
     })
   )
 
-  feedCache = feed
-
   return feed
 }
 
-export const generateChanglogFeed = async () => {
-  if (process.env.NODE_ENV === 'production' && changelogCache)
-    return changelogCache
-
+export const changlogFeed = async () => {
   const cl = await renderChangelog()
   const feed = new Feed({ ...feedBase, author, copyright })
 
@@ -88,8 +49,6 @@ export const generateChanglogFeed = async () => {
 
     return { date: new Date(date), link, title, content, copyright, guid: link }
   })
-
-  changelogCache = feed
 
   return feed
 }

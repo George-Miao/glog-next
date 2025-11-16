@@ -1,9 +1,8 @@
+import changelogs from 'virtual:changelog'
 import ChangeLogItem from '@comps/changelog/changelogItem'
 import SafeArea from '@comps/layout/safeArea'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
-
-import changelogs from 'virtual:changelog'
 
 export default function ChangelogPage() {
   const len = changelogs.length

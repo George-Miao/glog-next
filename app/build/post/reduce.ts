@@ -24,6 +24,4 @@ export const getPostList: () => Promise<PostPath[]> = async () => {
 export const renderAllPost: () => Promise<Rendered[]> = () =>
   getPostList()
     .then(x => Promise.all(x.map(({ slug }) => renderSlug(slug))))
-    .then(x =>
-      x.sort((a, b) => +new Date(b.meta.created) - +new Date(a.meta.created))
-    )
+    .then(x => x.sort((a, b) => b.meta.created - a.meta.created))

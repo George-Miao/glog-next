@@ -2,6 +2,7 @@
 
 import MarkdownIt from 'markdown-it'
 import { config } from '../config'
+
 // import codeBlock from '../vendor/markdown-it-code-block.js'
 
 const anchor = require('markdown-it-anchor')

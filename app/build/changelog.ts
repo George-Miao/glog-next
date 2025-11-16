@@ -1,5 +1,5 @@
-import DOMPurify from 'isomorphic-dompurify'
 import { readFile } from 'node:fs/promises'
+import DOMPurify from 'isomorphic-dompurify'
 import type { Changelog } from '../types/changelog'
 import { md } from './markdown'
 import { renderMarkdown } from './post/map'

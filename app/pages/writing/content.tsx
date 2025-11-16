@@ -1,5 +1,5 @@
-import postList from 'virtual:post_path'
-import postRendered from 'virtual:posts'
+import postRendered from 'virtual:post:all'
+import postList from 'virtual:post:path'
 import BreadCrumb from '@comps/breadcrumb'
 import HTMLContent from '@comps/HTMLContent'
 import SafeArea from '@comps/layout/safeArea'
@@ -8,7 +8,7 @@ import PostFooter from '@comps/post/postFooter'
 import PostMeta from '@comps/post/postMeta'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
-import type { MetaValidated } from '@type/post'
+import type { MetaValidated, Rendered } from '@type/post'
 import type { Route } from './+types/content'
 
 interface PostProp {
@@ -24,15 +24,21 @@ export async function loader({ params }: Route.LoaderArgs) {
 
   const found = postList[current]
   const md = await import(`../../../content/posts/${found.slug}.md`).then(
-    mod => mod.default
+    mod => mod.default as Rendered
   )
+  const currentRendered = postRendered.findIndex(
+    post => post.slug === params.slug
+  )
+
   return {
     html: md.html,
     meta: md.meta,
     footer: {
       next:
-        postRendered.length > current + 1 ? postRendered[current + 1] : null,
-      prev: current !== 0 ? postRendered[current - 1] : null
+        postRendered.length > currentRendered + 1
+          ? postRendered[currentRendered + 1]
+          : null,
+      prev: currentRendered !== 0 ? postRendered[currentRendered - 1] : null
     }
   } satisfies PostProp
 }

@@ -1,4 +1,4 @@
-import list from 'virtual:posts'
+import list from 'virtual:post:all'
 import Button from '@comps/button'
 import SafeArea from '@comps/layout/safeArea'
 import PostList from '@comps/post/postList'

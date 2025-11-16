@@ -15,7 +15,7 @@ export interface GlogConfig {
   image: string
   favicon: string
   twitter: unknown
-  openGraph: unknown
+  openGraph: object
   education: DotListItemProp[]
   professional: DotListItemProp[]
   links: DotListItemProp[]

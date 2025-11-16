@@ -63,6 +63,7 @@ export default function Thingy() {
       <SEO title='Thingy' />
       <Title title='Thingy' subtitle='Random stuff' safeArea />
       <DotList
+        id='notes'
         items={notes}
         title='Notes'
         subtitle={
@@ -76,16 +77,19 @@ export default function Thingy() {
         className='pt-2 at-sm:pt-12'
       />
       <DotList
+        id='feeds'
         items={genItems('posts')}
         title='Feeds'
         className='pt-2 at-sm:pt-12'
       />
       <DotList
+        id='changelogs'
         items={genItems('changelog')}
         title='Changelogs'
         className='pt-2 at-sm:pt-12'
       />
       <DotList
+        id='keys'
         items={[
           {
             title: 'SSH',

@@ -2,6 +2,7 @@ import Badge from '@comps/badge'
 import Button from '@comps/button'
 import { DotList } from '@comps/dotList'
 import SafeArea from '@comps/layout/safeArea'
+import SEO from '@comps/seo'
 import Title from '@comps/title'
 import config from '@config'
 import content from '@styles/content.module.css'
@@ -9,6 +10,8 @@ import content from '@styles/content.module.css'
 export default function Home() {
   return (
     <SafeArea>
+      <SEO />
+
       <Title title="Hi, I'm George Miao" safeArea />
       <br />
       <p className='flex flex-col gap-2 sm:flex-row'>
@@ -31,9 +34,14 @@ export default function Home() {
         </p>
       </div>
 
-      <DotList items={config.education} title='Education' />
-      <DotList items={config.professional} title='Experience' />
-      <DotList items={config.links} title='Link exchange' className='mb-16' />
+      <DotList id='education' items={config.education} title='Education' />
+      <DotList id='experience' items={config.professional} title='Experience' />
+      <DotList
+        id='link_exchange'
+        items={config.links}
+        title='Link exchange'
+        className='mb-16'
+      />
       <Button
         href='/writing'
         className='ml-auto text-sm w-36'

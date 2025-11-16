@@ -8,6 +8,8 @@ import '@unocss/reset/tailwind-v4.css'
 
 import Footer from '@comps/footer'
 import NavBar from '@comps/navbar'
+import NotFoundPage from '@pages/404'
+import ServerErrorPage from '@pages/500'
 import {
   isRouteErrorResponse,
   Links,
@@ -42,17 +44,14 @@ export const links: Route.LinksFunction = () => [
   { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#be223a' }
 ]
 
-export const meta: Route.MetaFunction = () => [
-  { name: 'msapplication-TileColor', content: '#FFFFFF' },
-  { name: 'theme-color', content: '#be223a' }
-]
-
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
       <head>
         <meta charSet='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta name='msapplication-TileColor' content='#FFFFFF' />
+        <meta name='theme-color' content='#be223a' />
         <Meta />
         <Links />
       </head>
@@ -99,27 +98,9 @@ export default function App() {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = 'Oops!'
-  let details = 'An unexpected error occurred.'
-  let stack: string | undefined
-
-  if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? '404' : 'Error'
-    details =
-      error.status === 404
-        ? 'The requested page could not be found.'
-        : error.statusText || details
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    return <NotFoundPage />
   }
 
-  return (
-    <main className='container mx-auto p-4 pt-16'>
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className='w-full p-4 overflow-x-auto'>
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
-  )
+  return <ServerErrorPage />
 }

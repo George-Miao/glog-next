@@ -19,14 +19,22 @@ declare module 'virtual:category' {
   export default categories
 }
 
-declare module 'virtual:posts' {
+declare module 'virtual:post:all' {
   import type { Rendered } from '@type/post'
   const posts: Rendered[]
   export default posts
 }
 
-declare module 'virtual:post_path' {
+declare module 'virtual:post:path' {
   import type { PostPath } from '@type/post'
   const posts: PostPath[]
   export default posts
+}
+
+declare module 'virtual:feed:*' {
+  export default string
+}
+
+declare module 'virtual:git-sha' {
+  export default string
 }

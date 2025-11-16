@@ -3,8 +3,10 @@
 import type { Awaitable } from 'unocss'
 import type { Plugin } from 'vite'
 import { renderChangelog } from './changelog'
+import { changlogFeed, postFeed } from './post/feed'
 import { renderPost } from './post/map'
 import { getPostList, renderAllPost } from './post/reduce'
+import { gitSHA } from './utils'
 import { renderCategories } from './writing'
 
 export const post = {
@@ -47,9 +49,16 @@ const virtual = <R>(id: string, render: () => Awaitable<R>) => {
 export default function GlogPlugin() {
   return [
     post,
+    virtual('git-sha', gitSHA),
     virtual('changelog', renderChangelog),
     virtual('category', renderCategories),
-    virtual('posts', renderAllPost),
-    virtual('post_path', getPostList)
+    virtual('post:all', renderAllPost),
+    virtual('post:path', getPostList),
+    virtual('feed:posts:rss2', () => postFeed().then(x => x.rss2())),
+    virtual('feed:posts:atom1', () => postFeed().then(x => x.atom1())),
+    virtual('feed:posts:json1', () => postFeed().then(x => x.json1())),
+    virtual('feed:changelog:rss2', () => changlogFeed().then(x => x.rss2())),
+    virtual('feed:changelog:atom1', () => changlogFeed().then(x => x.atom1())),
+    virtual('feed:changelog:json1', () => changlogFeed().then(x => x.json1()))
   ]
 }

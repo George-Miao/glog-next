@@ -3,6 +3,7 @@
   Functions it exports require node and fs access
 */
 
+import { exec } from 'node:child_process'
 import type { PathLike } from 'node:fs'
 import { access } from 'node:fs/promises'
 
@@ -26,7 +27,7 @@ export const regexIndexOf = (
 }
 
 export const allIndexOf = (string: string, regex: RegExp) => {
-  let pos: number | undefined = undefined
+  let pos: number | undefined
   const ret: number[] = []
   do {
     pos && ret.push(pos)
@@ -34,3 +35,14 @@ export const allIndexOf = (string: string, regex: RegExp) => {
   } while (pos >= 0)
   return ret
 }
+
+export const gitSHA = () =>
+  new Promise<string>((resolve, reject) => {
+    exec('git rev-parse --short HEAD', (error, stdout) => {
+      if (error) {
+        reject(error)
+        return
+      }
+      resolve(stdout.trim())
+    })
+  })

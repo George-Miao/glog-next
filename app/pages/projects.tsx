@@ -1,12 +1,10 @@
-import { PhotoAlbum } from 'react-photo-album'
-
 import SafeArea from '@comps/layout/safeArea'
+import type { PseudoProjPhoto } from '@comps/projects'
 import ProjCategory from '@comps/projects'
 import SEO from '@comps/seo'
 import Title from '@comps/title'
 import { config } from '@config'
-
-import type { PseudoProjPhoto } from '@comps/projects'
+import { PhotoAlbum } from 'react-photo-album'
 
 const pseudoProjPhotos: PseudoProjPhoto[] = config.proj.map(category => ({
   src: '',
@@ -31,12 +29,6 @@ export default function Projects() {
             className: 'flex pt-12'
           }
         }}
-        // breakpointCols={{
-        //   default: 2,
-        //   768: 1
-        // }}
-        // className='flex mt-8 sm:mt-12 md:mt-0'
-        // columnClassName='not-first:ml-6'
       />
     </SafeArea>
   )
