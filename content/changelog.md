@@ -1,5 +1,11 @@
 <!-- markdownlint-disable -->
 
+# Migrating to Vite + React Router - 2025-11-16
+
+**Glog-next now works without Next.js!**
+
+The original setup with nextjs is a little bit hacky. To hot reload when content files change, I used an [external package](https://github.com/stackbit/nextjs-hot-content-reload) to watch file system events and trigger rerender. However it stopped maintaining and is not long working on recent Next.js. So I decided to switch to vite and react-router, which I used for [compio.rs](https://compio.rs) website, and I know I can render markdowns with hand-written vite plugins, and has perfect hot reload support as long as I `import "content/my_post.md"`. The result? This [+5,251 −8,386 monstrous PR](https://github.com/George-Miao/glog-next/pull/1).
+
 # Design tweak - 2022-5-25
 
 ![2022-05-24T17:52:50Z.png](https://imagedelivery.net/b21oeeg7p6hqWEI-IA5xDw/f4060d5a-f42c-4b76-8676-0d6695e7a000/public)
