@@ -1,0 +1,15 @@
+{
+  "language_servers": ["!tailwindcss-language-server", "!prettier"],
+  "languages": {
+    "TSX": {
+      "language_servers": [
+        "!tailwindcss-language-server",
+        "vtsls",
+        "unocss-language-server"
+      ]
+    },
+    "TypeScript": {
+      "language_servers": ["vtsls"]
+    }
+  }
+}

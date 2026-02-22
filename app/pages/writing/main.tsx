@@ -11,6 +11,7 @@ const buttons = [
 ]
 
 export default function Writing() {
+
   return (
     <SafeArea className='grid gap-8 md:gap-16 items-center'>
       <SEO title='Writing' />
@@ -47,15 +48,9 @@ export default function Writing() {
       <p className='text-neutral-500 font-bold text-md -mb-2 md:-mb-12 mx-auto'>
         Latest Posts
       </p>
-      <PostList list={list} />
-      <Button
-        href={'/writing/posts'}
-        className='ml-auto w-36 text-sm'
-        style='underline'
-        postfix='→'
-      >
-        View All Posts
-      </Button>
+      <PostList list={list} /><p className='text-neutral-500 font-bold text-md -mb-2 md:-mb-12 mx-auto'>
+        You've reached the end!
+      </p>
     </SafeArea>
   )
 }

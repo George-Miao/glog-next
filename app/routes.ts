@@ -19,5 +19,5 @@ export default [
   route('sitemap.xml', './pages/sitemap.tsx'),
   route('robot.txt', './pages/robot.txt.tsx'),
   route('404', './pages/404.tsx'),
-  route('*', './pages/feed.tsx')
+  route('feeds/*', './pages/feed.tsx')
 ] satisfies RouteConfig

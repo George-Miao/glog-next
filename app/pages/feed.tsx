@@ -1,7 +1,7 @@
 import type { LoaderFunctionArgs } from 'react-router'
 
 export async function loader({ params }: LoaderFunctionArgs) {
-  const path = (params['*'] || '').replace(/^\//, '')
+  const path = (params['*'] || '').replace(/feeds\/^\//, '')
 
   if (path === 'posts.rss.xml') {
     const content = await import('virtual:feed:posts:rss2').then(
